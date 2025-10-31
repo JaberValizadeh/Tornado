@@ -31,10 +31,10 @@ const Header = () => {
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <nav className="container-custom">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-2 md:py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="w-52 h-52 rounded-lg overflow-hidden">
+            <div className="w-28 h-12 md:w-40 md:h-16 lg:w-52 lg:h-20 rounded-lg overflow-hidden">
               <Image 
                 src="/img/Tornado-removebg-preview.png" 
                 alt="Tornado Logo" 
@@ -68,7 +68,7 @@ const Header = () => {
                 }
               }}
             >
-              Book a Consultation
+              Book Free Consultation
             </a>
           </div>
 
@@ -109,7 +109,7 @@ const Header = () => {
                     }
                   }}
                 >
-                  Book a Consultation
+                  Book Free Consultation
                 </a>
               </div>
             </div>
