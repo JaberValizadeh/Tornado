@@ -63,18 +63,39 @@ Your custom domain is already configured in the code (`app/layout.tsx`). To conn
 4. Click "Add"
 
 ### Step 2: Configure DNS Records
-**Important**: Vercel will automatically display the exact DNS records you need when you add the domain. The records depend on your registrar's capabilities.
 
-1. After adding the domain in Vercel, you'll see DNS configuration instructions
-2. Go to your domain registrar's DNS management panel (where you bought `tornadoai.com.au`)
-3. Add the DNS records shown in Vercel (usually one of these methods):
+**Vercel will show you the exact DNS records required.** Look for the message: *"The DNS records at your provider must match the following records..."*
 
-**Common DNS Record Types:**
-- **A Record**: Points `tornadoai.com.au` directly to Vercel's IP
-- **CNAME Record**: Points `tornadoai.com.au` to Vercel's DNS
-- **Nameservers**: Optionally use Vercel's nameservers for full DNS management
+1. **Copy the exact DNS record** Vercel displays (it will show Type, Name, and Value)
 
-**Note**: Some registrars (like GoDaddy, Namecheap) don't allow CNAME on root domain (@). In that case, use the A record provided by Vercel or use their nameserver option.
+2. **Go to your domain registrar** (GoDaddy, Namecheap, Cloudflare, etc.)
+   - Find "DNS Management" or "Advanced DNS" settings
+   - Locate existing DNS records for `@` or `tornadoai.com.au`
+
+3. **Add/Update the record:**
+   - **If Vercel shows an A Record:**
+     - Type: `A`
+     - Name: `@` (or leave blank/root)
+     - Value: The IP address Vercel provides
+     - **Remove any existing A records** for `@` (only keep the Vercel one)
+   
+   - **If Vercel shows a CNAME:**
+     - Some registrars don't support CNAME on root domain
+     - If you get "Invalid Configuration", contact Vercel support for an A record IP
+     - Or use the nameserver option instead
+
+4. **Wait 5-10 minutes**, then in Vercel Dashboard:
+   - Go to Settings → Domains
+   - Click **"Refresh"** next to your domain
+   - Status should change from "Invalid Configuration" to "Valid Configuration"
+
+**Troubleshooting "Invalid Configuration":**
+- ✅ Ensure the record matches **exactly** what Vercel shows
+- ✅ Remove conflicting records (only ONE A record for `@`)
+- ✅ If using Cloudflare, disable proxying (gray cloud, not orange)
+- ✅ Wait 10-15 minutes for DNS propagation
+
+📖 **Detailed guide**: See [DNS_SETUP.md](./DNS_SETUP.md) for registrar-specific steps.
 
 ### Step 3: SSL Certificate
 - Vercel automatically provisions SSL certificates (HTTPS) for your domain
