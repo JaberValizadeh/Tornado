@@ -32,6 +32,7 @@
    - Click "Deploy"
    - Wait for build to complete (~2-3 minutes)
    - Your site will be live at: `https://tornado-[random].vercel.app`
+   - **After adding domain**: Your site will also be at `https://tornadoai.com.au`
 
 ## Alternative: CLI Method
 
@@ -47,9 +48,58 @@ vercel --prod
 ## Post-Deployment
 
 After deployment succeeds:
-1. Your site will have a production URL
-2. You can add a custom domain in Vercel Dashboard → Settings → Domains
+1. Your site will have a production URL: `https://tornado-[random].vercel.app`
+2. **Add Custom Domain: `tornadoai.com.au`** (see Domain Setup below)
 3. Environment variables can be updated anytime in Settings → Environment Variables
+
+## Domain Setup: tornadoai.com.au
+
+Your custom domain is already configured in the code (`app/layout.tsx`). To connect it in Vercel:
+
+### Step 1: Add Domain in Vercel
+1. Go to Vercel Dashboard → Your Project → Settings → Domains
+2. Click "Add Domain"
+3. Enter: `tornadoai.com.au`
+4. Click "Add"
+
+### Step 2: Configure DNS Records
+Vercel will show you the DNS records you need. Add these to your domain registrar (where you bought `tornadoai.com.au`):
+
+**Option A: Root Domain (tornadoai.com.au)**
+```
+Type: A
+Name: @
+Value: 76.76.21.21
+```
+
+**Option B: Using CNAME (Alternative)**
+```
+Type: CNAME
+Name: @
+Value: cname.vercel-dns.com
+```
+
+**For www Subdomain (Optional):**
+```
+Type: CNAME
+Name: www
+Value: cname.vercel-dns.com
+```
+
+### Step 3: SSL Certificate
+- Vercel automatically provisions SSL certificates (HTTPS) for your domain
+- Wait 1-24 hours for DNS propagation and SSL certificate issuance
+- You'll receive an email when the domain is ready
+
+### Step 4: Verify Domain
+- Check domain status in Vercel Dashboard → Settings → Domains
+- Status will change from "Pending" to "Valid Configuration" when DNS is correct
+- Once valid, your site will be live at: **https://tornadoai.com.au**
+
+### DNS Propagation Check
+You can check if DNS is propagating using:
+- https://dnschecker.org
+- Enter: `tornadoai.com.au` and check A/CNAME records globally
 
 ## Fixing DEPLOYMENT_NOT_FOUND Error
 
