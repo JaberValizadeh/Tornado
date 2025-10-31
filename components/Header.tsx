@@ -34,7 +34,7 @@ const Header = () => {
         <div className="flex items-center justify-between py-2 md:py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="w-28 h-12 md:w-40 md:h-16 lg:w-52 lg:h-20 rounded-lg overflow-hidden">
+            <div className="w-36 h-16 md:w-48 md:h-20 lg:w-60 lg:h-24 rounded-lg overflow-hidden">
               <Image 
                 src="/img/Tornado-removebg-preview.png" 
                 alt="Tornado Logo" 
