@@ -34,12 +34,12 @@ const Header = () => {
         <div className="flex items-center justify-between py-2 md:py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="w-36 h-16 md:w-48 md:h-20 lg:w-60 lg:h-24 rounded-lg overflow-hidden">
+            <div className="w-40 h-16 md:w-56 md:h-24 lg:w-64 lg:h-28 rounded-lg overflow-hidden">
               <Image 
                 src="/img/Tornado-removebg-preview.png" 
                 alt="Tornado Logo" 
-                width={208} 
-                height={208}
+                width={320} 
+                height={320}
                 className="w-full h-full object-contain"
               />
             </div>
