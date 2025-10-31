@@ -63,28 +63,18 @@ Your custom domain is already configured in the code (`app/layout.tsx`). To conn
 4. Click "Add"
 
 ### Step 2: Configure DNS Records
-Vercel will show you the DNS records you need. Add these to your domain registrar (where you bought `tornadoai.com.au`):
+**Important**: Vercel will automatically display the exact DNS records you need when you add the domain. The records depend on your registrar's capabilities.
 
-**Option A: Root Domain (tornadoai.com.au)**
-```
-Type: A
-Name: @
-Value: 76.76.21.21
-```
+1. After adding the domain in Vercel, you'll see DNS configuration instructions
+2. Go to your domain registrar's DNS management panel (where you bought `tornadoai.com.au`)
+3. Add the DNS records shown in Vercel (usually one of these methods):
 
-**Option B: Using CNAME (Alternative)**
-```
-Type: CNAME
-Name: @
-Value: cname.vercel-dns.com
-```
+**Common DNS Record Types:**
+- **A Record**: Points `tornadoai.com.au` directly to Vercel's IP
+- **CNAME Record**: Points `tornadoai.com.au` to Vercel's DNS
+- **Nameservers**: Optionally use Vercel's nameservers for full DNS management
 
-**For www Subdomain (Optional):**
-```
-Type: CNAME
-Name: www
-Value: cname.vercel-dns.com
-```
+**Note**: Some registrars (like GoDaddy, Namecheap) don't allow CNAME on root domain (@). In that case, use the A record provided by Vercel or use their nameserver option.
 
 ### Step 3: SSL Certificate
 - Vercel automatically provisions SSL certificates (HTTPS) for your domain
