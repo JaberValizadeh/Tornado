@@ -21,200 +21,320 @@ import {
   MessageSquare,
   Award,
   Code,
-  Settings
+  Settings,
+  Sparkles,
+  GitBranch,
+  Cpu,
+  GraduationCap,
+  Briefcase,
+  Layers
 } from 'lucide-react'
 import Button from '@/components/Button'
 
 const ServicesPage = () => {
   const services = [
     {
-      icon: Brain,
-      title: 'AI Strategy & Digital Transformation',
-      description: 'Develop comprehensive AI roadmaps that align with your business objectives and drive measurable growth.',
-      image: '/img/AI Strategy.png',
-      features: [
-        'AI Readiness Assessment',
-        'Strategic AI Roadmap Development',
-        'Change Management & Training',
-        'ROI Analysis & Planning',
-        'Technology Stack Selection'
-      ],
-      benefits: [
-        'Clear AI implementation path',
-        'Reduced implementation risks',
-        'Faster time to value',
-        'Competitive advantage'
-      ]
-    },
-    {
-      icon: TrendingUp,
-      title: 'Machine Learning Models & Predictive Analytics',
-      description: 'Build intelligent systems that predict trends, optimize operations, and unlock data-driven insights.',
-      image: '/img/Machine Learning.webp',
-      features: [
-        'Custom ML Model Development',
-        'Predictive Analytics Solutions',
-        'Real-time Data Processing',
-        'Model Performance Optimization',
-        'A/B Testing & Validation'
-      ],
-      benefits: [
-        'Data-driven decision making',
-        'Improved operational efficiency',
-        'Reduced costs and waste',
-        'Enhanced customer experience'
-      ]
-    },
-    {
-      icon: Zap,
-      title: 'Generative AI & Automation for Business Operations',
-      description: 'Implement cutting-edge AI solutions that automate workflows and enhance productivity across your organization.',
-      image: '/img/Robotics & Automation.jpeg',
-      features: [
-        'Process Automation Design',
-        'Chatbot & Virtual Assistant Development',
-        'Document Processing & Analysis',
-        'Content Generation Systems',
-        'Workflow Optimization'
-      ],
-      benefits: [
-        'Increased productivity',
-        'Reduced manual errors',
-        '24/7 operational capability',
-        'Scalable business processes'
-      ]
-    },
-    {
       icon: Database,
-      title: 'Data Engineering & Cloud AI',
-      description: 'Build robust data infrastructure and cloud-based AI solutions that scale with your business growth.',
+      title: 'Data & AI Experts',
+      description: 'We deliver cutting-edge data and AI solutions tailored to your organization\'s goals. Our experts transform complex data into actionable insights and leverage advanced AI technologies to drive innovation, enhance decision-making, and optimize operations—ensuring your business thrives in a data-driven world.',
       image: '/img/data-analysis-vs-data-science.jpeg',
       features: [
-        'Data Pipeline Architecture',
-        'Cloud Infrastructure Setup',
-        'Data Quality & Governance',
-        'Scalable AI Infrastructure',
-        'Security & Compliance'
+        'Data transformation & insights',
+        'Advanced AI technology integration',
+        'Decision-making optimization',
+        'Operational excellence',
+        'Business-driven solutions'
       ],
       benefits: [
-        'Scalable data infrastructure',
-        'Improved data quality',
-        'Enhanced security posture',
-        'Cost-effective cloud solutions'
+        'Actionable business insights',
+        'Enhanced decision-making',
+        'Improved operational efficiency',
+        'Competitive advantage in data-driven world'
       ]
     },
     {
-      icon: Target,
-      title: 'IoT & Edge Computing',
-      description: 'Connected device solutions, real-time data processing, and edge AI deployment for industrial and consumer applications.',
-      image: '/img/IoT and Edge Computing.png',
+      icon: Sparkles,
+      title: 'Generative AI Specialists',
+      description: 'We design and deploy generative AI models that create new content—text, imagery, video, and voice. Our specialists help businesses unlock creativity, automate content generation, and elevate customer experiences through the transformative potential of generative AI.',
+      image: '/img/Generative AI & Intelligent Automation.jpg',
       features: [
-        'Edge AI Model Deployment',
-        'IoT Device Integration',
-        'Real-time Data Processing',
-        'Edge-to-Cloud Architecture',
-        'Industrial IoT Solutions'
+        'Text, image, video & voice generation',
+        'Content automation systems',
+        'Creative AI solutions',
+        'Customer experience enhancement',
+        'Multi-modal AI development'
       ],
       benefits: [
-        'Reduced latency',
-        'Enhanced privacy & security',
-        'Lower bandwidth costs',
-        'Offline operational capability'
-      ]
-    },
-    {
-      icon: Award,
-      title: 'Responsible & Ethical AI',
-      description: 'AI governance, bias detection, fairness auditing, and ethical AI implementation ensuring transparent, accountable, and trustworthy AI systems.',
-      image: '/img/Responsible & Ethical AI.jpg',
-      features: [
-        'AI Ethics Framework Development',
-        'Bias Detection & Mitigation',
-        'Fairness Auditing',
-        'Transparency & Explainability',
-        'Compliance & Governance'
-      ],
-      benefits: [
-        'Regulatory compliance',
-        'Reduced bias risks',
-        'Increased trust & transparency',
-        'Ethical brand reputation'
-      ]
-    },
-    {
-      icon: Eye,
-      title: 'Computer Vision & Image Recognition',
-      description: 'Develop advanced vision systems that can analyze, interpret, and understand visual data for various business applications.',
-      image: '/img/AI Strategy.png',
-      features: [
-        'Object Detection & Classification',
-        'Image & Video Analysis',
-        'Facial Recognition Systems',
-        'Quality Control Automation',
-        'Visual Search Solutions'
-      ],
-      benefits: [
-        'Automated visual inspection',
-        'Enhanced security systems',
-        'Improved customer experience',
-        'Reduced human error'
+        'Automated content creation',
+        'Enhanced creativity & innovation',
+        'Improved customer experiences',
+        'Reduced content production costs'
       ]
     },
     {
       icon: MessageSquare,
-      title: 'Natural Language Processing (NLP)',
-      description: 'Transform text and speech data into actionable insights with advanced NLP solutions for understanding and generating human language.',
+      title: 'Large Language Model (LLM) Solutions',
+      description: 'We harness the power of large-scale AI models such as GPT to build intelligent chatbots, copilots, and enterprise assistants. Our LLM solutions enhance productivity, automate communication, and deliver human-like interaction across customer support, internal operations, and analytics.',
       image: '/img/Machine Learning.webp',
       features: [
-        'Text Analysis & Sentiment Analysis',
-        'Chatbot & Conversational AI',
-        'Document Summarization',
-        'Language Translation Systems',
-        'Voice Recognition & Processing'
+        'Intelligent chatbot development',
+        'Enterprise copilot solutions',
+        'Customer support automation',
+        'Internal operations optimization',
+        'Human-like AI interactions'
       ],
       benefits: [
-        'Automated customer support',
-        'Better data insights',
-        'Multilingual capabilities',
-        'Enhanced user experience'
+        'Increased productivity',
+        '24/7 automated communication',
+        'Enhanced customer satisfaction',
+        'Streamlined internal operations'
+      ]
+    },
+    {
+      icon: TrendingUp,
+      title: 'Machine Learning & Data Science',
+      description: 'Our machine learning engineers and data scientists develop adaptive algorithms that continuously learn from data. We deliver predictive insights, automate workflows, and enable data-driven decisions—empowering organizations to stay agile and competitive.',
+      image: '/img/Machine Learning.webp',
+      features: [
+        'Adaptive ML algorithm development',
+        'Predictive analytics & forecasting',
+        'Workflow automation',
+        'Data-driven decision systems',
+        'Continuous learning models'
+      ],
+      benefits: [
+        'Predictive business insights',
+        'Automated workflows',
+        'Agile & competitive operations',
+        'Continuous improvement'
+      ]
+    },
+    {
+      icon: Brain,
+      title: 'Strategic AI & Transformation Consulting',
+      description: 'We partner with executives to craft AI strategies and implementation roadmaps aligned with business priorities. From opportunity discovery to measurable outcomes, our consultants guide your organization through every stage of its AI transformation journey.',
+      image: '/img/AI Strategy.png',
+      features: [
+        'Executive-level AI strategy',
+        'Implementation roadmaps',
+        'Opportunity discovery & assessment',
+        'Measurable outcome frameworks',
+        'End-to-end transformation guidance'
+      ],
+      benefits: [
+        'Aligned AI strategy with business goals',
+        'Clear transformation roadmap',
+        'Measurable business outcomes',
+        'Executive confidence in AI adoption'
+      ]
+    },
+    {
+      icon: Briefcase,
+      title: 'Management & Digital Transformation Consulting',
+      description: 'Our management consultants align AI and data strategies with organizational goals. We help businesses modernize systems, optimize performance, and foster innovation through seamless technology integration and change management.',
+      image: '/img/AI Strategy.png',
+      features: [
+        'Strategic alignment consulting',
+        'System modernization',
+        'Performance optimization',
+        'Technology integration',
+        'Change management support'
+      ],
+      benefits: [
+        'Aligned technology & business goals',
+        'Modernized operational systems',
+        'Optimized performance metrics',
+        'Successful change adoption'
+      ]
+    },
+    {
+      icon: Eye,
+      title: 'Machine Vision & Computer Vision Systems',
+      description: 'We design advanced computer vision solutions for automating visual inspection, quality control, facial recognition, and pattern detection. Our systems enhance precision, reduce operational costs, and improve efficiency across manufacturing, retail, and security sectors.',
+      image: '/img/IoT and Edge Computing.png',
+      features: [
+        'Visual inspection automation',
+        'Quality control systems',
+        'Facial recognition technology',
+        'Pattern detection & analysis',
+        'Multi-sector applications'
+      ],
+      benefits: [
+        'Enhanced precision & accuracy',
+        'Reduced operational costs',
+        'Improved efficiency',
+        'Sector-specific solutions'
+      ]
+    },
+    {
+      icon: Cloud,
+      title: 'Modern Data Platform Architecture (Azure, AWS & GCP)',
+      description: 'Our data architects design secure and scalable data ecosystems on Azure, AWS, and GCP. We build modern data lakes, warehouses, and pipelines to support real-time analytics, machine learning, and enterprise-grade AI solutions.',
+      image: '/img/data-analysis-vs-data-science.jpeg',
+      features: [
+        'Multi-cloud architecture (Azure, AWS, GCP)',
+        'Modern data lakes & warehouses',
+        'Scalable data pipelines',
+        'Real-time analytics infrastructure',
+        'Enterprise-grade AI solutions'
+      ],
+      benefits: [
+        'Scalable & secure infrastructure',
+        'Real-time analytics capabilities',
+        'Cloud-agnostic flexibility',
+        'Enterprise-ready solutions'
+      ]
+    },
+    {
+      icon: Shield,
+      title: 'AI Governance, Ethics & Risk Management',
+      description: 'We implement robust AI governance frameworks that ensure transparency, accountability, and compliance. Our experts help organizations manage ethical, regulatory, and operational risks while fostering trust in AI adoption.',
+      image: '/img/Responsible & Ethical AI.jpg',
+      features: [
+        'AI governance frameworks',
+        'Transparency & accountability systems',
+        'Regulatory compliance',
+        'Ethical risk management',
+        'Trust-building strategies'
+      ],
+      benefits: [
+        'Regulatory compliance',
+        'Reduced ethical risks',
+        'Enhanced trust & transparency',
+        'Sustainable AI adoption'
+      ]
+    },
+    {
+      icon: GitBranch,
+      title: 'Agile Delivery & Project Management',
+      description: 'Our Scrum and Agile project management expertise ensures timely, efficient, and collaborative delivery. This approach enables flexibility, continuous improvement, and consistent client satisfaction throughout every phase of your AI journey.',
+      image: '/img/Robotics & Automation.jpeg',
+      features: [
+        'Scrum & Agile methodologies',
+        'Timely project delivery',
+        'Collaborative development',
+        'Flexible project management',
+        'Continuous improvement processes'
+      ],
+      benefits: [
+        'On-time project delivery',
+        'Flexible & adaptive approach',
+        'Consistent client satisfaction',
+        'Continuous value delivery'
+      ]
+    },
+    {
+      icon: Zap,
+      title: 'AI Automation & Intelligent Process Optimization',
+      description: 'We design AI-driven automation systems that eliminate repetitive tasks, streamline operations, and improve efficiency. Our automation experts integrate AI into workflows—boosting productivity and freeing human teams to focus on high-value work.',
+      image: '/img/Robotics & Automation.jpeg',
+      features: [
+        'Repetitive task elimination',
+        'Process streamlining',
+        'Workflow AI integration',
+        'Productivity optimization',
+        'Human-AI collaboration design'
+      ],
+      benefits: [
+        'Increased productivity',
+        'Reduced manual workloads',
+        'Enhanced operational efficiency',
+        'Focus on high-value work'
+      ]
+    },
+    {
+      icon: Cpu,
+      title: 'Edge AI & IoT Intelligence',
+      description: 'We build edge AI solutions that process data in real time—close to where it\'s generated. Perfect for IoT, robotics, and industrial automation, our systems deliver faster insights, reduce latency, and enable smarter, autonomous operations.',
+      image: '/img/IoT and Edge Computing.png',
+      features: [
+        'Real-time edge processing',
+        'IoT device intelligence',
+        'Robotics automation',
+        'Industrial automation systems',
+        'Low-latency AI deployment'
+      ],
+      benefits: [
+        'Faster real-time insights',
+        'Reduced latency',
+        'Autonomous operations',
+        'Offline processing capability'
       ]
     },
     {
       icon: Code,
-      title: 'AI Integration & Custom Development',
-      description: 'Seamlessly integrate AI capabilities into your existing systems and develop custom AI applications tailored to your unique requirements.',
+      title: 'AI Integration & Custom Application Development',
+      description: 'We integrate AI into existing platforms, CRMs, and enterprise applications to extend their capabilities. From intelligent search to recommendation engines, we create tailored solutions that deliver immediate business impact.',
       image: '/img/Robotics & Automation.jpeg',
       features: [
-        'API Integration & Development',
-        'Legacy System Modernization',
-        'Custom AI Application Development',
-        'Third-party Tool Integration',
-        'Microservices Architecture'
+        'Platform & CRM integration',
+        'Enterprise application enhancement',
+        'Intelligent search solutions',
+        'Recommendation engine development',
+        'Tailored business solutions'
       ],
       benefits: [
-        'Smooth system integration',
-        'Minimal disruption to operations',
-        'Customized solutions',
-        'Scalable architecture'
+        'Extended platform capabilities',
+        'Immediate business impact',
+        'Seamless system integration',
+        'Customized AI solutions'
       ]
     },
     {
-      icon: Settings,
-      title: 'AI Maintenance & Support',
-      description: 'Ensure your AI systems remain optimized, up-to-date, and performing at peak efficiency with our comprehensive support services.',
+      icon: Layers,
+      title: 'Data Engineering & MLOps',
+      description: 'We provide end-to-end data engineering and MLOps services, including data ingestion, transformation, model deployment, and continuous monitoring. This ensures your AI systems are reliable, scalable, and production-ready.',
       image: '/img/data-analysis-vs-data-science.jpeg',
       features: [
-        'Model Monitoring & Optimization',
-        'Performance Tuning',
-        'Regular Updates & Patches',
-        '24/7 Technical Support',
-        'Model Retraining Services'
+        'End-to-end data engineering',
+        'Data ingestion & transformation',
+        'Model deployment automation',
+        'Continuous monitoring systems',
+        'Production-ready infrastructure'
       ],
       benefits: [
-        'Consistent performance',
-        'Reduced downtime',
-        'Continuous improvement',
-        'Peace of mind'
+        'Reliable AI systems',
+        'Scalable infrastructure',
+        'Production-ready solutions',
+        'Continuous optimization'
+      ]
+    },
+    {
+      icon: Award,
+      title: 'Responsible & Sustainable AI Consulting',
+      description: 'We help organizations design ethical and sustainable AI frameworks that prioritize fairness, inclusivity, and environmental responsibility. Our consultants align technology with human and societal values for long-term trust and success.',
+      image: '/img/Responsible & Ethical AI.jpg',
+      features: [
+        'Ethical AI framework design',
+        'Fairness & inclusivity focus',
+        'Environmental responsibility',
+        'Value-aligned technology',
+        'Long-term sustainability planning'
+      ],
+      benefits: [
+        'Ethical brand reputation',
+        'Sustainable AI practices',
+        'Long-term trust & success',
+        'Social responsibility alignment'
+      ]
+    },
+    {
+      icon: GraduationCap,
+      title: 'AI Training & Capability Building',
+      description: 'We empower teams with custom AI training programs—from executive briefings to hands-on technical workshops. Our goal is to build your internal AI literacy so your organization can innovate confidently and independently.',
+      image: '/img/AI Strategy.png',
+      features: [
+        'Custom training programs',
+        'Executive AI briefings',
+        'Hands-on technical workshops',
+        'Internal AI capability building',
+        'Innovation enablement'
+      ],
+      benefits: [
+        'Enhanced AI literacy',
+        'Confident AI innovation',
+        'Independent AI capabilities',
+        'Organizational transformation'
       ]
     }
   ]
@@ -391,7 +511,7 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">8+</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">16</div>
               <div className="text-gray-700">Service Categories</div>
             </motion.div>
             <motion.div
