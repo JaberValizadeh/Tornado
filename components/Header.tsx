@@ -36,8 +36,8 @@ const Header = () => {
           <Link href="/" className="flex items-center">
             <div className="w-48 h-20 md:w-72 md:h-28 lg:w-80 lg:h-32 rounded-lg overflow-hidden">
               <Image 
-                src="/img/Tornado-removebg-preview.png" 
-                alt="Tornado Logo" 
+                src="/img/Tornado_AI-removebg-preview.png" 
+                alt="Tornado AI Logo" 
                 width={512} 
                 height={512}
                 className="w-full h-full object-contain"
@@ -51,7 +51,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`${isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-300'} font-medium transition-colors duration-200`}
+                className={`${isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-gray-900 hover:text-primary-600'} font-medium transition-colors duration-200`}
               >
                 {item.name}
               </Link>
@@ -74,7 +74,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+            className={`md:hidden p-2 ${isScrolled ? 'text-gray-700' : 'text-gray-900'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >

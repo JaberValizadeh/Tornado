@@ -120,19 +120,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/img/6849391_3425081.jpg')`
-            }}
-          ></div>
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/50"></div>
-        </div>
-        
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-primary-50 to-primary-100">
         <div className="container-custom text-center relative z-10 px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -142,9 +130,9 @@ const HomePage = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="gradient-text">The Right AI Consulting</span>
               <br />
-              <span className="text-white">Let's Transform Your Business!</span>
+              <span className="text-gray-900">Let's Transform Your Business!</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
               Partner with Tornado, a leading AI consulting firm. We help businesses unlock AI's potential 
               with intelligent solutions that drive productivity, automation, and innovation.
             </p>
