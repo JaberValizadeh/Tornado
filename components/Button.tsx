@@ -26,9 +26,9 @@ const Button = ({
   const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none'
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white hover:shadow-lg',
-    secondary: 'bg-white text-primary-600 border-2 border-primary-600 hover:bg-primary-600 hover:text-white',
-    accent: 'bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white hover:shadow-lg'
+    primary: 'bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-gray-900 hover:shadow-lg',
+    secondary: 'bg-white text-primary-600 border-2 border-primary-600 hover:bg-primary-500 hover:text-gray-900',
+    accent: 'bg-gradient-to-r from-accent-200 to-accent-300 hover:from-accent-300 hover:to-accent-400 text-gray-900 hover:shadow-lg'
   }
   
   const sizeClasses = {
