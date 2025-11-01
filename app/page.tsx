@@ -184,23 +184,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              AI Solutions and Consulting, Crafted with Brilliance, Precision and Excellence.
-            </h2>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Partners Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
