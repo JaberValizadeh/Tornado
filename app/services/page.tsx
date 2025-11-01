@@ -3,7 +3,6 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { 
   Brain, 
   TrendingUp, 
@@ -37,7 +36,6 @@ const ServicesPage = () => {
       icon: Database,
       title: 'Data & AI Experts',
       description: 'We deliver cutting-edge data and AI solutions tailored to your organization\'s goals. Our experts transform complex data into actionable insights and leverage advanced AI technologies to drive innovation, enhance decision-making, and optimize operations—ensuring your business thrives in a data-driven world.',
-      image: '/img/data-analysis-vs-data-science.jpeg',
       features: [
         'Data transformation & insights',
         'Advanced AI technology integration',
@@ -56,7 +54,6 @@ const ServicesPage = () => {
       icon: Sparkles,
       title: 'Generative AI Specialists',
       description: 'We design and deploy generative AI models that create new content—text, imagery, video, and voice. Our specialists help businesses unlock creativity, automate content generation, and elevate customer experiences through the transformative potential of generative AI.',
-      image: '/img/Generative AI & Intelligent Automation.jpg',
       features: [
         'Text, image, video & voice generation',
         'Content automation systems',
@@ -75,7 +72,6 @@ const ServicesPage = () => {
       icon: MessageSquare,
       title: 'Large Language Model (LLM) Solutions',
       description: 'We harness the power of large-scale AI models such as GPT to build intelligent chatbots, copilots, and enterprise assistants. Our LLM solutions enhance productivity, automate communication, and deliver human-like interaction across customer support, internal operations, and analytics.',
-      image: '/img/Machine Learning.webp',
       features: [
         'Intelligent chatbot development',
         'Enterprise copilot solutions',
@@ -94,7 +90,6 @@ const ServicesPage = () => {
       icon: TrendingUp,
       title: 'Machine Learning & Data Science',
       description: 'Our machine learning engineers and data scientists develop adaptive algorithms that continuously learn from data. We deliver predictive insights, automate workflows, and enable data-driven decisions—empowering organizations to stay agile and competitive.',
-      image: '/img/Machine Learning.webp',
       features: [
         'Adaptive ML algorithm development',
         'Predictive analytics & forecasting',
@@ -113,7 +108,6 @@ const ServicesPage = () => {
       icon: Brain,
       title: 'Strategic AI & Transformation Consulting',
       description: 'We partner with executives to craft AI strategies and implementation roadmaps aligned with business priorities. From opportunity discovery to measurable outcomes, our consultants guide your organization through every stage of its AI transformation journey.',
-      image: '/img/AI Strategy.png',
       features: [
         'Executive-level AI strategy',
         'Implementation roadmaps',
@@ -132,7 +126,6 @@ const ServicesPage = () => {
       icon: Briefcase,
       title: 'Management & Digital Transformation Consulting',
       description: 'Our management consultants align AI and data strategies with organizational goals. We help businesses modernize systems, optimize performance, and foster innovation through seamless technology integration and change management.',
-      image: '/img/AI Strategy.png',
       features: [
         'Strategic alignment consulting',
         'System modernization',
@@ -151,7 +144,6 @@ const ServicesPage = () => {
       icon: Eye,
       title: 'Machine Vision & Computer Vision Systems',
       description: 'We design advanced computer vision solutions for automating visual inspection, quality control, facial recognition, and pattern detection. Our systems enhance precision, reduce operational costs, and improve efficiency across manufacturing, retail, and security sectors.',
-      image: '/img/IoT and Edge Computing.png',
       features: [
         'Visual inspection automation',
         'Quality control systems',
@@ -170,7 +162,6 @@ const ServicesPage = () => {
       icon: Cloud,
       title: 'Modern Data Platform Architecture (Azure, AWS & GCP)',
       description: 'Our data architects design secure and scalable data ecosystems on Azure, AWS, and GCP. We build modern data lakes, warehouses, and pipelines to support real-time analytics, machine learning, and enterprise-grade AI solutions.',
-      image: '/img/data-analysis-vs-data-science.jpeg',
       features: [
         'Multi-cloud architecture (Azure, AWS, GCP)',
         'Modern data lakes & warehouses',
@@ -189,7 +180,6 @@ const ServicesPage = () => {
       icon: Shield,
       title: 'AI Governance, Ethics & Risk Management',
       description: 'We implement robust AI governance frameworks that ensure transparency, accountability, and compliance. Our experts help organizations manage ethical, regulatory, and operational risks while fostering trust in AI adoption.',
-      image: '/img/Responsible & Ethical AI.jpg',
       features: [
         'AI governance frameworks',
         'Transparency & accountability systems',
@@ -208,7 +198,6 @@ const ServicesPage = () => {
       icon: GitBranch,
       title: 'Agile Delivery & Project Management',
       description: 'Our Scrum and Agile project management expertise ensures timely, efficient, and collaborative delivery. This approach enables flexibility, continuous improvement, and consistent client satisfaction throughout every phase of your AI journey.',
-      image: '/img/Robotics & Automation.jpeg',
       features: [
         'Scrum & Agile methodologies',
         'Timely project delivery',
@@ -246,7 +235,6 @@ const ServicesPage = () => {
       icon: Cpu,
       title: 'Edge AI & IoT Intelligence',
       description: 'We build edge AI solutions that process data in real time—close to where it\'s generated. Perfect for IoT, robotics, and industrial automation, our systems deliver faster insights, reduce latency, and enable smarter, autonomous operations.',
-      image: '/img/IoT and Edge Computing.png',
       features: [
         'Real-time edge processing',
         'IoT device intelligence',
@@ -265,7 +253,6 @@ const ServicesPage = () => {
       icon: Code,
       title: 'AI Integration & Custom Application Development',
       description: 'We integrate AI into existing platforms, CRMs, and enterprise applications to extend their capabilities. From intelligent search to recommendation engines, we create tailored solutions that deliver immediate business impact.',
-      image: '/img/Robotics & Automation.jpeg',
       features: [
         'Platform & CRM integration',
         'Enterprise application enhancement',
@@ -284,7 +271,6 @@ const ServicesPage = () => {
       icon: Layers,
       title: 'Data Engineering & MLOps',
       description: 'We provide end-to-end data engineering and MLOps services, including data ingestion, transformation, model deployment, and continuous monitoring. This ensures your AI systems are reliable, scalable, and production-ready.',
-      image: '/img/data-analysis-vs-data-science.jpeg',
       features: [
         'End-to-end data engineering',
         'Data ingestion & transformation',
@@ -322,7 +308,6 @@ const ServicesPage = () => {
       icon: GraduationCap,
       title: 'AI Training & Capability Building',
       description: 'We empower teams with custom AI training programs—from executive briefings to hands-on technical workshops. Our goal is to build your internal AI literacy so your organization can innovate confidently and independently.',
-      image: '/img/AI Strategy.png',
       features: [
         'Custom training programs',
         'Executive AI briefings',
@@ -420,11 +405,9 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
+                className="max-w-4xl mx-auto"
               >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div>
                   <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
                     <service.icon className="w-8 h-8 text-gray-900" />
                   </div>
@@ -459,23 +442,6 @@ const ServicesPage = () => {
                           </li>
                         ))}
                       </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className={`bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 ${
-                  index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''
-                }`}>
-                  <div className="aspect-square bg-white rounded-2xl shadow-lg overflow-hidden relative">
-                    <Image 
-                      src={service.image} 
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                      <service.icon className="w-6 h-6 text-primary-600" />
                     </div>
                   </div>
                 </div>
