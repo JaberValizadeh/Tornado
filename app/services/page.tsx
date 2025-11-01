@@ -422,7 +422,12 @@ const ServicesPage = () => {
                 {/* Card Body */}
                 <div className="p-6 space-y-6">
                   {/* Description */}
-                  <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">
+                  <p className="text-sm text-gray-700 leading-relaxed" style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden'
+                  }}>
                     {service.description}
                   </p>
 
