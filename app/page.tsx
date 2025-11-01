@@ -107,7 +107,7 @@ const HomePage = () => {
       icon: Zap,
       title: 'AI Training',
       description: 'Comprehensive training programs to help your team master AI tools and technologies.',
-      link: '/services#ai-training'
+      link: '/training'
     },
     {
       icon: Shield,

@@ -79,7 +79,7 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+61 2 8000 0000', 'Mon-Fri 9AM-6PM AEST'],
+      details: ['+61 468 933 033', 'Mon-Fri 9AM-6PM AEST'],
       color: 'text-accent-600'
     },
     {
