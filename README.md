@@ -62,6 +62,9 @@ npm run dev
 
 The site is ready for deployment on Vercel, Netlify, or any other Next.js-compatible platform.
 
+**Production Domain**: https://tornadoai.com.au
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 ## License
 
 © 2024 Tornado Consulting Group (TCG). All rights reserved.
