@@ -216,7 +216,6 @@ const ServicesPage = () => {
       icon: Zap,
       title: 'AI Automation & Intelligent Process Optimization',
       description: 'We design AI-driven automation systems that eliminate repetitive tasks, streamline operations, and improve efficiency. Our automation experts integrate AI into workflows—boosting productivity and freeing human teams to focus on high-value work.',
-      image: '/img/Robotics & Automation.jpeg',
       features: [
         'Repetitive task elimination',
         'Process streamlining',
@@ -289,7 +288,6 @@ const ServicesPage = () => {
       icon: Award,
       title: 'Responsible & Sustainable AI Consulting',
       description: 'We help organizations design ethical and sustainable AI frameworks that prioritize fairness, inclusivity, and environmental responsibility. Our consultants align technology with human and societal values for long-term trust and success.',
-      image: '/img/Responsible & Ethical AI.jpg',
       features: [
         'Ethical AI framework design',
         'Fairness & inclusivity focus',
