@@ -51,7 +51,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                className={`${isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-300'} font-medium transition-colors duration-200`}
               >
                 {item.name}
               </Link>
@@ -74,7 +74,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className={`md:hidden p-2 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
