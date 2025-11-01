@@ -198,8 +198,8 @@ const ServicesPage = () => {
                 }`}
               >
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6">
-                    <service.icon className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
+                    <service.icon className="w-8 h-8 text-gray-900" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">{service.title}</h3>
                   <p className="text-lg text-gray-600 mb-8">{service.description}</p>
@@ -286,8 +286,8 @@ const ServicesPage = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <step.icon className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <step.icon className="w-10 h-10 text-gray-900" />
                 </div>
                 <div className="text-4xl font-bold text-primary-600 mb-4">
                   {step.step}
@@ -308,7 +308,7 @@ const ServicesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl p-12"
+            className="text-center bg-gradient-to-r from-primary-100 to-primary-50 rounded-3xl p-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Business with AI?

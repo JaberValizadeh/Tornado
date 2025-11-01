@@ -67,7 +67,7 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: ['hello@tornado.io', 'partnerships@tornado.io'],
+      details: ['info@tornadoai.com.au'],
       color: 'text-primary-600'
     },
     {
@@ -99,7 +99,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-accent-50">
+      <section className="section-padding bg-gradient-to-br from-primary-50 to-primary-100">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -285,14 +285,14 @@ const ContactPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-6"
+                className="bg-gradient-to-r from-primary-100 to-primary-50 rounded-2xl p-6"
               >
                 <h3 className="text-xl font-bold mb-4">Why Partner with Us?</h3>
                 <div className="space-y-4">
                   {partnershipBenefits.map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <benefit.icon className="w-4 h-4 text-white" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-4 h-4 text-gray-900" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">{benefit.title}</h4>

@@ -185,8 +185,8 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <item.icon className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <item.icon className="w-10 h-10 text-gray-900" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
@@ -234,7 +234,7 @@ const HomePage = () => {
       </section>
 
       {/* AI Services Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-accent-50">
+      <section className="section-padding bg-gradient-to-br from-primary-50 to-primary-100">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -262,8 +262,8 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 className="card p-8 text-center group hover:shadow-2xl transition-all duration-300"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-8 h-8 text-gray-900" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
@@ -335,7 +335,7 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-gray-900">
+      <section className="section-padding bg-accent-100">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -344,7 +344,7 @@ const HomePage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
               Unveiling AI Excellence
             </h2>
           </motion.div>
@@ -359,10 +359,10 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-5xl md:text-6xl font-bold text-white mb-3">
+                <div className="text-5xl md:text-6xl font-bold text-primary-600 mb-3">
                   {stat.value}
                 </div>
-                <div className="text-gray-300 text-lg">{stat.label}</div>
+                <div className="text-gray-700 text-lg">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -377,7 +377,7 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl p-12"
+            className="text-center bg-gradient-to-r from-primary-100 to-primary-50 rounded-3xl p-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Business?

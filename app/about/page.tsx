@@ -87,8 +87,8 @@ const AboutPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
+                <Target className="w-8 h-8 text-gray-900" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -108,8 +108,8 @@ const AboutPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-accent-500 to-primary-500 rounded-2xl flex items-center justify-center mb-6">
-                <Eye className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
+                <Eye className="w-8 h-8 text-gray-900" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -153,8 +153,8 @@ const AboutPage = () => {
                 viewport={{ once: true }}
                 className="card p-8 text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="w-8 h-8 text-gray-900" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
@@ -165,7 +165,7 @@ const AboutPage = () => {
       </section>
 
       {/* Founder Profile Section */}
-      <section className="section-padding bg-gray-900">
+      <section className="section-padding bg-accent-100">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -174,8 +174,8 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Meet Our Founder</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Meet Our Founder</h2>
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
               Leading AI innovation with deep expertise and a passion for business transformation.
             </p>
           </motion.div>
@@ -186,7 +186,7 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gray-800 border border-gray-700 rounded-2xl p-8 lg:p-12"
+              className="bg-white border border-accent-300 rounded-2xl p-8 lg:p-12 shadow-lg"
             >
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                 <div className="lg:col-span-1">
@@ -203,25 +203,25 @@ const AboutPage = () => {
                 </div>
                 
                 <div className="lg:col-span-2">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">Dr. Jaber Valizadeh</h3>
-                  <p className="text-lg text-primary-400 font-semibold mb-6">Founder & Principal AI Consultant</p>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Dr. Jaber Valizadeh</h3>
+                  <p className="text-lg text-primary-600 font-semibold mb-6">Founder & Principal AI Consultant</p>
                   
                   <div className="space-y-4 mb-6">
                     <div className="flex items-center space-x-3">
-                      <GraduationCap className="w-5 h-5 text-accent-500" />
-                      <span className="text-gray-300">PhD in Computer Science</span>
+                      <GraduationCap className="w-5 h-5 text-primary-600" />
+                      <span className="text-gray-700">PhD in Computer Science</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <MapPin className="w-5 h-5 text-accent-500" />
-                      <span className="text-gray-300">Western Sydney University</span>
+                      <MapPin className="w-5 h-5 text-primary-600" />
+                      <span className="text-gray-700">Western Sydney University</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Calendar className="w-5 h-5 text-accent-500" />
-                      <span className="text-gray-300">Years of experience with industry and research leaders</span>
+                      <Calendar className="w-5 h-5 text-primary-600" />
+                      <span className="text-gray-700">Years of experience with industry and research leaders</span>
                     </div>
                   </div>
                   
-                  <p className="text-gray-300 mb-6">
+                  <p className="text-gray-700 mb-6">
                     Dr. Jaber Valizadeh is an expert in Artificial Intelligence, Multi-Agent Systems and Algorithmic Game Theory based in Sydney, Australia. 
                     With a PhD in Computer Science and years of experience collaborating with industry and research leaders, 
                     he specializes in transforming business challenges into practical, scalable AI solutions. 
@@ -230,10 +230,10 @@ const AboutPage = () => {
                   
                   
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-primary-500/20 text-primary-300 rounded-full text-sm">Multi-Agent Systems</span>
-                    <span className="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Algorithmic Game Theory</span>
-                    <span className="px-3 py-1 bg-primary-500/20 text-primary-300 rounded-full text-sm">Machine Learning</span>
-                    <span className="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm">Generative AI</span>
+                    <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Multi-Agent Systems</span>
+                    <span className="px-3 py-1 bg-accent-200 text-gray-700 rounded-full text-sm">Algorithmic Game Theory</span>
+                    <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Machine Learning</span>
+                    <span className="px-3 py-1 bg-accent-200 text-gray-700 rounded-full text-sm">Generative AI</span>
                   </div>
                 </div>
               </div>
@@ -268,8 +268,8 @@ const AboutPage = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <achievement.icon className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <achievement.icon className="w-10 h-10 text-gray-900" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{achievement.title}</h3>
                 <p className="text-gray-600">{achievement.description}</p>
@@ -287,7 +287,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl p-12"
+            className="text-center bg-gradient-to-r from-primary-100 to-primary-50 rounded-3xl p-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Partner with Us?

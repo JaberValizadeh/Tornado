@@ -124,7 +124,7 @@ const CaseStudiesPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-accent-50">
+      <section className="section-padding bg-gradient-to-br from-primary-50 to-primary-100">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -181,8 +181,8 @@ const CaseStudiesPage = () => {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl flex items-center justify-center">
-                      <study.icon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
+                      <study.icon className="w-6 h-6 text-gray-900" />
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">{study.industry}</div>
@@ -239,7 +239,7 @@ const CaseStudiesPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-accent-600">
+      <section className="section-padding bg-gradient-to-r from-primary-100 to-accent-100">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -248,10 +248,10 @@ const CaseStudiesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Our Track Record
             </h2>
-            <p className="text-xl text-primary-100 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
               Numbers that speak to our commitment to delivering exceptional results.
             </p>
           </motion.div>
@@ -264,8 +264,8 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">50+</div>
-              <div className="text-primary-100">Projects Completed</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">50+</div>
+              <div className="text-gray-700">Projects Completed</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -274,8 +274,8 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">95%</div>
-              <div className="text-primary-100">Success Rate</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">95%</div>
+              <div className="text-gray-700">Success Rate</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -284,8 +284,8 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">3x</div>
-              <div className="text-primary-100">Average ROI</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">3x</div>
+              <div className="text-gray-700">Average ROI</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -294,8 +294,8 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">15+</div>
-              <div className="text-primary-100">Industries Served</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">15+</div>
+              <div className="text-gray-700">Industries Served</div>
             </motion.div>
           </div>
         </div>
@@ -309,7 +309,7 @@ const CaseStudiesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl p-12"
+            className="text-center bg-gradient-to-r from-primary-100 to-primary-50 rounded-3xl p-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Write Your Success Story?
