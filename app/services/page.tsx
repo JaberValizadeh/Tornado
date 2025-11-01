@@ -395,84 +395,90 @@ const ServicesPage = () => {
             </p>
           </motion.div>
 
-          <div className="overflow-x-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="bg-gradient-to-r from-primary-100 to-primary-50">
-                    <th className="px-6 py-4 text-left text-sm font-bold text-gray-900 border-b-2 border-primary-300">
-                      Service
-                    </th>
-                    <th className="px-6 py-4 text-left text-sm font-bold text-gray-900 border-b-2 border-primary-300">
-                      Description
-                    </th>
-                    <th className="px-6 py-4 text-left text-sm font-bold text-gray-900 border-b-2 border-primary-300">
-                      What We Deliver
-                    </th>
-                    <th className="px-6 py-4 text-left text-sm font-bold text-gray-900 border-b-2 border-primary-300">
-                      Business Impact
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {services.map((service, index) => (
-                    <motion.tr
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.05 }}
-                      viewport={{ once: true }}
-                      className={`border-b border-gray-200 hover:bg-primary-50/50 transition-colors ${
-                        index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
-                      }`}
-                    >
-                      <td className="px-6 py-5 align-top">
-                        <div className="flex items-start gap-3">
-                          <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <service.icon className="w-6 h-6 text-gray-900" />
-                          </div>
-                          <div className="min-w-0 flex-1">
-                            <h3 className="text-base font-bold text-gray-900 leading-tight">
-                              {service.title}
-                            </h3>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-6 py-5 align-top">
-                        <p className="text-sm text-gray-700 leading-relaxed">
-                          {service.description}
-                        </p>
-                      </td>
-                      <td className="px-6 py-5 align-top">
-                        <ul className="space-y-1.5">
-                          {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="text-sm text-gray-700 flex items-start">
-                              <CheckCircle className="w-4 h-4 text-accent-500 mr-2 mt-0.5 flex-shrink-0" />
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </td>
-                      <td className="px-6 py-5 align-top">
-                        <ul className="space-y-1.5">
-                          {service.benefits.map((benefit, benefitIndex) => (
-                            <li key={benefitIndex} className="text-sm text-gray-700 flex items-start">
-                              <Target className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
-                              <span>{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </td>
-                    </motion.tr>
-                  ))}
-                </tbody>
-              </table>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group"
+              >
+                {/* Card Header */}
+                <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 border-b border-primary-200">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="w-7 h-7 text-gray-900" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-bold text-gray-900 leading-tight mb-2 group-hover:text-primary-600 transition-colors">
+                        {service.title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-6 space-y-6">
+                  {/* Description */}
+                  <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">
+                    {service.description}
+                  </p>
+
+                  {/* What We Deliver */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <CheckCircle className="w-5 h-5 text-accent-500" />
+                      <h4 className="text-sm font-semibold text-gray-900">What We Deliver</h4>
+                    </div>
+                    <ul className="space-y-2">
+                      {service.features.slice(0, 3).map((feature, featureIndex) => (
+                        <li key={featureIndex} className="text-xs text-gray-600 flex items-start">
+                          <div className="w-1.5 h-1.5 bg-accent-500 rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
+                          <span className="leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                      {service.features.length > 3 && (
+                        <li className="text-xs text-primary-600 font-medium">
+                          +{service.features.length - 3} more
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+
+                  {/* Business Impact */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <Target className="w-5 h-5 text-primary-500" />
+                      <h4 className="text-sm font-semibold text-gray-900">Business Impact</h4>
+                    </div>
+                    <ul className="space-y-2">
+                      {service.benefits.slice(0, 3).map((benefit, benefitIndex) => (
+                        <li key={benefitIndex} className="text-xs text-gray-600 flex items-start">
+                          <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
+                          <span className="leading-relaxed">{benefit}</span>
+                        </li>
+                      ))}
+                      {service.benefits.length > 3 && (
+                        <li className="text-xs text-primary-600 font-medium">
+                          +{service.benefits.length - 3} more
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Card Footer */}
+                <div className="px-6 pb-6 pt-0">
+                  <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-4"></div>
+                  <div className="flex items-center justify-between text-xs text-gray-500">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
