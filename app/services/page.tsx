@@ -16,7 +16,12 @@ import {
   BarChart3,
   Cloud,
   Bot,
-  Shield
+  Shield,
+  Eye,
+  MessageSquare,
+  Award,
+  Code,
+  Settings
 } from 'lucide-react'
 import Button from '@/components/Button'
 
@@ -96,6 +101,120 @@ const ServicesPage = () => {
         'Improved data quality',
         'Enhanced security posture',
         'Cost-effective cloud solutions'
+      ]
+    },
+    {
+      icon: Target,
+      title: 'IoT & Edge Computing',
+      description: 'Connected device solutions, real-time data processing, and edge AI deployment for industrial and consumer applications.',
+      image: '/img/IoT and Edge Computing.png',
+      features: [
+        'Edge AI Model Deployment',
+        'IoT Device Integration',
+        'Real-time Data Processing',
+        'Edge-to-Cloud Architecture',
+        'Industrial IoT Solutions'
+      ],
+      benefits: [
+        'Reduced latency',
+        'Enhanced privacy & security',
+        'Lower bandwidth costs',
+        'Offline operational capability'
+      ]
+    },
+    {
+      icon: Award,
+      title: 'Responsible & Ethical AI',
+      description: 'AI governance, bias detection, fairness auditing, and ethical AI implementation ensuring transparent, accountable, and trustworthy AI systems.',
+      image: '/img/Responsible & Ethical AI.jpg',
+      features: [
+        'AI Ethics Framework Development',
+        'Bias Detection & Mitigation',
+        'Fairness Auditing',
+        'Transparency & Explainability',
+        'Compliance & Governance'
+      ],
+      benefits: [
+        'Regulatory compliance',
+        'Reduced bias risks',
+        'Increased trust & transparency',
+        'Ethical brand reputation'
+      ]
+    },
+    {
+      icon: Eye,
+      title: 'Computer Vision & Image Recognition',
+      description: 'Develop advanced vision systems that can analyze, interpret, and understand visual data for various business applications.',
+      image: '/img/AI Strategy.png',
+      features: [
+        'Object Detection & Classification',
+        'Image & Video Analysis',
+        'Facial Recognition Systems',
+        'Quality Control Automation',
+        'Visual Search Solutions'
+      ],
+      benefits: [
+        'Automated visual inspection',
+        'Enhanced security systems',
+        'Improved customer experience',
+        'Reduced human error'
+      ]
+    },
+    {
+      icon: MessageSquare,
+      title: 'Natural Language Processing (NLP)',
+      description: 'Transform text and speech data into actionable insights with advanced NLP solutions for understanding and generating human language.',
+      image: '/img/Machine Learning.webp',
+      features: [
+        'Text Analysis & Sentiment Analysis',
+        'Chatbot & Conversational AI',
+        'Document Summarization',
+        'Language Translation Systems',
+        'Voice Recognition & Processing'
+      ],
+      benefits: [
+        'Automated customer support',
+        'Better data insights',
+        'Multilingual capabilities',
+        'Enhanced user experience'
+      ]
+    },
+    {
+      icon: Code,
+      title: 'AI Integration & Custom Development',
+      description: 'Seamlessly integrate AI capabilities into your existing systems and develop custom AI applications tailored to your unique requirements.',
+      image: '/img/Robotics & Automation.jpeg',
+      features: [
+        'API Integration & Development',
+        'Legacy System Modernization',
+        'Custom AI Application Development',
+        'Third-party Tool Integration',
+        'Microservices Architecture'
+      ],
+      benefits: [
+        'Smooth system integration',
+        'Minimal disruption to operations',
+        'Customized solutions',
+        'Scalable architecture'
+      ]
+    },
+    {
+      icon: Settings,
+      title: 'AI Maintenance & Support',
+      description: 'Ensure your AI systems remain optimized, up-to-date, and performing at peak efficiency with our comprehensive support services.',
+      image: '/img/data-analysis-vs-data-science.jpeg',
+      features: [
+        'Model Monitoring & Optimization',
+        'Performance Tuning',
+        'Regular Updates & Patches',
+        '24/7 Technical Support',
+        'Model Retraining Services'
+      ],
+      benefits: [
+        'Consistent performance',
+        'Reduced downtime',
+        'Continuous improvement',
+        'Peace of mind'
       ]
     }
   ]
