@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="flex items-center">
               <div className="w-52 h-52 rounded-lg overflow-hidden">
                 <Image 
-                  src="/img/Tornado AI.jpg" 
+                  src="/img/Tornado_AI-removebg-preview.png" 
                   alt="Tornado AI Logo" 
                   width={208} 
                   height={208}
