@@ -113,7 +113,7 @@ const HomePage = () => {
       icon: Shield,
       title: 'AI Tools',
       description: 'Access to cutting-edge AI tools and platforms tailored to your business needs.',
-      link: '/services#ai-tools'
+      link: '/ai-tools'
     }
   ]
 

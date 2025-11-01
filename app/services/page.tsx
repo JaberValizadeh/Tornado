@@ -3,6 +3,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { 
   Brain, 
   TrendingUp, 
@@ -15,16 +16,7 @@ import {
   BarChart3,
   Cloud,
   Bot,
-  Shield,
-  Eye,
-  Globe,
-  Code,
-  FileText,
-  Settings,
-  Sparkles,
-  Cpu,
-  GitBranch,
-  Leaf
+  Shield
 } from 'lucide-react'
 import Button from '@/components/Button'
 
@@ -32,83 +24,79 @@ const ServicesPage = () => {
   const services = [
     {
       icon: Brain,
-      title: 'Data & AI Experts',
-      description: 'We deliver cutting-edge data and AI solutions tailored to your organization\'s goals. Our experts transform complex data into actionable insights and leverage advanced AI technologies to drive innovation, enhance decision-making, and optimize operations—ensuring your business thrives in a data-driven world.'
-    },
-    {
-      icon: Sparkles,
-      title: 'Generative AI Specialists',
-      description: 'We design and deploy generative AI models that create new content—text, imagery, video, and voice. Our specialists help businesses unlock creativity, automate content generation, and elevate customer experiences through the transformative potential of generative AI.'
-    },
-    {
-      icon: Bot,
-      title: 'Large Language Model (LLM) Solutions',
-      description: 'We harness the power of large-scale AI models such as GPT to build intelligent chatbots, copilots, and enterprise assistants. Our LLM solutions enhance productivity, automate communication, and deliver human-like interaction across customer support, internal operations, and analytics.'
+      title: 'AI Strategy & Digital Transformation',
+      description: 'Develop comprehensive AI roadmaps that align with your business objectives and drive measurable growth.',
+      image: '/img/AI Strategy.png',
+      features: [
+        'AI Readiness Assessment',
+        'Strategic AI Roadmap Development',
+        'Change Management & Training',
+        'ROI Analysis & Planning',
+        'Technology Stack Selection'
+      ],
+      benefits: [
+        'Clear AI implementation path',
+        'Reduced implementation risks',
+        'Faster time to value',
+        'Competitive advantage'
+      ]
     },
     {
       icon: TrendingUp,
-      title: 'Machine Learning & Data Science',
-      description: 'Our machine learning engineers and data scientists develop adaptive algorithms that continuously learn from data. We deliver predictive insights, automate workflows, and enable data-driven decisions—empowering organizations to stay agile and competitive.'
-    },
-    {
-      icon: Target,
-      title: 'Strategic AI & Transformation Consulting',
-      description: 'We partner with executives to craft AI strategies and implementation roadmaps aligned with business priorities. From opportunity discovery to measurable outcomes, our consultants guide your organization through every stage of its AI transformation journey.'
-    },
-    {
-      icon: Users,
-      title: 'Management & Digital Transformation Consulting',
-      description: 'Our management consultants align AI and data strategies with organizational goals. We help businesses modernize systems, optimize performance, and foster innovation through seamless technology integration and change management.'
-    },
-    {
-      icon: Eye,
-      title: 'Machine Vision & Computer Vision Systems',
-      description: 'We design advanced computer vision solutions for automating visual inspection, quality control, facial recognition, and pattern detection. Our systems enhance precision, reduce operational costs, and improve efficiency across manufacturing, retail, and security sectors.'
-    },
-    {
-      icon: Cloud,
-      title: 'Modern Data Platform Architecture (Azure, AWS & GCP)',
-      description: 'Our data architects design secure and scalable data ecosystems on Azure, AWS, and GCP. We build modern data lakes, warehouses, and pipelines to support real-time analytics, machine learning, and enterprise-grade AI solutions.'
-    },
-    {
-      icon: Shield,
-      title: 'AI Governance, Ethics & Risk Management',
-      description: 'We implement robust AI governance frameworks that ensure transparency, accountability, and compliance. Our experts help organizations manage ethical, regulatory, and operational risks while fostering trust in AI adoption.'
-    },
-    {
-      icon: GitBranch,
-      title: 'Agile Delivery & Project Management',
-      description: 'Our Scrum and Agile project management expertise ensures timely, efficient, and collaborative delivery. This approach enables flexibility, continuous improvement, and consistent client satisfaction throughout every phase of your AI journey.'
+      title: 'Machine Learning Models & Predictive Analytics',
+      description: 'Build intelligent systems that predict trends, optimize operations, and unlock data-driven insights.',
+      image: '/img/Machine Learning.webp',
+      features: [
+        'Custom ML Model Development',
+        'Predictive Analytics Solutions',
+        'Real-time Data Processing',
+        'Model Performance Optimization',
+        'A/B Testing & Validation'
+      ],
+      benefits: [
+        'Data-driven decision making',
+        'Improved operational efficiency',
+        'Reduced costs and waste',
+        'Enhanced customer experience'
+      ]
     },
     {
       icon: Zap,
-      title: 'AI Automation & Intelligent Process Optimization',
-      description: 'We design AI-driven automation systems that eliminate repetitive tasks, streamline operations, and improve efficiency. Our automation experts integrate AI into workflows—boosting productivity and freeing human teams to focus on high-value work.'
-    },
-    {
-      icon: Cpu,
-      title: 'Edge AI & IoT Intelligence',
-      description: 'We build edge AI solutions that process data in real time—close to where it\'s generated. Perfect for IoT, robotics, and industrial automation, our systems deliver faster insights, reduce latency, and enable smarter, autonomous operations.'
-    },
-    {
-      icon: Code,
-      title: 'AI Integration & Custom Application Development',
-      description: 'We integrate AI into existing platforms, CRMs, and enterprise applications to extend their capabilities. From intelligent search to recommendation engines, we create tailored solutions that deliver immediate business impact.'
+      title: 'Generative AI & Automation for Business Operations',
+      description: 'Implement cutting-edge AI solutions that automate workflows and enhance productivity across your organization.',
+      image: '/img/Robotics & Automation.jpeg',
+      features: [
+        'Process Automation Design',
+        'Chatbot & Virtual Assistant Development',
+        'Document Processing & Analysis',
+        'Content Generation Systems',
+        'Workflow Optimization'
+      ],
+      benefits: [
+        'Increased productivity',
+        'Reduced manual errors',
+        '24/7 operational capability',
+        'Scalable business processes'
+      ]
     },
     {
       icon: Database,
-      title: 'Data Engineering & MLOps',
-      description: 'We provide end-to-end data engineering and MLOps services, including data ingestion, transformation, model deployment, and continuous monitoring. This ensures your AI systems are reliable, scalable, and production-ready.'
-    },
-    {
-      icon: Leaf,
-      title: 'Responsible & Sustainable AI Consulting',
-      description: 'We help organizations design ethical and sustainable AI frameworks that prioritize fairness, inclusivity, and environmental responsibility. Our consultants align technology with human and societal values for long-term trust and success.'
-    },
-    {
-      icon: FileText,
-      title: 'AI Training & Capability Building',
-      description: 'We empower teams with custom AI training programs—from executive briefings to hands-on technical workshops. Our goal is to build your internal AI literacy so your organization can innovate confidently and independently.'
+      title: 'Data Engineering & Cloud AI',
+      description: 'Build robust data infrastructure and cloud-based AI solutions that scale with your business growth.',
+      image: '/img/data-analysis-vs-data-science.jpeg',
+      features: [
+        'Data Pipeline Architecture',
+        'Cloud Infrastructure Setup',
+        'Data Quality & Governance',
+        'Scalable AI Infrastructure',
+        'Security & Compliance'
+      ],
+      benefits: [
+        'Scalable data infrastructure',
+        'Improved data quality',
+        'Enhanced security posture',
+        'Cost-effective cloud solutions'
+      ]
     }
   ]
 
@@ -142,7 +130,19 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-primary-50 to-primary-100">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/img/background.jpg')`
+            }}
+          ></div>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
+        
         <div className="container-custom text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -153,7 +153,7 @@ const ServicesPage = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="gradient-text">AI Consulting Services</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8">
+            <p className="text-xl md:text-2xl text-gray-200 mb-8">
               Comprehensive AI solutions designed to transform your business operations, 
               drive innovation, and deliver measurable results.
             </p>
@@ -185,21 +185,73 @@ const ServicesPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-16">
             {services.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.05 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="card p-6 lg:p-8 relative group hover:shadow-2xl transition-all duration-300"
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                }`}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 text-gray-900" />
+                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
+                    <service.icon className="w-8 h-8 text-gray-900" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-lg text-gray-600 mb-8">{service.description}</p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
+                        <CheckCircle className="w-5 h-5 text-accent-500 mr-2" />
+                        What We Deliver
+                      </h4>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="text-gray-600 flex items-start">
+                            <div className="w-2 h-2 bg-accent-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
+                        <Target className="w-5 h-5 text-primary-500 mr-2" />
+                        Business Impact
+                      </h4>
+                      <ul className="space-y-2">
+                        {service.benefits.map((benefit, benefitIndex) => (
+                          <li key={benefitIndex} className="text-gray-600 flex items-start">
+                            <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                
+                <div className={`bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 ${
+                  index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''
+                }`}>
+                  <div className="aspect-square bg-white rounded-2xl shadow-lg overflow-hidden relative">
+                    <Image 
+                      src={service.image} 
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                      <service.icon className="w-6 h-6 text-primary-600" />
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -207,7 +259,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-accent-100">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
