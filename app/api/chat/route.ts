@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
 
-// Force dynamic rendering - this route should not be statically analyzed during build
-export const dynamic = 'force-dynamic'
-export const runtime = 'nodejs'
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+})
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,11 +17,6 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
-
-    // Initialize OpenAI client inside the handler to avoid build-time issues
-    const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-    })
 
     // Validate messages
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
