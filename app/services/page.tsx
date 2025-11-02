@@ -1,8 +1,9 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { 
   Brain, 
   TrendingUp, 
@@ -26,11 +27,25 @@ import {
   Cpu,
   GraduationCap,
   Briefcase,
-  Layers
+  Layers,
+  X
 } from 'lucide-react'
 import Button from '@/components/Button'
 
 const ServicesPage = () => {
+  const [selectedService, setSelectedService] = useState<number | null>(null)
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedService !== null) {
+        setSelectedService(null)
+      }
+    }
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [selectedService])
+
   const services = [
     {
       icon: Database,
@@ -477,10 +492,13 @@ const ServicesPage = () => {
                 {/* Card Footer */}
                 <div className="px-6 pb-6 pt-0">
                   <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-4"></div>
-                  <div className="flex items-center justify-between text-xs text-gray-500">
+                  <button
+                    onClick={() => setSelectedService(index)}
+                    className="flex items-center justify-between text-xs text-gray-500 hover:text-primary-600 transition-colors w-full group/btn"
+                  >
                     <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
                 </div>
               </motion.div>
             ))}
@@ -625,6 +643,127 @@ const ServicesPage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Service Detail Modal */}
+      <AnimatePresence>
+        {selectedService !== null && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+              onClick={() => setSelectedService(null)}
+            />
+            
+            {/* Modal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+            >
+              <div
+                className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {selectedService !== null && (
+                  <>
+                    {/* Modal Header */}
+                    <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 border-b border-primary-200 sticky top-0 z-10">
+                      <div className="flex items-start gap-4">
+                        <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                          {(() => {
+                            const ServiceIcon = services[selectedService].icon
+                            return <ServiceIcon className="w-8 h-8 text-gray-900" />
+                          })()}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                            {services[selectedService].title}
+                          </h2>
+                        </div>
+                        <button
+                          onClick={() => setSelectedService(null)}
+                          className="w-10 h-10 rounded-full bg-white hover:bg-gray-100 flex items-center justify-center transition-colors flex-shrink-0"
+                          aria-label="Close modal"
+                        >
+                          <X className="w-6 h-6 text-gray-600" />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Modal Body */}
+                    <div className="p-6 md:p-8 space-y-8">
+                      {/* Full Description */}
+                      <div>
+                        <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                          {services[selectedService].description}
+                        </p>
+                      </div>
+
+                      {/* What We Deliver - Full List */}
+                      <div>
+                        <div className="flex items-center gap-3 mb-4">
+                          <CheckCircle className="w-6 h-6 text-accent-500" />
+                          <h3 className="text-xl font-bold text-gray-900">What We Deliver</h3>
+                        </div>
+                        <ul className="space-y-3">
+                          {services[selectedService].features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="text-base text-gray-700 flex items-start">
+                              <div className="w-2 h-2 bg-accent-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <span className="leading-relaxed">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Business Impact - Full List */}
+                      <div>
+                        <div className="flex items-center gap-3 mb-4">
+                          <Target className="w-6 h-6 text-primary-500" />
+                          <h3 className="text-xl font-bold text-gray-900">Business Impact</h3>
+                        </div>
+                        <ul className="space-y-3">
+                          {services[selectedService].benefits.map((benefit, benefitIndex) => (
+                            <li key={benefitIndex} className="text-base text-gray-700 flex items-start">
+                              <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <span className="leading-relaxed">{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* CTA Buttons */}
+                      <div className="pt-6 border-t border-gray-200">
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <Link href="/contact" className="flex-1">
+                            <Button variant="primary" size="lg" className="w-full">
+                              Get Started
+                              <ArrowRight className="ml-2 w-5 h-5" />
+                            </Button>
+                          </Link>
+                          <Button
+                            variant="secondary"
+                            size="lg"
+                            onClick={() => setSelectedService(null)}
+                            className="flex-1 sm:flex-initial"
+                          >
+                            Close
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
