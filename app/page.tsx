@@ -137,12 +137,15 @@ const HomePage = () => {
               with intelligent solutions that drive productivity, automation, and innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto">
-                  Free Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
+              <Button
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto"
+                onClick={() => window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')}
+              >
+                Book Free Consultation
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -357,12 +360,15 @@ const HomePage = () => {
               Let's discuss how AI can drive growth and innovation in your organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto">
-                  Free Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
+              <Button
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto"
+                onClick={() => window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')}
+              >
+                Book Free Consultation
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
               <Link href="/case-studies">
                 <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                   View Case Studies

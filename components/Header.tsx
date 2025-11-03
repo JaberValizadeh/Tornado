@@ -56,20 +56,12 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <a
-              href={bookingsUrl || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
               className="btn-primary"
-              onClick={(e) => {
-                if (!bookingsUrl) {
-                  e.preventDefault()
-                  alert('Microsoft Bookings URL is not configured. Please set NEXT_PUBLIC_BOOKINGS_URL in your .env.local file.')
-                }
-              }}
+              onClick={() => window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')}
             >
               Book Free Consultation
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,20 +89,15 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-4">
-                <a
-                  href={bookingsUrl || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
                   className="btn-primary w-full text-center block"
-                  onClick={(e) => {
-                    if (!bookingsUrl) {
-                      e.preventDefault()
-                      alert('Microsoft Bookings URL is not configured. Please set NEXT_PUBLIC_BOOKINGS_URL in your .env.local file.')
-                    }
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')
                   }}
                 >
                   Book Free Consultation
-                </a>
+                </button>
               </div>
             </div>
           </div>
