@@ -3,11 +3,6 @@
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Button from '@/components/Button'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Schedule',
-}
 
 const timeSlots = [
   '09:00', '09:30', '10:00', '10:30',
