@@ -3,6 +3,11 @@
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Button from '@/components/Button'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Schedule',
+}
 
 const timeSlots = [
   '09:00', '09:30', '10:00', '10:30',
@@ -31,10 +36,6 @@ export default function BookingPage() {
     <div className="min-h-screen bg-white">
       <div className="container-custom py-10">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Book Free Consultation</h1>
-            <p className="text-gray-600">Choose a date, time, and meeting preference.</p>
-          </div>
 
           <form onSubmit={handleSubmit} className="card p-6 md:p-8">
             <div className="grid grid-cols-1 gap-6">
