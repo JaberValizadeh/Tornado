@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const bookingsUrl = process.env.NEXT_PUBLIC_BOOKINGS_URL || ''
+  const pathname = usePathname()
+  const showCta = pathname !== '/book'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,12 +59,14 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <button
-              className="btn-primary"
-              onClick={() => window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')}
-            >
-              Book Free Consultation
-            </button>
+            {showCta && (
+              <button
+                className="btn-primary"
+                onClick={() => window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')}
+              >
+                Book Free Consultation
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,15 +94,17 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-4">
-                <button
-                  className="btn-primary w-full text-center block"
-                  onClick={() => {
-                    setIsMenuOpen(false)
-                    window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')
-                  }}
-                >
-                  Book Free Consultation
-                </button>
+                {showCta && (
+                  <button
+                    className="btn-primary w-full text-center block"
+                    onClick={() => {
+                      setIsMenuOpen(false)
+                      window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')
+                    }}
+                  >
+                    Book Free Consultation
+                  </button>
+                )}
               </div>
             </div>
           </div>
