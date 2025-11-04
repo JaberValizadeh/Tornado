@@ -24,7 +24,12 @@ const Footer = () => {
               Empowering businesses with cutting-edge AI solutions for sustainable growth and innovation.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/109622305/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-primary-600 transition-colors"
+              >
                 LinkedIn
               </a>
               <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
