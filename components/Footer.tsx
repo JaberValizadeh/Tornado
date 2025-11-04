@@ -32,9 +32,6 @@ const Footer = () => {
               >
                 LinkedIn
               </a>
-              <a href="#" className="text-gray-600 hover:text-primary-600 transition-colors">
-                Twitter
-              </a>
             </div>
           </div>
 
