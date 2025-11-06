@@ -120,7 +120,227 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-primary-50 to-primary-100">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Enhanced Background with Multiple Layers */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50 to-primary-100"></div>
+        
+        {/* Animated Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-200/30 via-transparent to-primary-300/30 animate-pulse"></div>
+        
+        {/* Animated Geometric Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Floating Orbs - Various Sizes */}
+          {/* Extra Large Orb */}
+          <motion.div
+            className="absolute top-10 left-1/4 w-[32rem] h-[32rem] bg-primary-400/12 rounded-full blur-3xl"
+            animate={{
+              x: [0, 80, 0],
+              y: [0, 60, 0],
+              scale: [1, 1.15, 1],
+            }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          {/* Large Orbs */}
+          <motion.div
+            className="absolute top-20 left-10 w-96 h-96 bg-primary-300/20 rounded-full blur-3xl"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute top-40 right-20 w-[28rem] h-[28rem] bg-primary-400/15 rounded-full blur-3xl"
+            animate={{
+              x: [0, -80, 0],
+              y: [0, 100, 0],
+              scale: [1, 1.3, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 left-1/4 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl"
+            animate={{
+              x: [0, 120, 0],
+              y: [0, -60, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          {/* Medium Orbs */}
+          <motion.div
+            className="absolute bottom-40 right-1/3 w-64 h-64 bg-primary-300/20 rounded-full blur-3xl"
+            animate={{
+              x: [0, -100, 0],
+              y: [0, 80, 0],
+              scale: [1, 1.25, 1],
+            }}
+            transition={{
+              duration: 22,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-400/18 rounded-full blur-3xl"
+            animate={{
+              x: [0, 60, 0],
+              y: [0, -80, 0],
+              scale: [1, 1.18, 1],
+            }}
+            transition={{
+              duration: 16,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/3 left-1/3 w-56 h-56 bg-primary-500/12 rounded-full blur-3xl"
+            animate={{
+              x: [0, -70, 0],
+              y: [0, 90, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 24,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          {/* Small Orbs */}
+          <motion.div
+            className="absolute top-1/2 left-1/5 w-48 h-48 bg-primary-300/25 rounded-full blur-3xl"
+            animate={{
+              x: [0, 40, 0],
+              y: [0, -50, 0],
+              scale: [1, 1.3, 1],
+            }}
+            transition={{
+              duration: 14,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute top-1/4 right-1/5 w-40 h-40 bg-primary-400/22 rounded-full blur-3xl"
+            animate={{
+              x: [0, -50, 0],
+              y: [0, 70, 0],
+              scale: [1, 1.4, 1],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 left-1/2 w-36 h-36 bg-primary-500/20 rounded-full blur-3xl"
+            animate={{
+              x: [0, 90, 0],
+              y: [0, -40, 0],
+              scale: [1, 1.35, 1],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          {/* Extra Small Orbs */}
+          <motion.div
+            className="absolute top-3/4 right-1/6 w-32 h-32 bg-primary-300/30 rounded-full blur-3xl"
+            animate={{
+              x: [0, 30, 0],
+              y: [0, -60, 0],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/5 left-2/3 w-28 h-28 bg-primary-400/28 rounded-full blur-3xl"
+            animate={{
+              x: [0, -40, 0],
+              y: [0, 50, 0],
+              scale: [1, 1.45, 1],
+            }}
+            transition={{
+              duration: 11,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          {/* Geometric Patterns */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 border-4 border-primary-400/30 rounded-lg rotate-45"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-48 h-48 border-4 border-primary-500/30 rounded-lg rotate-12"></div>
+            <div className="absolute top-1/2 right-1/3 w-32 h-32 border-4 border-primary-300/30 rounded-full"></div>
+          </div>
+          
+          {/* Grid Pattern Overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, currentColor 1px, transparent 1px),
+                linear-gradient(to bottom, currentColor 1px, transparent 1px)
+              `,
+              backgroundSize: '50px 50px',
+              color: 'rgb(0, 255, 239)'
+            }}
+          ></div>
+          
+          {/* Animated Particles */}
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-primary-500 rounded-full"
+              style={{
+                left: `${20 + i * 15}%`,
+                top: `${30 + (i % 3) * 20}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.3, 0.8, 0.3],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: 3 + i * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3,
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Content */}
         <div className="container-custom text-center relative z-10 px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
