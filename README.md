@@ -20,6 +20,17 @@ A modern, responsive website for Tornado Consulting Group built with Next.js and
 
 ## Getting Started
 
+### Quick Start (Recommended)
+
+**Option 1: Use the batch file (Windows)**
+```bash
+start-website.bat
+```
+
+This will install dependencies and start the development server automatically.
+
+### Manual Setup
+
 1. Install dependencies:
 ```bash
 npm install
@@ -32,10 +43,44 @@ npm run dev
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Troubleshooting
+
+**PowerShell Execution Policy Error**
+
+If you see an error like:
+```
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system.
+```
+
+**Solution Options:**
+
+**Option A: Use the PowerShell script** (Recommended for PowerShell)
+- Run: `.\start-website.ps1`
+- This script automatically fixes the execution policy and runs npm commands
+- If you get an error, run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` first
+
+**Option B: Use the batch file** (Recommended for cmd.exe)
+- Double-click `start-website.bat` or run it from Command Prompt (cmd.exe)
+- This bypasses PowerShell execution policy issues completely
+
+**Option C: Fix PowerShell manually**
+Run this command in PowerShell:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+```
+
+Then run npm commands directly (no `call` needed in PowerShell):
+```powershell
+npm install
+npm run dev
+```
+
+**Note:** The `call` command is a batch file command and doesn't work in PowerShell. In PowerShell, just run `npm install` directly.
+
 ## Pages
 
 - **Home**: Hero section, services overview, testimonials, and CTAs
-- **Services**: Detailed AI consulting offerings with process steps
+- **Services**: Detailed robotics consulting offerings with process steps
 - **About**: Mission, vision, values, and founder profile
 - **Case Studies**: Success stories with measurable results
 - **Contact**: Contact form and Sydney location details

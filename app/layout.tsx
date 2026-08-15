@@ -6,14 +6,14 @@ import AppShell from '@/components/AppShell'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Tornado Consulting Group (TCG) - AI Solutions for Business Growth',
-  description: 'Partner with Tornado Consulting Group (TCG) to unlock AI potential. We help businesses adopt AI solutions for productivity, automation, and innovation.',
-  keywords: 'AI consulting, machine learning, business automation, AI strategy, digital transformation, TCG',
+  title: 'Tornado Consulting Group (TCG) - Robotic Solutions for Business Growth',
+  description: 'Partner with Tornado Consulting Group (TCG) to unlock the potential of robotics. We help businesses deploy robotic solutions for productivity, automation, and innovation.',
+  keywords: 'robotics solutions, industrial automation, robotic arms, warehouse robotics, robotics integration, digital transformation, TCG',
   authors: [{ name: 'Tornado Consulting Group' }],
   metadataBase: new URL('https://tornadoai.com.au'),
   openGraph: {
-    title: 'Tornado Consulting Group (TCG) - AI Solutions for Business Growth',
-    description: 'Partner with Tornado Consulting Group (TCG) to unlock AI potential. We help businesses adopt AI solutions for productivity, automation, and innovation.',
+    title: 'Tornado Consulting Group (TCG) - Robotic Solutions for Business Growth',
+    description: 'Partner with Tornado Consulting Group (TCG) to unlock the potential of robotics. We help businesses deploy robotic solutions for productivity, automation, and innovation.',
     type: 'website',
     locale: 'en_AU',
   },

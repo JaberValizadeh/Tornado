@@ -30,18 +30,18 @@ const Header = () => {
   ]
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300 border-b ${
+      isScrolled ? 'shadow-lg border-transparent' : 'border-gray-100'
     }`}>
       <nav className="container-custom">
         <div className="flex items-center justify-between py-2 md:py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="w-48 h-20 md:w-72 md:h-28 lg:w-80 lg:h-32 rounded-lg overflow-hidden">
-              <Image 
-                src="/img/Tornado_AI-removebg-preview.png" 
-                alt="Tornado AI Logo" 
-                width={512} 
+              <Image
+                src="/img/Tornado_AI-removebg-preview.png"
+                alt="Tornado AI Logo"
+                width={512}
                 height={512}
                 className="w-full h-full object-contain"
               />
@@ -54,9 +54,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`${isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-gray-900 hover:text-primary-600'} font-medium transition-colors duration-200`}
+                className="text-gray-700 hover:text-gray-950 font-medium transition-colors duration-200 relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
             {showCta && (
@@ -71,7 +72,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 ${isScrolled ? 'text-gray-700' : 'text-gray-900'}`}
+            className="md:hidden p-2 text-gray-800"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -87,7 +88,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary-600 font-medium px-4 py-2 transition-colors duration-200"
+                  className="text-gray-700 hover:text-primary-700 font-medium px-4 py-2 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

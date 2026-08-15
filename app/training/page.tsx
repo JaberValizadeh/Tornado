@@ -22,82 +22,82 @@ const TrainingPage = () => {
   const trainingPrograms = [
     {
       icon: Brain,
-      title: 'AI Fundamentals & Strategy',
+      title: 'Robotics Fundamentals & Strategy',
       duration: '2 Days',
       level: 'Beginner to Intermediate',
-      description: 'Introduction to AI concepts, business applications, and strategic planning for AI adoption.',
+      description: 'Introduction to robotics concepts, business applications, and strategic planning for robotics adoption.',
       topics: [
-        'Understanding AI and Machine Learning',
-        'AI Use Cases in Business',
-        'AI Strategy Development',
-        'ROI Measurement for AI Projects',
-        'Ethical AI Considerations'
+        'Understanding Robotics and Automation',
+        'Robotics Use Cases in Business',
+        'Robotics Strategy Development',
+        'ROI Measurement for Robotics Projects',
+        'Robot Safety Considerations'
       ],
       outcomes: [
-        'Understand AI fundamentals and terminology',
-        'Identify AI opportunities in your business',
-        'Develop an AI strategy framework',
-        'Assess AI readiness of your organization'
+        'Understand robotics fundamentals and terminology',
+        'Identify robotics opportunities in your business',
+        'Develop a robotics strategy framework',
+        'Assess robotics readiness of your organization'
       ]
     },
     {
       icon: Code,
-      title: 'AI Tools & Technologies',
+      title: 'Robotics Platforms & Programming',
       duration: '3 Days',
       level: 'Intermediate',
-      description: 'Hands-on training with cutting-edge AI tools, platforms, and development frameworks.',
+      description: 'Hands-on training with cutting-edge robot programming tools, platforms, and development frameworks.',
       topics: [
-        'Generative AI Tools (GPT, Claude, Gemini)',
-        'AI Development Platforms',
-        'No-Code AI Solutions',
-        'Data Preparation & Preprocessing',
-        'Model Training & Deployment'
+        'Robot Operating System (ROS/ROS2)',
+        'Vendor Programming Platforms (UR, FANUC, ABB)',
+        'No-Code Robot Configuration',
+        'Sensor Data Preparation & Calibration',
+        'Robot Deployment & Commissioning'
       ],
       outcomes: [
-        'Master popular AI tools and platforms',
-        'Build AI-powered applications',
-        'Implement AI solutions without extensive coding',
-        'Deploy AI models in production'
+        'Master popular robotics tools and platforms',
+        'Build robot-powered applications',
+        'Configure robotic solutions without extensive coding',
+        'Deploy robots into production'
       ]
     },
     {
       icon: TrendingUp,
-      title: 'Advanced Machine Learning',
+      title: 'Advanced Robotics Engineering',
       duration: '5 Days',
       level: 'Advanced',
-      description: 'Deep dive into machine learning algorithms, model development, and optimization techniques.',
+      description: 'Deep dive into robot kinematics, control systems, path planning, and optimization techniques.',
       topics: [
-        'Deep Learning Architectures',
-        'Neural Network Design',
-        'Model Optimization & Tuning',
-        'Advanced Analytics Techniques',
-        'Production ML Systems'
+        'Kinematics & Motion Planning',
+        'Robot Control System Design',
+        'Controller Optimization & Tuning',
+        'Advanced Perception Techniques',
+        'Production Robotics Systems'
       ],
       outcomes: [
-        'Build complex ML models from scratch',
-        'Optimize model performance',
-        'Implement advanced analytics solutions',
-        'Design scalable ML systems'
+        'Build complex robot control systems from scratch',
+        'Optimize robot performance',
+        'Implement advanced perception solutions',
+        'Design scalable robotics systems'
       ]
     },
     {
       icon: Users,
-      title: 'AI for Business Leaders',
+      title: 'Robotics for Business Leaders',
       duration: '1 Day',
       level: 'Executive',
-      description: 'Strategic overview of AI for decision-makers and business leaders.',
+      description: 'Strategic overview of robotics for decision-makers and business leaders.',
       topics: [
-        'AI Market Trends & Opportunities',
-        'Digital Transformation with AI',
-        'Building AI Teams & Culture',
-        'AI Investment & Budgeting',
+        'Robotics Market Trends & Opportunities',
+        'Digital Transformation with Robotics',
+        'Building Robotics Teams & Culture',
+        'Robotics Investment & Budgeting',
         'Risk Management & Governance'
       ],
       outcomes: [
-        'Make informed AI investment decisions',
-        'Lead AI transformation initiatives',
-        'Build AI-ready organizations',
-        'Navigate AI governance and compliance'
+        'Make informed robotics investment decisions',
+        'Lead robotics transformation initiatives',
+        'Build robotics-ready organizations',
+        'Navigate robotics governance and compliance'
       ]
     }
   ]
@@ -111,12 +111,12 @@ const TrainingPage = () => {
     {
       icon: Users,
       title: 'Expert Instructors',
-      description: 'Learn from industry practitioners with real-world AI implementation experience.'
+      description: 'Learn from industry practitioners with real-world robotics implementation experience.'
     },
     {
       icon: Award,
       title: 'Certificates',
-      description: 'Receive certificates of completion to validate your team\'s AI expertise.'
+      description: 'Receive certificates of completion to validate your team\'s robotics expertise.'
     },
     {
       icon: Target,
@@ -128,8 +128,15 @@ const TrainingPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-primary-100">
-        <div className="container-custom">
+      <section
+        className="relative section-padding overflow-hidden bg-gray-950"
+        style={{
+          backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.90), rgba(0,0,0,0.94)), url('https://images.unsplash.com/photo-1705579611249-9861db5469ea?auto=format&fit=crop&w=1600&q=70')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="container-custom relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,9 +146,9 @@ const TrainingPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">Our Training Services</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Comprehensive AI training programs designed to empower your team with the knowledge and skills 
-              needed to leverage artificial intelligence effectively in your business.
+            <p className="text-xl text-gray-300 mb-8">
+              Comprehensive robotics training programs designed to empower your team with the knowledge and skills
+              needed to leverage robotics effectively in your business.
             </p>
             <Link href="/contact">
               <Button variant="primary" size="lg">
@@ -206,7 +213,7 @@ const TrainingPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                          <BookOpen className="w-5 h-5 text-primary-600 mr-2" />
+                          <BookOpen className="w-5 h-5 text-primary-700 mr-2" />
                           Topics Covered
                         </h4>
                         <ul className="space-y-2">
@@ -221,7 +228,7 @@ const TrainingPage = () => {
                       
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                          <Target className="w-5 h-5 text-primary-600 mr-2" />
+                          <Target className="w-5 h-5 text-primary-700 mr-2" />
                           Learning Outcomes
                         </h4>
                         <ul className="space-y-2">
@@ -289,15 +296,16 @@ const TrainingPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-r from-primary-100 to-primary-50 rounded-3xl p-12"
+            className="text-center bg-gradient-to-br from-gray-950 via-black to-gray-900 rounded-3xl p-12 relative overflow-hidden"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl"></div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white relative">
               Ready to Upskill Your Team?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto relative">
               Contact us to discuss custom training programs tailored to your organization's needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative">
               <Link href="/contact">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto">
                   Get Started

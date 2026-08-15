@@ -74,7 +74,7 @@ const ContactPage = () => {
       icon: MapPin,
       title: 'Location',
       details: ['Level 15, 123 George Street', 'Sydney NSW 2000', 'Australia'],
-      color: 'text-primary-600'
+      color: 'text-primary-700'
     },
     {
       icon: Phone,
@@ -86,7 +86,7 @@ const ContactPage = () => {
       icon: Mail,
       title: 'Email',
       details: ['info@tornadoai.com.au'],
-      color: 'text-primary-600'
+      color: 'text-primary-700'
     },
     {
       icon: Clock,
@@ -105,7 +105,7 @@ const ContactPage = () => {
     {
       icon: Users,
       title: 'Dedicated Support',
-      description: 'Direct access to our AI experts throughout your journey.'
+      description: 'Direct access to our robotics experts throughout your journey.'
     },
     {
       icon: Target,
@@ -117,8 +117,15 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-primary-100">
-        <div className="container-custom">
+      <section
+        className="relative section-padding overflow-hidden bg-gray-950"
+        style={{
+          backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.90), rgba(0,0,0,0.94)), url('https://images.unsplash.com/photo-1767966762602-b68f11f146f7?auto=format&fit=crop&w=1600&q=70')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="container-custom relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,8 +135,8 @@ const ContactPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">Let's Work Together</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Ready to transform your business with AI? Get in touch with our team 
+            <p className="text-xl text-gray-300 mb-8">
+              Ready to transform your business with robotics? Get in touch with our team
               to discuss your specific needs and discover how we can help.
             </p>
           </motion.div>
@@ -150,7 +157,7 @@ const ContactPage = () => {
               <div className="card p-8">
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">Send us a Message</h2>
                 <p className="text-gray-600 mb-8">
-                  Tell us about your business and AI goals. We'll get back to you within 24 hours.
+                  Tell us about your business and robotics goals. We'll get back to you within 24 hours.
                 </p>
 
                 {isSubmitted ? (
@@ -159,7 +166,7 @@ const ContactPage = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <CheckCircle className="w-16 h-16 text-primary-600 mx-auto mb-4" />
+                    <CheckCircle className="w-16 h-16 text-primary-700 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
                     <p className="text-gray-600">Thank you for reaching out. We'll be in touch soon.</p>
                   </motion.div>
@@ -230,7 +237,7 @@ const ContactPage = () => {
                         required
                         rows={6}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
-                        placeholder="Tell us about your AI goals, challenges, or questions..."
+                        placeholder="Tell us about your robotics goals, challenges, or questions..."
                       />
                     </div>
 
@@ -270,7 +277,7 @@ const ContactPage = () => {
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">Get in Touch</h2>
                 <p className="text-gray-600 mb-8">
                   We're based in Sydney and serve clients across Australia and internationally. 
-                  Whether you're looking for a quick consultation or a comprehensive AI strategy, 
+                  Whether you're looking for a quick consultation or a comprehensive robotics strategy,
                   we're here to help.
                 </p>
               </div>

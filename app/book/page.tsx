@@ -54,9 +54,9 @@ export default function BookingPage() {
                       key={slot}
                       type="button"
                       onClick={() => setTime(slot)}
-                      className={`px-3 py-2 rounded-lg border text-sm transition ${
+                      className={`px-3 py-2 rounded-lg border text-sm font-semibold transition ${
                         time === slot
-                          ? 'bg-primary-600 text-white border-primary-600'
+                          ? 'bg-primary-500 text-gray-900 border-primary-500'
                           : 'bg-white text-gray-700 border-gray-300 hover:border-primary-400'
                       }`}
                     >

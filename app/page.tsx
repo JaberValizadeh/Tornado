@@ -3,12 +3,12 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { 
-  Brain, 
-  TrendingUp, 
-  Zap, 
-  Shield, 
-  ArrowRight, 
+import {
+  Bot,
+  TrendingUp,
+  Zap,
+  Shield,
+  ArrowRight,
   CheckCircle,
   Users,
   Target,
@@ -28,52 +28,52 @@ const HomePage = () => {
     },
     {
       icon: BarChart3,
-      title: 'Live Dashboards of Project Plan',
-      description: 'Maximise productivity with our efficient task management system: Monitor completed and in-progress tasks and stay informed with real-time project visibility.'
+      title: 'Live Dashboards of Deployment Plan',
+      description: 'Maximise productivity with our efficient project management system: Monitor completed and in-progress robot installations and stay informed with real-time deployment visibility.'
     },
     {
       icon: MessageSquare,
       title: 'Comprehensive Performance Insights',
-      description: 'Transparent, data-driven reports: Track progress, measure success, and make informed decisions.'
+      description: 'Transparent, data-driven reports: Track uptime, measure throughput, and make informed decisions.'
     }
   ]
 
   const services = [
     {
-      icon: Brain,
-      title: 'AI Strategy & Digital Transformation',
-      description: 'Develop comprehensive AI roadmaps that align with your business objectives and drive measurable growth.',
-      image: '/img/Generative AI & Intelligent Automation.jpg'
+      icon: Target,
+      title: 'Robotics Strategy & Automation Roadmap',
+      description: 'Develop comprehensive robotics roadmaps that align with your business objectives and drive measurable growth.',
+      image: 'https://images.unsplash.com/photo-1606206873764-fd15e242df52?auto=format&fit=crop&w=1200&q=80'
     },
     {
-      icon: TrendingUp,
-      title: 'Machine Learning Models & Predictive Analytics',
-      description: 'Build intelligent systems that predict trends, optimize operations, and unlock data-driven insights.',
-      image: '/img/Machine Learning.webp'
+      icon: Bot,
+      title: 'Robotic Arms & Manufacturing Automation',
+      description: 'Deploy intelligent robotic arms that automate production lines, optimize operations, and unlock data-driven insights.',
+      image: 'https://images.unsplash.com/photo-1716191299980-a6e8827ba10b?auto=format&fit=crop&w=1200&q=80'
     },
     {
       icon: Zap,
-      title: 'Generative AI & Automation',
-      description: 'Implement cutting-edge AI solutions that automate workflows and enhance productivity across your organization.',
-      image: '/img/Robotics & Automation.jpeg'
+      title: 'Warehouse & Logistics Robotics',
+      description: 'Implement autonomous mobile robots (AMRs) and AGVs that automate workflows and enhance productivity across your facility.',
+      image: 'https://images.unsplash.com/photo-1767966762602-b68f11f146f7?auto=format&fit=crop&w=1200&q=80'
     },
     {
       icon: Shield,
-      title: 'Data Engineering & Cloud-Based AI',
-      description: 'Scalable data pipelines, cloud infrastructure, and distributed AI systems that handle massive datasets with enterprise-grade reliability.',
-      image: '/img/data-analysis-vs-data-science.jpeg'
+      title: 'Robotics Systems Integration & Cloud Monitoring',
+      description: 'Scalable fleet management, cloud infrastructure, and distributed robotics systems that handle real-time telemetry with enterprise-grade reliability.',
+      image: 'https://images.unsplash.com/photo-1753153481105-7a979eabe5a9?auto=format&fit=crop&w=1200&q=80'
     },
     {
-      icon: Target,
-      title: 'IoT & Edge Computing',
-      description: 'Connected device solutions, real-time data processing, and edge AI deployment for industrial and consumer applications.',
-      image: '/img/IoT and Edge Computing.png'
+      icon: TrendingUp,
+      title: 'IoT & Edge Computing for Robotics',
+      description: 'Connected sensor solutions, real-time data processing, and edge computing deployment for industrial and consumer robotics applications.',
+      image: 'https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1200&q=80'
     },
     {
       icon: Award,
-      title: 'Responsible & Ethical AI',
-      description: 'AI governance, bias detection, fairness auditing, and ethical AI implementation ensuring transparent, accountable, and trustworthy AI systems.',
-      image: '/img/Responsible & Ethical AI.jpg'
+      title: 'Responsible & Safe Robotics',
+      description: 'Robot safety compliance, risk assessment, and ethical automation implementation ensuring transparent, accountable, and trustworthy robotic systems.',
+      image: 'https://images.unsplash.com/photo-1705579611249-9861db5469ea?auto=format&fit=crop&w=1200&q=80'
     }
   ]
 
@@ -84,7 +84,7 @@ const HomePage = () => {
     },
     {
       value: '50+',
-      label: 'Projects Completed Successfully'
+      label: 'Robotic Systems Deployed'
     },
     {
       value: '95%',
@@ -96,24 +96,24 @@ const HomePage = () => {
     }
   ]
 
-  const aiServices = [
+  const roboticsServices = [
     {
-      icon: Brain,
-      title: 'AI Consulting',
-      description: 'Strategic AI guidance to transform your business operations and drive innovation.',
-      link: '/services#ai-consulting'
+      icon: Bot,
+      title: 'Robotics Consulting',
+      description: 'Strategic robotics guidance to transform your business operations and drive innovation.',
+      link: '/services#robotics-consulting'
     },
     {
       icon: Zap,
-      title: 'AI Training',
-      description: 'Comprehensive training programs to help your team master AI tools and technologies.',
+      title: 'Robotics Training',
+      description: 'Comprehensive training programs to help your team master robotics platforms and technologies.',
       link: '/training'
     },
     {
       icon: Shield,
-      title: 'AI Tools',
-      description: 'Access to cutting-edge AI tools and platforms tailored to your business needs.',
-      link: '/ai-tools'
+      title: 'Robotics Tools',
+      description: 'Access to cutting-edge robotics tools and platforms tailored to your business needs.',
+      link: '/robotics-tools'
     }
   ]
 
@@ -122,10 +122,10 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Enhanced Background with Multiple Layers */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50 to-primary-100"></div>
-        
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900"></div>
+
         {/* Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-200/30 via-transparent to-primary-300/30 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-transparent to-primary-400/10 animate-pulse"></div>
         
         {/* Animated Geometric Shapes */}
         <div className="absolute inset-0 overflow-hidden">
@@ -304,15 +304,15 @@ const HomePage = () => {
           </div>
           
           {/* Grid Pattern Overlay */}
-          <div 
-            className="absolute inset-0 opacity-[0.03]"
+          <div
+            className="absolute inset-0 opacity-[0.07]"
             style={{
               backgroundImage: `
                 linear-gradient(to right, currentColor 1px, transparent 1px),
                 linear-gradient(to bottom, currentColor 1px, transparent 1px)
               `,
               backgroundSize: '50px 50px',
-              color: 'rgb(0, 255, 239)'
+              color: 'rgb(255, 195, 0)'
             }}
           ></div>
           
@@ -347,14 +347,17 @@ const HomePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-500/40 bg-primary-500/10 text-primary-400 text-sm font-semibold tracking-wide uppercase mb-6">
+              Robotic Solutions, Engineered
+            </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="gradient-text">The Right AI Consulting</span>
+              <span className="gradient-text">The Right Robotic Solutions</span>
               <br />
-              <span className="text-gray-900">Let's Transform Your Business!</span>
+              <span className="text-white">Let's Automate Your Business!</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-              Partner with Tornado, a leading AI consulting firm. We help businesses unlock AI's potential 
-              with intelligent solutions that drive productivity, automation, and innovation.
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Partner with Tornado, a leading robotics solutions provider. We help businesses unlock the potential of robotics
+              with intelligent systems that drive productivity, automation, and innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
@@ -382,7 +385,7 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              We Pave the Way to AI Success
+              We Pave the Way to Robotics Success
             </h2>
           </motion.div>
 
@@ -418,16 +421,16 @@ const HomePage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Your gateway to the world's most exciting AI technologies
+              Your gateway to the world's most advanced robotics technologies
             </h2>
             <p className="text-gray-600 text-lg">
-              Microsoft Azure, Amazon Web Services, Google Cloud, IBM Watson, OpenAI, and More
+              Universal Robots, FANUC, ABB, KUKA, Siemens, NVIDIA Isaac, and More
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* AI Services Section */}
+      {/* Robotics Services Section */}
       <section className="section-padding bg-gradient-to-br from-primary-50 to-primary-100">
         <div className="container-custom">
           <motion.div
@@ -438,16 +441,16 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Harness the Power of AI
+              Harness the Power of Robotics
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-              We've assessed hundreds of AI Tools so you don't have to. Choose from our AI services today 
+              We've assessed hundreds of robotics platforms so you don't have to. Choose from our robotics services today
               and put distance between you and your competition starting tomorrow.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {aiServices.map((service, index) => (
+            {roboticsServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -462,7 +465,7 @@ const HomePage = () => {
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 <Link href={service.link}>
-                  <span className="text-primary-600 font-semibold hover:text-primary-700 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                  <span className="text-primary-700 font-semibold hover:text-primary-800 flex items-center justify-center group-hover:translate-x-1 transition-transform">
                     Read more <ArrowRight className="ml-2 w-4 h-4" />
                   </span>
                 </Link>
@@ -483,10 +486,10 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              AI Consulting Services
+              Robotics Consulting Services
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From strategy to implementation, we provide end-to-end AI solutions tailored to your business needs.
+              From strategy to implementation, we provide end-to-end robotics solutions tailored to your business needs.
             </p>
           </motion.div>
 
@@ -517,7 +520,7 @@ const HomePage = () => {
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{service.description}</p>
                   <Link href="/services">
-                    <span className="text-primary-600 font-semibold hover:text-primary-700 flex items-center group-hover:translate-x-1 transition-transform">
+                    <span className="text-primary-700 font-semibold hover:text-primary-800 flex items-center group-hover:translate-x-1 transition-transform">
                       Read More <ArrowRight className="ml-2 w-4 h-4" />
                     </span>
                   </Link>
@@ -529,8 +532,13 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-accent-100">
-        <div className="container-custom">
+      <section className="section-padding bg-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06]" style={{
+          backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+          color: 'rgb(255, 195, 0)'
+        }}></div>
+        <div className="container-custom relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -538,8 +546,8 @@ const HomePage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-              Unveiling AI Excellence
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              Unveiling Robotics Excellence
             </h2>
           </motion.div>
 
@@ -553,10 +561,10 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-5xl md:text-6xl font-bold text-primary-600 mb-3">
+                <div className="text-5xl md:text-6xl font-bold text-primary-400 mb-3">
                   {stat.value}
                 </div>
-                <div className="text-gray-700 text-lg">{stat.label}</div>
+                <div className="text-gray-300 text-lg">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -571,15 +579,16 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-r from-primary-100 to-primary-50 rounded-3xl p-12"
+            className="text-center bg-gradient-to-br from-gray-950 via-black to-gray-900 rounded-3xl p-12 relative overflow-hidden"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl"></div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white relative">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let's discuss how AI can drive growth and innovation in your organization.
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto relative">
+              Let's discuss how robotics can drive growth and innovation in your organization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative">
               <Button
                 variant="primary"
                 size="lg"

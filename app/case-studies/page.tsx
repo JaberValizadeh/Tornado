@@ -25,107 +25,114 @@ const CaseStudiesPage = () => {
       industry: 'Retail',
       company: 'TechFlow Solutions',
       icon: ShoppingCart,
-      title: 'AI-Powered Inventory Optimization',
+      title: 'Autonomous Mobile Robot Warehouse Optimization',
       challenge: 'TechFlow Solutions was struggling with overstock and stockouts, leading to significant revenue loss and customer dissatisfaction.',
-      solution: 'Implemented machine learning models to predict demand patterns, optimize inventory levels, and automate reorder processes.',
+      solution: 'Deployed a fleet of autonomous mobile robots (AMRs) to automate picking and replenishment, predict demand patterns, and optimize inventory levels.',
       results: [
         { metric: '35%', label: 'Reduction in inventory costs' },
         { metric: '28%', label: 'Increase in sales' },
         { metric: '95%', label: 'Reduction in stockouts' }
       ],
       duration: '6 months',
-      category: 'Machine Learning'
+      category: 'Warehouse Robotics'
     },
     {
       id: 2,
       industry: 'Healthcare',
       company: 'MediCare Plus',
       icon: Heart,
-      title: 'Predictive Analytics for Patient Care',
-      challenge: 'MediCare Plus needed to improve patient outcomes while reducing readmission rates and operational costs.',
-      solution: 'Developed predictive models to identify high-risk patients and optimize treatment plans using historical patient data.',
+      title: 'Hospital Logistics Robots for Patient Care',
+      challenge: 'MediCare Plus needed to improve patient outcomes while reducing staff workload and operational costs.',
+      solution: 'Deployed autonomous delivery robots to transport medications, supplies, and lab samples, freeing clinical staff to focus on patient care.',
       results: [
-        { metric: '40%', label: 'Reduction in readmissions' },
-        { metric: '25%', label: 'Improvement in patient outcomes' },
+        { metric: '40%', label: 'Reduction in delivery response times' },
+        { metric: '25%', label: 'Improvement in staff availability' },
         { metric: '30%', label: 'Cost savings' }
       ],
       duration: '8 months',
-      category: 'Predictive Analytics'
+      category: 'Service Robotics'
     },
     {
       id: 3,
       industry: 'Manufacturing',
       company: 'InnovateCorp',
       icon: Factory,
-      title: 'Smart Manufacturing Automation',
+      title: 'Robotic Arm Deployment for Smart Manufacturing',
       challenge: 'InnovateCorp faced production inefficiencies and quality control issues in their manufacturing processes.',
-      solution: 'Implemented AI-driven quality control systems and predictive maintenance solutions to optimize production lines.',
+      solution: 'Implemented robotic arm work cells with machine vision quality control and predictive maintenance solutions to optimize production lines.',
       results: [
         { metric: '45%', label: 'Increase in production efficiency' },
         { metric: '60%', label: 'Reduction in defects' },
         { metric: '50%', label: 'Decrease in downtime' }
       ],
       duration: '10 months',
-      category: 'Process Automation'
+      category: 'Manufacturing Automation'
     },
     {
       id: 4,
       industry: 'Finance',
       company: 'SecureBank',
       icon: DollarSign,
-      title: 'Fraud Detection & Risk Management',
-      challenge: 'SecureBank needed to enhance their fraud detection capabilities while reducing false positives.',
-      solution: 'Built advanced machine learning models for real-time fraud detection and risk assessment.',
+      title: 'Autonomous Security & Facilities Robots',
+      challenge: 'SecureBank needed to enhance facility monitoring and physical security across its branch network while reducing patrol costs.',
+      solution: 'Deployed autonomous patrol robots with real-time sensing for facility monitoring, anomaly detection, and after-hours security.',
       results: [
-        { metric: '85%', label: 'Improvement in fraud detection' },
-        { metric: '70%', label: 'Reduction in false positives' },
-        { metric: '25%', label: 'Decrease in fraud losses' }
+        { metric: '85%', label: 'Improvement in incident detection' },
+        { metric: '70%', label: 'Reduction in false alarms' },
+        { metric: '25%', label: 'Decrease in security costs' }
       ],
       duration: '7 months',
-      category: 'Risk Management'
+      category: 'Security Robotics'
     },
     {
       id: 5,
       industry: 'Transportation',
       company: 'FleetMax Logistics',
       icon: Car,
-      title: 'Route Optimization & Fleet Management',
+      title: 'Autonomous Delivery Robots & Fleet Routing',
       challenge: 'FleetMax Logistics struggled with inefficient routing and high fuel costs across their delivery network.',
-      solution: 'Developed AI-powered route optimization algorithms and predictive maintenance systems for their fleet.',
+      solution: 'Deployed autonomous delivery robots with route optimization algorithms and predictive maintenance systems for their fleet.',
       results: [
         { metric: '30%', label: 'Reduction in fuel costs' },
         { metric: '35%', label: 'Improvement in delivery times' },
         { metric: '20%', label: 'Increase in customer satisfaction' }
       ],
       duration: '5 months',
-      category: 'Logistics Optimization'
+      category: 'Logistics Robotics'
     },
     {
       id: 6,
       industry: 'Education',
       company: 'EduTech Academy',
       icon: BookOpen,
-      title: 'Personalized Learning Platform',
-      challenge: 'EduTech Academy wanted to improve student engagement and learning outcomes through personalized education.',
-      solution: 'Created AI-driven personalized learning paths and adaptive content delivery systems.',
+      title: 'Educational & STEM Robotics Lab Deployment',
+      challenge: 'EduTech Academy wanted to improve student engagement and learning outcomes through hands-on robotics education.',
+      solution: 'Designed and deployed a STEM robotics lab with programmable robot kits and an adaptive, project-based curriculum.',
       results: [
         { metric: '50%', label: 'Improvement in student engagement' },
         { metric: '35%', label: 'Increase in completion rates' },
         { metric: '40%', label: 'Better learning outcomes' }
       ],
       duration: '9 months',
-      category: 'Personalization'
+      category: 'Educational Robotics'
     }
   ]
 
   const industries = ['All', 'Retail', 'Healthcare', 'Manufacturing', 'Finance', 'Transportation', 'Education']
-  const categories = ['All', 'Machine Learning', 'Predictive Analytics', 'Process Automation', 'Risk Management', 'Logistics Optimization', 'Personalization']
+  const categories = ['All', 'Warehouse Robotics', 'Service Robotics', 'Manufacturing Automation', 'Security Robotics', 'Logistics Robotics', 'Educational Robotics']
 
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-primary-100">
-        <div className="container-custom">
+      <section
+        className="relative section-padding overflow-hidden bg-gray-950"
+        style={{
+          backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.90), rgba(0,0,0,0.94)), url('https://images.unsplash.com/photo-1753153481105-7a979eabe5a9?auto=format&fit=crop&w=1600&q=70')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="container-custom relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -135,9 +142,9 @@ const CaseStudiesPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">Success Stories</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Discover how we've helped businesses across industries transform their operations 
-              and achieve remarkable results with AI solutions.
+            <p className="text-xl text-gray-300 mb-8">
+              Discover how we've helped businesses across industries transform their operations
+              and achieve remarkable results with robotic solutions.
             </p>
             <Link href="/contact">
               <Button variant="primary" size="lg">
@@ -163,7 +170,7 @@ const CaseStudiesPage = () => {
               Real Results, Real Impact
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Each case study represents a unique challenge solved with innovative AI solutions 
+              Each case study represents a unique challenge solved with innovative robotic solutions
               tailored to specific business needs.
             </p>
           </motion.div>
@@ -195,7 +202,7 @@ const CaseStudiesPage = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-4 group-hover:text-primary-600 transition-colors">
+                <h3 className="text-xl font-bold mb-4 group-hover:text-primary-700 transition-colors">
                   {study.title}
                 </h3>
 
@@ -217,7 +224,7 @@ const CaseStudiesPage = () => {
                   <div className="grid grid-cols-1 gap-3">
                     {study.results.map((result, resultIndex) => (
                       <div key={resultIndex} className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-primary-600">{result.metric}</span>
+                        <span className="text-2xl font-bold text-primary-700">{result.metric}</span>
                         <span className="text-gray-600 text-sm">{result.label}</span>
                       </div>
                     ))}
@@ -230,7 +237,7 @@ const CaseStudiesPage = () => {
                     <Clock className="w-4 h-4" />
                     <span>{study.duration}</span>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-primary-600 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.div>
             ))}
@@ -239,8 +246,13 @@ const CaseStudiesPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-100 to-accent-100">
-        <div className="container-custom">
+      <section className="section-padding bg-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06]" style={{
+          backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+          color: 'rgb(255, 195, 0)'
+        }}></div>
+        <div className="container-custom relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -248,10 +260,10 @@ const CaseStudiesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Our Track Record
             </h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Numbers that speak to our commitment to delivering exceptional results.
             </p>
           </motion.div>
@@ -264,8 +276,8 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">50+</div>
-              <div className="text-gray-700">Projects Completed</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">50+</div>
+              <div className="text-gray-300">Projects Completed</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -274,8 +286,8 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">95%</div>
-              <div className="text-gray-700">Success Rate</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">95%</div>
+              <div className="text-gray-300">Success Rate</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -284,8 +296,8 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">3x</div>
-              <div className="text-gray-700">Average ROI</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">3x</div>
+              <div className="text-gray-300">Average ROI</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -294,8 +306,8 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">15+</div>
-              <div className="text-gray-700">Industries Served</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">15+</div>
+              <div className="text-gray-300">Industries Served</div>
             </motion.div>
           </div>
         </div>
@@ -309,16 +321,17 @@ const CaseStudiesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-r from-primary-100 to-primary-50 rounded-3xl p-12"
+            className="text-center bg-gradient-to-br from-gray-950 via-black to-gray-900 rounded-3xl p-12 relative overflow-hidden"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl"></div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white relative">
               Ready to Write Your Success Story?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help your business achieve similar results 
-              with AI solutions tailored to your specific needs.
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto relative">
+              Let's discuss how we can help your business achieve similar results
+              with robotic solutions tailored to your specific needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative">
               <Link href="/contact">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto">
                   Start Your Project
