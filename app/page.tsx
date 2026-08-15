@@ -1,472 +1,296 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
 
+import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import {
-  Bot,
-  TrendingUp,
-  Zap,
-  Shield,
-  ArrowRight,
-  CheckCircle,
-  Users,
-  Target,
-  Award,
-  Clock,
-  BarChart3,
-  MessageSquare
-} from 'lucide-react'
-import Button from '@/components/Button'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
+
+// three.js touches window/document, so it never runs on the server.
+const RobotArm = dynamic(() => import('@/components/RobotArm'), {
+  ssr: false,
+  loading: () => <div className="h-full w-full" />,
+})
+
+const fadeUp = {
+  initial: { opacity: 0, y: 18 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-80px' },
+  transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+}
 
 const HomePage = () => {
-  const whyChooseItems = [
+  const openBooking = () =>
+    window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')
+
+  const stats = [
+    { value: '20+', label: 'Years combined experience' },
+    { value: '50+', label: 'Robotic systems deployed' },
+    { value: '95%', label: 'Client satisfaction' },
+    { value: '15+', label: 'Industry specialisations' },
+  ]
+
+  const principles = [
     {
-      icon: Clock,
-      title: 'Prompt and Responsive Support',
-      description: 'Experience exceptional customer service with our lightning-fast response guarantee within 2 hours.'
+      title: 'Prompt, responsive support',
+      description:
+        'A two-hour response guarantee, so a stopped line never waits on a ticket queue.',
     },
     {
-      icon: BarChart3,
-      title: 'Live Dashboards of Deployment Plan',
-      description: 'Maximise productivity with our efficient project management system: Monitor completed and in-progress robot installations and stay informed with real-time deployment visibility.'
+      title: 'Live deployment dashboards',
+      description:
+        'Track completed and in-progress robot installations with real-time visibility into every stage.',
     },
     {
-      icon: MessageSquare,
-      title: 'Comprehensive Performance Insights',
-      description: 'Transparent, data-driven reports: Track uptime, measure throughput, and make informed decisions.'
-    }
+      title: 'Transparent performance data',
+      description:
+        'Uptime, throughput and cycle-time reporting you can take straight into a board meeting.',
+    },
   ]
 
   const services = [
     {
-      icon: Target,
       title: 'Robotics Strategy & Automation Roadmap',
-      description: 'Develop comprehensive robotics roadmaps that align with your business objectives and drive measurable growth.',
-      image: 'https://images.unsplash.com/photo-1606206873764-fd15e242df52?auto=format&fit=crop&w=1200&q=80'
+      description:
+        'Comprehensive robotics roadmaps aligned to your business objectives and measurable growth targets.',
     },
     {
-      icon: Bot,
       title: 'Robotic Arms & Manufacturing Automation',
-      description: 'Deploy intelligent robotic arms that automate production lines, optimize operations, and unlock data-driven insights.',
-      image: 'https://images.unsplash.com/photo-1716191299980-a6e8827ba10b?auto=format&fit=crop&w=1200&q=80'
+      description:
+        'Intelligent robotic arms that automate production lines, optimise operations and unlock data-driven insight.',
     },
     {
-      icon: Zap,
       title: 'Warehouse & Logistics Robotics',
-      description: 'Implement autonomous mobile robots (AMRs) and AGVs that automate workflows and enhance productivity across your facility.',
-      image: 'https://images.unsplash.com/photo-1767966762602-b68f11f146f7?auto=format&fit=crop&w=1200&q=80'
+      description:
+        'Autonomous mobile robots and AGVs that automate workflows and lift productivity across the facility.',
     },
     {
-      icon: Shield,
-      title: 'Robotics Systems Integration & Cloud Monitoring',
-      description: 'Scalable fleet management, cloud infrastructure, and distributed robotics systems that handle real-time telemetry with enterprise-grade reliability.',
-      image: 'https://images.unsplash.com/photo-1753153481105-7a979eabe5a9?auto=format&fit=crop&w=1200&q=80'
+      title: 'Systems Integration & Cloud Monitoring',
+      description:
+        'Fleet management, cloud infrastructure and real-time telemetry with enterprise-grade reliability.',
     },
     {
-      icon: TrendingUp,
       title: 'IoT & Edge Computing for Robotics',
-      description: 'Connected sensor solutions, real-time data processing, and edge computing deployment for industrial and consumer robotics applications.',
-      image: 'https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1200&q=80'
+      description:
+        'Connected sensors, real-time processing and edge deployment for industrial and consumer robotics.',
     },
     {
-      icon: Award,
       title: 'Responsible & Safe Robotics',
-      description: 'Robot safety compliance, risk assessment, and ethical automation implementation ensuring transparent, accountable, and trustworthy robotic systems.',
-      image: 'https://images.unsplash.com/photo-1705579611249-9861db5469ea?auto=format&fit=crop&w=1200&q=80'
-    }
+      description:
+        'Safety compliance, risk assessment and ethical automation for transparent, accountable systems.',
+    },
   ]
 
-  const stats = [
+  const entryPoints = [
     {
-      value: '20+',
-      label: 'Years of Combined Experience'
-    },
-    {
-      value: '50+',
-      label: 'Robotic Systems Deployed'
-    },
-    {
-      value: '95%',
-      label: 'Client Satisfaction Rate'
-    },
-    {
-      value: '15+',
-      label: 'Industry Specializations'
-    }
-  ]
-
-  const roboticsServices = [
-    {
-      icon: Bot,
       title: 'Robotics Consulting',
-      description: 'Strategic robotics guidance to transform your business operations and drive innovation.',
-      link: '/services#robotics-consulting'
+      description:
+        'Strategic guidance to transform operations and prioritise the automation that pays back first.',
+      link: '/services#robotics-consulting',
     },
     {
-      icon: Zap,
       title: 'Robotics Training',
-      description: 'Comprehensive training programs to help your team master robotics platforms and technologies.',
-      link: '/training'
+      description:
+        'Programs that get your team fluent in the platforms running on your floor.',
+      link: '/training',
     },
     {
-      icon: Shield,
       title: 'Robotics Tools',
-      description: 'Access to cutting-edge robotics tools and platforms tailored to your business needs.',
-      link: '/robotics-tools'
-    }
+      description:
+        'Access to evaluated robotics tools and platforms matched to your requirements.',
+      link: '/robotics-tools',
+    },
+  ]
+
+  const partners = [
+    'Universal Robots',
+    'FANUC',
+    'ABB',
+    'KUKA',
+    'Siemens',
+    'NVIDIA Isaac',
   ]
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Enhanced Background with Multiple Layers */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900"></div>
+    <div className="bg-white">
+      {/* ================================================================ HERO */}
+      <section className="relative flex min-h-screen flex-col justify-center overflow-hidden pt-24 md:pt-28">
+        {/* whisper-thin grid, barely there */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, #171717 1px, transparent 1px), linear-gradient(to bottom, #171717 1px, transparent 1px)',
+            backgroundSize: '72px 72px',
+            maskImage:
+              'radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%)',
+            WebkitMaskImage:
+              'radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%)',
+          }}
+        />
 
-        {/* Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-transparent to-primary-400/10 animate-pulse"></div>
-        
-        {/* Animated Geometric Shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Floating Orbs - Various Sizes */}
-          {/* Extra Large Orb */}
+        <div className="container-custom relative z-10">
           <motion.div
-            className="absolute top-10 left-1/4 w-[32rem] h-[32rem] bg-primary-400/12 rounded-full blur-3xl"
-            animate={{
-              x: [0, 80, 0],
-              y: [0, 60, 0],
-              scale: [1, 1.15, 1],
-            }}
-            transition={{
-              duration: 28,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          
-          {/* Large Orbs */}
-          <motion.div
-            className="absolute top-20 left-10 w-96 h-96 bg-primary-300/20 rounded-full blur-3xl"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, 50, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute top-40 right-20 w-[28rem] h-[28rem] bg-primary-400/15 rounded-full blur-3xl"
-            animate={{
-              x: [0, -80, 0],
-              y: [0, 100, 0],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-20 left-1/4 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, 120, 0],
-              y: [0, -60, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          
-          {/* Medium Orbs */}
-          <motion.div
-            className="absolute bottom-40 right-1/3 w-64 h-64 bg-primary-300/20 rounded-full blur-3xl"
-            animate={{
-              x: [0, -100, 0],
-              y: [0, 80, 0],
-              scale: [1, 1.25, 1],
-            }}
-            transition={{
-              duration: 22,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-400/18 rounded-full blur-3xl"
-            animate={{
-              x: [0, 60, 0],
-              y: [0, -80, 0],
-              scale: [1, 1.18, 1],
-            }}
-            transition={{
-              duration: 16,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-1/3 left-1/3 w-56 h-56 bg-primary-500/12 rounded-full blur-3xl"
-            animate={{
-              x: [0, -70, 0],
-              y: [0, 90, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 24,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          
-          {/* Small Orbs */}
-          <motion.div
-            className="absolute top-1/2 left-1/5 w-48 h-48 bg-primary-300/25 rounded-full blur-3xl"
-            animate={{
-              x: [0, 40, 0],
-              y: [0, -50, 0],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 14,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute top-1/4 right-1/5 w-40 h-40 bg-primary-400/22 rounded-full blur-3xl"
-            animate={{
-              x: [0, -50, 0],
-              y: [0, 70, 0],
-              scale: [1, 1.4, 1],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 left-1/2 w-36 h-36 bg-primary-500/20 rounded-full blur-3xl"
-            animate={{
-              x: [0, 90, 0],
-              y: [0, -40, 0],
-              scale: [1, 1.35, 1],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          
-          {/* Extra Small Orbs */}
-          <motion.div
-            className="absolute top-3/4 right-1/6 w-32 h-32 bg-primary-300/30 rounded-full blur-3xl"
-            animate={{
-              x: [0, 30, 0],
-              y: [0, -60, 0],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-1/5 left-2/3 w-28 h-28 bg-primary-400/28 rounded-full blur-3xl"
-            animate={{
-              x: [0, -40, 0],
-              y: [0, 50, 0],
-              scale: [1, 1.45, 1],
-            }}
-            transition={{
-              duration: 11,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          
-          {/* Geometric Patterns */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 border-4 border-primary-400/30 rounded-lg rotate-45"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-48 h-48 border-4 border-primary-500/30 rounded-lg rotate-12"></div>
-            <div className="absolute top-1/2 right-1/3 w-32 h-32 border-4 border-primary-300/30 rounded-full"></div>
-          </div>
-          
-          {/* Grid Pattern Overlay */}
-          <div
-            className="absolute inset-0 opacity-[0.07]"
-            style={{
-              backgroundImage: `
-                linear-gradient(to right, currentColor 1px, transparent 1px),
-                linear-gradient(to bottom, currentColor 1px, transparent 1px)
-              `,
-              backgroundSize: '50px 50px',
-              color: 'rgb(255, 195, 0)'
-            }}
-          ></div>
-          
-          {/* Animated Particles */}
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-primary-500 rounded-full"
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${30 + (i % 3) * 20}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0.3, 0.8, 0.3],
-                scale: [1, 1.5, 1],
-              }}
-              transition={{
-                duration: 3 + i * 0.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.3,
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Content */}
-        <div className="container-custom text-center relative z-10 px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mx-auto max-w-3xl text-center"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-500/40 bg-primary-500/10 text-primary-400 text-sm font-semibold tracking-wide uppercase mb-6">
-              Robotic Solutions, Engineered
-            </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="gradient-text">The Right Robotic Solutions</span>
-              <br />
-              <span className="text-white">Let's Automate Your Business!</span>
+            <span className="eyebrow">Robotic solutions, engineered</span>
+            <h1 className="display mt-5">
+              The right robotic solutions
+              <br className="hidden sm:block" />{' '}
+              <span className="text-neutral-400">for your business.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Partner with Tornado, a leading robotics solutions provider. We help businesses unlock the potential of robotics
-              with intelligent systems that drive productivity, automation, and innovation.
+            <p className="body-muted mx-auto mt-6 max-w-xl">
+              Tornado helps businesses unlock the potential of robotics with
+              intelligent systems that drive productivity, automation and
+              innovation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto"
-                onClick={() => window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')}
-              >
-                Book Free Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <button onClick={openBooking} className="btn-primary w-full sm:w-auto">
+                Book free consultation
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
+              <Link href="/services" className="btn-secondary w-full sm:w-auto">
+                Explore services
+              </Link>
             </div>
           </motion.div>
         </div>
+
+        {/* -------------------------------------------------- 3D robot arm */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.15 }}
+          className="relative z-0 mt-6 h-[46vh] min-h-[300px] w-full md:mt-4 md:h-[52vh] md:min-h-[380px]"
+        >
+          <RobotArm className="h-full w-full" />
+        </motion.div>
       </section>
 
-      {/* Why Choose Tornado Section */}
-      <section className="section-padding bg-white">
+      {/* =============================================================== STATS */}
+      <section className="border-y border-neutral-200">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              We Pave the Way to Robotics Success
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {whyChooseItems.map((item, index) => (
+          <dl className="grid grid-cols-2 md:grid-cols-4">
+            {stats.map((stat, i) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="text-center"
+                key={stat.label}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: i * 0.06 }}
+                className="border-neutral-200 py-10 pr-6 [&:nth-child(n+3)]:border-t md:border-t-0 md:py-12 [&:not(:first-child)]:md:border-l md:[&:not(:first-child)]:pl-8"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <item.icon className="w-10 h-10 text-gray-900" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <dt className="text-4xl font-medium tracking-tight text-neutral-950 md:text-5xl">
+                  {stat.value}
+                </dt>
+                <dd className="mt-2 text-sm text-neutral-500">{stat.label}</dd>
+              </motion.div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ========================================================== PRINCIPLES */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <motion.h2 {...fadeUp} className="heading max-w-xl">
+            We pave the way to robotics success.
+          </motion.h2>
+
+          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden md:grid-cols-3">
+            {principles.map((item, i) => (
+              <motion.div
+                key={item.title}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: i * 0.08 }}
+                className="border-t border-neutral-200 pt-6 md:pr-8"
+              >
+                <span className="text-xs font-medium tabular-nums text-primary-600">
+                  0{i + 1}
+                </span>
+                <h3 className="mt-4 text-lg font-medium text-neutral-950">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="section-padding bg-white">
+      {/* ============================================================ SERVICES */}
+      <section className="section-padding bg-neutral-50">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Your gateway to the world's most advanced robotics technologies
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Universal Robots, FANUC, ABB, KUKA, Siemens, NVIDIA Isaac, and More
+          <motion.div {...fadeUp} className="max-w-xl">
+            <span className="eyebrow">What we do</span>
+            <h2 className="heading mt-4">Robotics consulting services.</h2>
+            <p className="body-muted mt-5">
+              From strategy to implementation, end-to-end robotics solutions
+              tailored to how your operation actually runs.
             </p>
           </motion.div>
+
+          <div className="mt-14 grid grid-cols-1 gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: (i % 3) * 0.07 }}
+                className="group border-t border-neutral-200 py-8"
+              >
+                <span className="text-xs font-medium tabular-nums text-neutral-400">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="mt-4 text-base font-medium leading-snug text-neutral-950">
+                  {service.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                  {service.description}
+                </p>
+                <Link href="/services" className="link-quiet mt-5">
+                  Read more
+                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Robotics Services Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-primary-100">
+      {/* ======================================================== ENTRY POINTS */}
+      <section className="section-padding">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Harness the Power of Robotics
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-              We've assessed hundreds of robotics platforms so you don't have to. Choose from our robotics services today
-              and put distance between you and your competition starting tomorrow.
+          <motion.div {...fadeUp} className="max-w-xl">
+            <h2 className="heading">Harness the power of robotics.</h2>
+            <p className="body-muted mt-5">
+              We've assessed hundreds of robotics platforms so you don't have to.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {roboticsServices.map((service, index) => (
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {entryPoints.map((item, i) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="card p-8 text-center group hover:shadow-2xl transition-all duration-300"
+                key={item.title}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: i * 0.08 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 text-gray-900" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <Link href={service.link}>
-                  <span className="text-primary-700 font-semibold hover:text-primary-800 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                    Read more <ArrowRight className="ml-2 w-4 h-4" />
+                <Link
+                  href={item.link}
+                  className="card group flex h-full flex-col p-7 hover:border-neutral-900"
+                >
+                  <h3 className="text-lg font-medium text-neutral-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-500">
+                    {item.description}
+                  </p>
+                  <span className="link-quiet mt-6">
+                    Read more
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </Link>
               </motion.div>
@@ -475,133 +299,61 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="section-padding bg-white">
+      {/* ============================================================ PARTNERS */}
+      <section className="border-t border-neutral-200 py-16">
         <div className="container-custom">
+          <motion.p {...fadeUp} className="eyebrow text-center">
+            Your gateway to the world's most advanced robotics technologies
+          </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Robotics Consulting Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From strategy to implementation, we provide end-to-end robotics solutions tailored to your business needs.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="card p-0 overflow-hidden group"
+            {partners.map((name) => (
+              <span
+                key={name}
+                className="text-sm font-medium text-neutral-400 transition-colors hover:text-neutral-900"
               >
-                <div 
-                  className="h-48 bg-cover bg-center bg-no-repeat relative"
-                  style={{
-                    backgroundImage: `url('${service.image}')`
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                      <service.icon className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-                  <Link href="/services">
-                    <span className="text-primary-700 font-semibold hover:text-primary-800 flex items-center group-hover:translate-x-1 transition-transform">
-                      Read More <ArrowRight className="ml-2 w-4 h-4" />
-                    </span>
-                  </Link>
-                </div>
-              </motion.div>
+                {name}
+              </span>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section-padding bg-black relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{
-          backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-          color: 'rgb(255, 195, 0)'
-        }}></div>
-        <div className="container-custom relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Unveiling Robotics Excellence
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-5xl md:text-6xl font-bold text-primary-400 mb-3">
-                  {stat.value}
-                </div>
-                <div className="text-gray-300 text-lg">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-white">
+      {/* ================================================================= CTA */}
+      <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center bg-gradient-to-br from-gray-950 via-black to-gray-900 rounded-3xl p-12 relative overflow-hidden"
+            {...fadeUp}
+            className="relative overflow-hidden rounded-3xl bg-neutral-950 px-8 py-20 text-center md:px-16"
           >
-            <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl"></div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white relative">
-              Ready to Transform Your Business?
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 -top-24 h-64"
+              style={{
+                background:
+                  'radial-gradient(50% 100% at 50% 100%, rgba(255,195,0,0.18) 0%, rgba(255,195,0,0) 100%)',
+              }}
+            />
+            <h2 className="relative text-3xl font-medium tracking-tight text-white md:text-4xl">
+              Ready to transform your business?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto relative">
-              Let's discuss how robotics can drive growth and innovation in your organization.
+            <p className="relative mx-auto mt-5 max-w-lg text-base leading-relaxed text-neutral-400">
+              Let's discuss how robotics can drive growth and innovation in your
+              organisation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative">
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto"
-                onClick={() => window.open('/book', '_blank', 'noopener,noreferrer,width=960,height=800')}
+            <div className="relative mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <button onClick={openBooking} className="btn-primary w-full sm:w-auto">
+                Book free consultation
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
+              <Link
+                href="/case-studies"
+                className="btn-base w-full border border-neutral-700 px-6 py-3 text-white transition-colors hover:border-neutral-500 hover:bg-neutral-900 sm:w-auto"
               >
-                Book Free Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Link href="/case-studies">
-                <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                  View Case Studies
-                </Button>
+                View case studies
               </Link>
             </div>
           </motion.div>

@@ -2,44 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
+
   body {
     font-family: 'Inter', system-ui, sans-serif;
+    background-color: #ffffff;
+    color: #171717;
+  }
+
+  ::selection {
+    background-color: rgba(255, 195, 0, 0.35);
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.028em;
   }
 }
 
 @layer components {
+  /* ---------------------------------------------------------------- buttons */
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-full text-sm font-medium
+           transition-colors duration-200 whitespace-nowrap;
+  }
+
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-gray-950 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/30;
+    @apply btn-base bg-primary-500 text-neutral-950 px-6 py-3 hover:bg-primary-400;
   }
 
   .btn-secondary {
-    @apply bg-white text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-primary-400 font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+    @apply btn-base border border-neutral-300 text-neutral-900 px-6 py-3
+           hover:border-neutral-900 hover:bg-neutral-50;
   }
-  
+
   .btn-accent {
-    @apply bg-gradient-to-r from-accent-200 to-accent-300 hover:from-accent-300 hover:to-accent-400 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    @apply btn-base bg-neutral-950 text-white px-6 py-3 hover:bg-neutral-800;
   }
-  
-  .card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
-  }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent;
-  }
-  
-  .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
-  }
-  
+
+  /* ------------------------------------------------------------------ layout */
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  /* ------------------------------------------------------------------- cards */
+  .card {
+    @apply rounded-2xl border border-neutral-200 bg-white transition-colors duration-200
+           hover:border-neutral-300;
+  }
+
+  /* -------------------------------------------------------------- typography */
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.18em] text-neutral-400;
+  }
+
+  .display {
+    @apply text-4xl font-medium leading-[1.05] text-neutral-950 sm:text-5xl md:text-6xl;
+  }
+
+  .heading {
+    @apply text-3xl font-medium leading-tight text-neutral-950 md:text-4xl;
+  }
+
+  .body-muted {
+    @apply text-base leading-relaxed text-neutral-500 md:text-lg;
+  }
+
+  .gradient-text {
+    @apply text-neutral-950;
+  }
+
+  /* ------------------------------------------------------------------ detail */
+  .rule {
+    @apply h-px w-full bg-neutral-200;
+  }
+
+  .link-quiet {
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900
+           transition-colors hover:text-primary-600;
   }
 }

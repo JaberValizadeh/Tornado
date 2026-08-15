@@ -117,25 +117,19 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section
-        className="relative section-padding overflow-hidden bg-gray-950"
-        style={{
-          backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.90), rgba(0,0,0,0.94)), url('https://images.unsplash.com/photo-1767966762602-b68f11f146f7?auto=format&fit=crop&w=1600&q=70')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="container-custom relative">
+      <section className="section-padding bg-neutral-50">
+        <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Let's Work Together</span>
+            <span className="eyebrow">Contact</span>
+            <h1 className="display mt-5">
+              Let's work <span className="text-neutral-400">together.</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="body-muted mx-auto mt-6 max-w-xl">
               Ready to transform your business with robotics? Get in touch with our team
               to discuss your specific needs and discover how we can help.
             </p>

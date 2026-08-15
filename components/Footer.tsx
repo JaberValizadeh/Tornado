@@ -1,95 +1,121 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Mail, MapPin, Phone } from 'lucide-react'
+
+const columns = [
+  {
+    title: 'Company',
+    links: [
+      { label: 'Services', href: '/services' },
+      { label: 'About', href: '/about' },
+      { label: 'Case Studies', href: '/case-studies' },
+      { label: 'Training', href: '/training' },
+    ],
+  },
+  {
+    title: 'Capabilities',
+    links: [
+      { label: 'Robotics Strategy', href: '/services' },
+      { label: 'Robotic Arms & Automation', href: '/services' },
+      { label: 'Warehouse Robotics', href: '/services' },
+      { label: 'Robotics Tools', href: '/robotics-tools' },
+    ],
+  },
+]
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div className="w-40 h-40 rounded-xl overflow-hidden bg-white p-3">
-              <Image
-                src="/img/Tornado_AI-removebg-preview.png"
-                alt="Tornado AI Logo"
-                width={148}
-                height={148}
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <p className="text-gray-400 text-sm">
-              Empowering businesses with cutting-edge robotic solutions for sustainable growth and innovation.
+    <footer className="border-t border-neutral-200 bg-white">
+      <div className="container-custom py-16 md:py-20">
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-8">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-1">
+            <Image
+              src="/img/Tornado_AI-removebg-preview.png"
+              alt="Tornado AI"
+              width={512}
+              height={512}
+              className="h-12 w-auto object-contain"
+            />
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-neutral-500">
+              Robotic solutions engineered for productivity, automation and
+              measurable growth.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.linkedin.com/company/109622305/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
-              >
-                LinkedIn
-              </a>
+          </div>
+
+          {columns.map((col) => (
+            <div key={col.title}>
+              <h3 className="text-xs font-medium uppercase tracking-[0.16em] text-neutral-400">
+                {col.title}
+              </h3>
+              <ul className="mt-5 space-y-3">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-neutral-600 transition-colors hover:text-neutral-950"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
 
-          {/* Quick Links */}
+          {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4 text-primary-400 uppercase text-sm tracking-wide">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/services" className="text-gray-400 hover:text-white transition-colors">Services</Link></li>
-              <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/case-studies" className="text-gray-400 hover:text-white transition-colors">Case Studies</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold mb-4 text-primary-400 uppercase text-sm tracking-wide">Services</h3>
-            <ul className="space-y-2 text-sm">
-              <li><span className="text-gray-400">Robotics Strategy</span></li>
-              <li><span className="text-gray-400">Robotic Arms & Automation</span></li>
-              <li><span className="text-gray-400">Warehouse Robotics</span></li>
-              <li><span className="text-gray-400">Fleet Systems Integration</span></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="font-semibold mb-4 text-primary-400 uppercase text-sm tracking-wide">Contact</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-primary-400" />
-                <span className="text-gray-400">Sydney, Australia</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-primary-400" />
-                <a href="mailto:info@tornadoai.com.au" className="text-gray-400 hover:text-white transition-colors">
+            <h3 className="text-xs font-medium uppercase tracking-[0.16em] text-neutral-400">
+              Contact
+            </h3>
+            <ul className="mt-5 space-y-3 text-sm text-neutral-600">
+              <li>Sydney, Australia</li>
+              <li>
+                <a
+                  href="mailto:info@tornadoai.com.au"
+                  className="transition-colors hover:text-neutral-950"
+                >
                   info@tornadoai.com.au
                 </a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-primary-400" />
-                <span className="text-gray-400">+61 468 933 033</span>
-              </div>
-            </div>
+              </li>
+              <li>
+                <a
+                  href="tel:+61468933033"
+                  className="transition-colors hover:text-neutral-950"
+                >
+                  +61 468 933 033
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/109622305/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-neutral-950"
+                >
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-500 text-sm">
-              © 2024 Tornado. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="text-gray-500 hover:text-primary-400 transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-500 hover:text-primary-400 transition-colors">
-                Terms of Service
-              </Link>
-            </div>
+        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-neutral-200 pt-8 sm:flex-row sm:items-center">
+          <p className="text-sm text-neutral-400">
+            © {new Date().getFullYear()} Tornado. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link
+              href="/privacy"
+              className="text-sm text-neutral-400 transition-colors hover:text-neutral-900"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-sm text-neutral-400 transition-colors hover:text-neutral-900"
+            >
+              Terms
+            </Link>
           </div>
         </div>
       </div>

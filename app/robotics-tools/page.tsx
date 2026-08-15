@@ -152,34 +152,30 @@ const RoboticsToolsPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section
-        className="relative section-padding overflow-hidden bg-gray-950"
-        style={{
-          backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.90), rgba(0,0,0,0.94)), url('https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1600&q=70')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="container-custom relative">
+      <section className="section-padding bg-neutral-50">
+        <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Our Robotics Tools</span>
+            <span className="eyebrow">Our Robotics Tools</span>
+            <h1 className="display mt-5">
+              Cutting-edge platforms, <span className="text-neutral-400">already vetted.</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="body-muted mx-auto mt-6 max-w-xl">
               We've assessed hundreds of robotics platforms so you don't have to. Access cutting-edge robotics platforms
               and technologies tailored to your business needs, helping you stay ahead of the competition.
             </p>
-            <Link href="/contact">
-              <Button variant="primary" size="lg">
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
+            <div className="mt-9">
+              <Link href="/contact">
+                <Button variant="primary" size="lg">
+                  Get Started
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -368,13 +364,19 @@ const RoboticsToolsPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-br from-gray-950 via-black to-gray-900 rounded-3xl p-12 relative overflow-hidden"
+            className="relative overflow-hidden rounded-3xl bg-neutral-950 px-8 py-16 md:px-16 text-center"
           >
-            <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl"></div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white relative">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 -top-24 h-64"
+              style={{
+                background: 'radial-gradient(50% 100% at 50% 100%, rgba(255,195,0,0.18) 0%, rgba(255,195,0,0) 100%)',
+              }}
+            ></div>
+            <h2 className="relative text-3xl md:text-4xl font-medium tracking-tight text-white">
               Ready to Leverage Robotics Tools for Your Business?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto relative">
+            <p className="relative text-base md:text-lg leading-relaxed text-neutral-400 mb-8 mt-5 max-w-lg mx-auto">
               Let's discuss how our robotics tools can transform your business operations and drive growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative">

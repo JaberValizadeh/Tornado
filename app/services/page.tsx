@@ -367,34 +367,30 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section
-        className="relative section-padding overflow-hidden bg-gray-950"
-        style={{
-          backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.90), rgba(0,0,0,0.94)), url('https://images.unsplash.com/photo-1716191299980-a6e8827ba10b?auto=format&fit=crop&w=1600&q=70')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="container-custom text-center relative z-10">
+      <section className="section-padding bg-neutral-50">
+        <div className="container-custom text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="gradient-text">Robotics Consulting Services</span>
+            <span className="eyebrow">What we do</span>
+            <h1 className="display mt-5">
+              Robotics consulting <span className="text-neutral-400">services.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8">
+            <p className="body-muted mx-auto mt-6 max-w-xl">
               Comprehensive robotic solutions designed to transform your business operations,
               drive innovation, and deliver measurable results.
             </p>
-            <Link href="/contact">
-              <Button variant="primary" size="lg">
-                Book a Strategy Session
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
+            <div className="mt-9">
+              <Link href="/contact">
+                <Button variant="primary" size="lg">
+                  Book a Strategy Session
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -514,68 +510,61 @@ const ServicesPage = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="section-padding bg-black relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{
-          backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-          color: 'rgb(255, 195, 0)'
-        }}></div>
-        <div className="container-custom relative">
+      <section className="border-y border-neutral-200 py-16">
+        <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-14"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Proven Results
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <h2 className="heading">Proven Results</h2>
+            <p className="body-muted max-w-2xl mx-auto mt-4">
               Our robotics consulting services deliver measurable impact for businesses across industries.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">16</div>
-              <div className="text-gray-300">Service Categories</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">16</div>
+              <div className="text-sm text-neutral-500">Service Categories</div>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">100%</div>
-              <div className="text-gray-300">Custom Solutions</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">100%</div>
+              <div className="text-sm text-neutral-500">Custom Solutions</div>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">24/7</div>
-              <div className="text-gray-300">Support Available</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">24/7</div>
+              <div className="text-sm text-neutral-500">Support Available</div>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">50+</div>
-              <div className="text-gray-300">Robotics Projects Delivered</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">50+</div>
+              <div className="text-sm text-neutral-500">Robotics Projects Delivered</div>
             </motion.div>
           </div>
         </div>
@@ -631,16 +620,22 @@ const ServicesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-br from-gray-950 via-black to-gray-900 rounded-3xl p-12 relative overflow-hidden"
+            className="relative overflow-hidden rounded-3xl bg-neutral-950 px-8 py-16 md:px-16 text-center"
           >
-            <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl"></div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white relative">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 -top-24 h-64"
+              style={{
+                background: 'radial-gradient(50% 100% at 50% 100%, rgba(255,195,0,0.18) 0%, rgba(255,195,0,0) 100%)',
+              }}
+            ></div>
+            <h2 className="relative text-3xl md:text-4xl font-medium tracking-tight text-white">
               Ready to Transform Your Business with Robotics?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto relative">
+            <p className="relative text-base md:text-lg leading-relaxed text-neutral-400 mb-8 mt-5 max-w-lg mx-auto">
               Let's discuss your specific needs and create a customized robotics strategy for your organization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center relative">
               <Link href="/contact">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto">
                   Book a Strategy Session

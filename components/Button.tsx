@@ -1,7 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 interface ButtonProps {
   children: React.ReactNode
   variant?: 'primary' | 'secondary' | 'accent'
@@ -13,59 +11,47 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
 }
 
-const Button = ({ 
-  children, 
-  variant = 'primary', 
-  size = 'md', 
-  className = '', 
+const Button = ({
+  children,
+  variant = 'primary',
+  size = 'md',
+  className = '',
   onClick,
   href,
   disabled = false,
-  type = 'button'
+  type = 'button',
 }: ButtonProps) => {
-  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none'
-  
+  const baseClasses =
+    'inline-flex items-center justify-center rounded-full font-medium whitespace-nowrap transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed'
+
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-gray-900 hover:shadow-lg',
-    secondary: 'bg-white text-primary-700 border-2 border-primary-600 hover:bg-primary-500 hover:text-gray-900',
-    accent: 'bg-gradient-to-r from-accent-200 to-accent-300 hover:from-accent-300 hover:to-accent-400 text-gray-900 hover:shadow-lg'
+    primary: 'bg-primary-500 text-neutral-950 hover:bg-primary-400',
+    secondary:
+      'border border-neutral-300 text-neutral-900 hover:border-neutral-900 hover:bg-neutral-50',
+    accent: 'bg-neutral-950 text-white hover:bg-neutral-800',
   }
-  
+
   const sizeClasses = {
     sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+    md: 'px-6 py-3 text-sm',
+    lg: 'px-7 py-3.5 text-base',
   }
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
 
-  const buttonContent = (
-    <motion.button
-      type={type}
-      className={classes}
-      onClick={onClick}
-      disabled={disabled}
-      whileHover={{ scale: disabled ? 1 : 1.05 }}
-      whileTap={{ scale: disabled ? 1 : 0.95 }}
-    >
-      {children}
-    </motion.button>
-  )
-
   if (href) {
     return (
-      <motion.a
-        href={href}
-        className={classes}
-        whileHover={{ scale: disabled ? 1 : 1.05 }}
-        whileTap={{ scale: disabled ? 1 : 0.95 }}
-      >
+      <a href={href} className={classes}>
         {children}
-      </motion.a>
+      </a>
     )
   }
 
-  return buttonContent
+  return (
+    <button type={type} className={classes} onClick={onClick} disabled={disabled}>
+      {children}
+    </button>
+  )
 }
 
 export default Button
