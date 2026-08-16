@@ -191,9 +191,8 @@ const HomePage = () => {
 
   const stats = [
     { value: '20+', label: 'Years combined experience' },
-    { value: '50+', label: 'Robotic systems deployed' },
-    { value: '95%', label: 'Client satisfaction' },
-    { value: '15+', label: 'Industry specialisations' },
+    { value: '2', label: 'Founders, hands-on on every project' },
+    { value: 'Sydney', label: 'Based, working Australia-wide' },
   ]
 
   const principles = [
@@ -481,15 +480,15 @@ const HomePage = () => {
       {/* =============================================================== STATS */}
       <section className="border-b border-white/10">
         <div className="container-custom">
-          <dl className="grid grid-cols-2 md:grid-cols-4">
+          <dl className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: i * 0.06 }}
-                className="border-white/10 py-10 pr-6 [&:nth-child(n+3)]:border-t md:border-t-0 md:py-12 [&:not(:first-child)]:md:border-l md:[&:not(:first-child)]:pl-8"
+                className="py-10 sm:px-8 sm:py-12 sm:first:pl-0"
               >
-                <dt className="text-4xl font-medium tracking-tight text-white md:text-5xl">
+                <dt className="text-3xl font-medium tracking-tight text-white md:text-4xl">
                   {stat.value}
                 </dt>
                 <dd className="mt-2 text-sm text-neutral-500">{stat.label}</dd>
@@ -583,7 +582,7 @@ const HomePage = () => {
               Harness the power of robotics.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-neutral-400 md:text-lg">
-              We've assessed hundreds of robotics platforms so you don't have to.
+              We help you cut through the noise of robotics platforms and vendors to find what actually fits your operation.
             </p>
           </motion.div>
 
@@ -612,7 +611,7 @@ const HomePage = () => {
       <section className="border-t border-white/10 py-16">
         <div className="container-custom">
           <motion.p {...fadeUp} className="eyebrow-dark text-center">
-            Your gateway to the world's most advanced robotics technologies
+            Platforms and vendors we build with
           </motion.p>
           <motion.div
             {...fadeUp}
@@ -662,7 +661,7 @@ const HomePage = () => {
                 href="/case-studies"
                 className="btn-base w-full border border-white/15 px-6 py-3 text-white transition-colors hover:border-white/30 hover:bg-white/5 sm:w-auto"
               >
-                View case studies
+                See example use cases
               </Link>
             </div>
           </motion.div>

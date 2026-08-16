@@ -519,13 +519,13 @@ const ServicesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <h2 className="heading">Proven Results</h2>
+            <h2 className="heading">How We Work</h2>
             <p className="body-muted max-w-2xl mx-auto mt-4">
-              Our robotics consulting services deliver measurable impact for businesses across industries.
+              What to expect when you bring us into your operation.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -534,7 +534,7 @@ const ServicesPage = () => {
               className="text-center"
             >
               <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">16</div>
-              <div className="text-sm text-neutral-500">Service Categories</div>
+              <div className="text-sm text-neutral-500">Service Areas Covered</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -543,8 +543,8 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">100%</div>
-              <div className="text-sm text-neutral-500">Custom Solutions</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">2</div>
+              <div className="text-sm text-neutral-500">Founders, Hands-On Every Project</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -553,18 +553,8 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">24/7</div>
-              <div className="text-sm text-neutral-500">Support Available</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">50+</div>
-              <div className="text-sm text-neutral-500">Robotics Projects Delivered</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">2024</div>
+              <div className="text-sm text-neutral-500">Founded in Sydney</div>
             </motion.div>
           </div>
         </div>
@@ -581,7 +571,7 @@ const ServicesPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Our Proven Process
+              Our Process
             </h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
               A systematic approach to robotics implementation that ensures success at every stage.
@@ -644,7 +634,7 @@ const ServicesPage = () => {
               </Link>
               <Link href="/case-studies">
                 <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                  View Success Stories
+                  See Example Use Cases
                 </Button>
               </Link>
             </div>

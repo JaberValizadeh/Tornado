@@ -162,11 +162,11 @@ const RoboticsToolsPage = () => {
           >
             <span className="eyebrow">Our Robotics Tools</span>
             <h1 className="display mt-5">
-              Cutting-edge platforms, <span className="text-neutral-400">already vetted.</span>
+              The right platform for <span className="text-neutral-400">your operation.</span>
             </h1>
             <p className="body-muted mx-auto mt-6 max-w-xl">
-              We've assessed hundreds of robotics platforms so you don't have to. Access cutting-edge robotics platforms
-              and technologies tailored to your business needs, helping you stay ahead of the competition.
+              We help you cut through the noise of robotics platforms and vendors, matching
+              technology to your business needs instead of a one-size-fits-all pitch.
             </p>
             <div className="mt-9">
               <Link href="/contact">

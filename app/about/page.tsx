@@ -68,18 +68,18 @@ const AboutPage = () => {
   const achievements = [
     {
       icon: Award,
-      title: 'Industry Recognition',
-      description: 'Recognized as Sydney\'s leading robotics solutions firm by industry publications.',
+      title: 'Hands-On Leadership',
+      description: 'Every engagement is led directly by our founders — no account-manager hand-offs, no junior bench.',
     },
     {
       icon: Users,
-      title: 'Expert Team',
-      description: 'PhD-level robotics experts with decades of combined experience in automation and business transformation.',
+      title: 'PhD-Level Expertise',
+      description: 'Robotics and multi-agent systems expertise grounded in real research, applied to practical business problems.',
     },
     {
       icon: Target,
-      title: 'Proven Results',
-      description: '95% success rate in robotics implementations with measurable ROI for our clients.',
+      title: 'Built for Accountability',
+      description: 'Clear scope, transparent pricing, and metrics you can track from day one of every engagement.',
     },
   ]
 
@@ -96,7 +96,7 @@ const AboutPage = () => {
           >
             <span className="eyebrow">About Tornado Consulting Group</span>
             <h1 className="display mt-5">
-              A trusted partner in <span className="text-neutral-400">applied robotics.</span>
+              A hands-on partner in <span className="text-neutral-400">applied robotics.</span>
             </h1>
             <p className="body-muted mx-auto mt-6 max-w-xl">
               We're helping businesses unlock their potential through innovative robotic solutions.
@@ -204,7 +204,7 @@ const AboutPage = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Meet Our Founders</h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Leading robotics innovation with deep expertise and a passion for business transformation.
+              Deep expertise in robotics, applied hands-on by the two people who lead every engagement.
             </p>
           </motion.div>
 
@@ -287,7 +287,7 @@ const AboutPage = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Tornado Consulting Group?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself. Here's what sets us apart in the robotics solutions space.
+              Here's what to expect when you work with us.
             </p>
           </motion.div>
 
@@ -345,7 +345,7 @@ const AboutPage = () => {
               </Link>
               <Link href="/case-studies">
                 <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                  View Our Work
+                  See Example Use Cases
                 </Button>
               </Link>
             </div>
