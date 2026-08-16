@@ -152,7 +152,7 @@ const RoboticsToolsPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -181,7 +181,7 @@ const RoboticsToolsPage = () => {
       </section>
 
       {/* Tool Categories Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -193,7 +193,7 @@ const RoboticsToolsPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Robotics Tool Categories
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               From robot programming to enterprise fleet platforms, we provide access to the best robotics tools
               across all categories to meet your business needs.
             </p>
@@ -211,38 +211,38 @@ const RoboticsToolsPage = () => {
               >
                 <div className="flex items-start space-x-6 mb-8">
                   <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <category.icon className="w-8 h-8 text-gray-900" />
+                    <category.icon className="w-8 h-8 text-black" />
                   </div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold mb-3">{category.title}</h3>
-                    <p className="text-lg text-gray-600">{category.description}</p>
+                    <p className="text-lg text-white/60">{category.description}</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                      <Code className="w-5 h-5 text-primary-700 mr-2" />
+                    <h4 className="font-semibold text-white mb-4 flex items-center">
+                      <Code className="w-5 h-5 text-primary-400 mr-2" />
                       Available Tools
                     </h4>
                     <div className="space-y-4">
                       {category.tools.map((tool, toolIndex) => (
                         <div key={toolIndex} className="border-l-4 border-primary-500 pl-4">
-                          <h5 className="font-semibold text-gray-900 mb-1">{tool.name}</h5>
-                          <p className="text-sm text-gray-600">{tool.description}</p>
+                          <h5 className="font-semibold text-white mb-1">{tool.name}</h5>
+                          <p className="text-sm text-white/60">{tool.description}</p>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                      <Target className="w-5 h-5 text-primary-700 mr-2" />
+                    <h4 className="font-semibold text-white mb-4 flex items-center">
+                      <Target className="w-5 h-5 text-primary-400 mr-2" />
                       Use Cases
                     </h4>
                     <ul className="space-y-3">
                       {category.useCases.map((useCase, useCaseIndex) => (
-                        <li key={useCaseIndex} className="text-gray-600 flex items-start">
+                        <li key={useCaseIndex} className="text-white/60 flex items-start">
                           <CheckCircle className="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
                           <span>{useCase}</span>
                         </li>
@@ -257,7 +257,7 @@ const RoboticsToolsPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-accent-100">
+      <section className="section-padding bg-white/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -269,7 +269,7 @@ const RoboticsToolsPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Benefits of Using Our Robotics Tools
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               Partner with us to access and implement the best robotics tools that drive real business value.
             </p>
           </motion.div>
@@ -285,10 +285,10 @@ const RoboticsToolsPage = () => {
                 className="text-center"
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="w-8 h-8 text-gray-900" />
+                  <benefit.icon className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <p className="text-white/60">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -296,7 +296,7 @@ const RoboticsToolsPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -308,7 +308,7 @@ const RoboticsToolsPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               How We Help You Implement Robotics Tools
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               We don't just provide access to tools—we help you select, implement, and optimize
               the right robotics solutions for your business.
             </p>
@@ -346,10 +346,10 @@ const RoboticsToolsPage = () => {
                 className="text-center"
               >
                 <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-gray-900">{step.step}</span>
+                  <span className="text-2xl font-bold text-black">{step.step}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-white/60">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -357,7 +357,7 @@ const RoboticsToolsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

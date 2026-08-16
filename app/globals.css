@@ -13,8 +13,8 @@
 
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: #ffffff;
-    color: #171717;
+    background-color: #000000;
+    color: #ffffff;
   }
 
   ::selection {
@@ -25,6 +25,21 @@
   h2,
   h3 {
     letter-spacing: -0.028em;
+  }
+
+  /* Slim, unobtrusive scrollbar to match the cinematic dark shell. */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3d3d3d;
   }
 }
 
@@ -40,17 +55,28 @@
   }
 
   .btn-secondary {
-    @apply btn-base border border-neutral-300 text-neutral-900 px-6 py-3
-           hover:border-neutral-900 hover:bg-neutral-50;
+    @apply btn-base border border-white/25 text-white px-6 py-3
+           hover:border-white hover:bg-white/5;
   }
 
   .btn-accent {
-    @apply btn-base bg-neutral-950 text-white px-6 py-3 hover:bg-neutral-800;
+    @apply btn-base bg-white text-black px-6 py-3 hover:bg-neutral-200;
+  }
+
+  /* Thin outlined pill — the quiet "Learn more" affordance used over imagery. */
+  .btn-ghost {
+    @apply btn-base border border-white/45 px-7 py-2.5 text-white
+           hover:border-white hover:bg-white hover:text-black;
   }
 
   /* ------------------------------------------------------------------ layout */
   .container-custom {
     @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
+  }
+
+  /* Near-full-bleed rail for the cinematic tile grids. */
+  .container-wide {
+    @apply mx-auto w-full max-w-[1680px] px-5 sm:px-7 lg:px-10;
   }
 
   .section-padding {
@@ -59,8 +85,8 @@
 
   /* ------------------------------------------------------------------- cards */
   .card {
-    @apply rounded-2xl border border-neutral-200 bg-white transition-colors duration-200
-           hover:border-neutral-300;
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-200
+           hover:border-white/20;
   }
 
   .card-dark {
@@ -72,38 +98,50 @@
     @apply border border-white/10 bg-white/[0.04] backdrop-blur-md;
   }
 
+  /* A full-bleed image tile: photography carries it, text sits on top.
+     Pair with the `group` utility inline — Tailwind can't @apply it. */
+  .tile {
+    @apply relative isolate overflow-hidden rounded-xl bg-neutral-900;
+  }
+
+  /* Slow, subtle push-in on hover — the signature product-tile motion. */
+  .tile-media {
+    @apply object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06];
+  }
+
   /* -------------------------------------------------------------- typography */
   .eyebrow {
-    @apply text-xs font-medium uppercase tracking-[0.18em] text-neutral-400;
+    @apply text-xs font-medium uppercase tracking-[0.18em] text-neutral-500;
   }
 
   .eyebrow-dark {
     @apply text-xs font-medium uppercase tracking-[0.18em] text-primary-400/90;
   }
 
+  /* Airy, wide-tracked headline type — light weight does the work, not size alone. */
   .display {
-    @apply text-4xl font-medium leading-[1.05] text-neutral-950 sm:text-5xl md:text-6xl;
+    @apply text-4xl font-light leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl;
   }
 
   .heading {
-    @apply text-3xl font-medium leading-tight text-neutral-950 md:text-4xl;
+    @apply text-3xl font-light leading-tight tracking-tight text-white md:text-4xl;
   }
 
   .body-muted {
-    @apply text-base leading-relaxed text-neutral-500 md:text-lg;
+    @apply text-base leading-relaxed text-neutral-400 md:text-lg;
   }
 
   .gradient-text {
-    @apply text-neutral-950;
+    @apply text-white;
   }
 
   /* ------------------------------------------------------------------ detail */
   .rule {
-    @apply h-px w-full bg-neutral-200;
+    @apply h-px w-full bg-white/10;
   }
 
   .link-quiet {
-    @apply inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900
-           transition-colors hover:text-primary-600;
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-neutral-300
+           transition-colors hover:text-primary-400;
   }
 }

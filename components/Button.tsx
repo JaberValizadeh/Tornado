@@ -25,10 +25,10 @@ const Button = ({
     'inline-flex items-center justify-center rounded-full font-medium whitespace-nowrap transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed'
 
   const variantClasses = {
-    primary: 'bg-primary-500 text-neutral-950 hover:bg-primary-400',
+    primary: 'bg-primary-500 text-black hover:bg-primary-400',
     secondary:
-      'border border-neutral-300 text-neutral-900 hover:border-neutral-900 hover:bg-neutral-50',
-    accent: 'bg-neutral-950 text-white hover:bg-neutral-800',
+      'border border-white/45 text-white hover:border-white hover:bg-white hover:text-black',
+    accent: 'bg-white text-black hover:bg-neutral-200',
   }
 
   const sizeClasses = {

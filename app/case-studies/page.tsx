@@ -27,7 +27,7 @@ const CaseStudiesPage = () => {
       approach: 'A fleet of autonomous mobile robots (AMRs) automates picking and replenishment, tracking demand patterns to keep inventory levels closer to what the floor actually needs.',
       outcomes: ['Fewer stockouts', 'Less manual picking time', 'Tighter inventory control'],
       category: 'Warehouse Robotics',
-      image: 'https://images.unsplash.com/photo-1767966762602-b68f11f146f7?auto=format&fit=crop&w=900&q=80'
+      image: 'https://images.unsplash.com/photo-1743611978046-9723d29b99cb?auto=format&fit=crop&w=900&q=80'
     },
     {
       id: 2,
@@ -89,7 +89,7 @@ const CaseStudiesPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -120,7 +120,7 @@ const CaseStudiesPage = () => {
       </section>
 
       {/* Scenarios Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -132,7 +132,7 @@ const CaseStudiesPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               How Robotics Applies Across Industries
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               Each scenario below reflects a common challenge and the type of robotic
               solution typically used to address it.
             </p>
@@ -160,39 +160,39 @@ const CaseStudiesPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                   <div className="absolute bottom-3 left-3 flex items-center space-x-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
-                      <scenario.icon className="w-5 h-5 text-gray-900" />
+                      <scenario.icon className="w-5 h-5 text-black" />
                     </div>
                     <div className="font-semibold text-white text-sm">{scenario.industry}</div>
                   </div>
-                  <div className="absolute top-3 right-3 text-xs bg-white/90 text-primary-700 px-2 py-1 rounded-full backdrop-blur-sm">
+                  <div className="absolute top-3 right-3 text-xs bg-black/75 text-primary-400 border border-white/15 px-2.5 py-1 rounded-full backdrop-blur-sm">
                     {scenario.category}
                   </div>
                 </div>
 
                 <div className="p-6">
                   {/* Title */}
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-primary-700 transition-colors">
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-primary-400 transition-colors">
                     {scenario.title}
                   </h3>
 
                   {/* Challenge */}
                   <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">The Challenge</h4>
-                    <p className="text-gray-600 text-sm">{scenario.challenge}</p>
+                    <h4 className="font-semibold text-white mb-2">The Challenge</h4>
+                    <p className="text-white/60 text-sm">{scenario.challenge}</p>
                   </div>
 
                   {/* Approach */}
                   <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-2">The Approach</h4>
-                    <p className="text-gray-600 text-sm">{scenario.approach}</p>
+                    <h4 className="font-semibold text-white mb-2">The Approach</h4>
+                    <p className="text-white/60 text-sm">{scenario.approach}</p>
                   </div>
 
                   {/* Outcomes */}
-                  <div className="pt-4 border-t border-gray-100">
-                    <h4 className="font-semibold text-gray-900 mb-3">What This Targets</h4>
+                  <div className="pt-4 border-t border-white/10">
+                    <h4 className="font-semibold text-white mb-3">What This Targets</h4>
                     <ul className="space-y-1.5">
                       {scenario.outcomes.map((outcome) => (
-                        <li key={outcome} className="text-sm text-gray-600 flex items-center">
+                        <li key={outcome} className="text-sm text-white/60 flex items-center">
                           <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
                           {outcome}
                         </li>
@@ -207,7 +207,7 @@ const CaseStudiesPage = () => {
       </section>
 
       {/* Why work with us early */}
-      <section className="border-y border-neutral-200 py-16">
+      <section className="border-y border-white/10 py-16">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -230,10 +230,10 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="flex items-start gap-3"
             >
-              <Clock className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
+              <Clock className="w-5 h-5 text-primary-400 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Direct founder access</h3>
-                <p className="text-sm text-gray-600">You work with the people who actually design the system, not an account manager.</p>
+                <h3 className="font-semibold text-white mb-1">Direct founder access</h3>
+                <p className="text-sm text-white/60">You work with the people who actually design the system, not an account manager.</p>
               </div>
             </motion.div>
             <motion.div
@@ -243,10 +243,10 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="flex items-start gap-3"
             >
-              <Clock className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
+              <Clock className="w-5 h-5 text-primary-400 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Small team, fast iteration</h3>
-                <p className="text-sm text-gray-600">Fewer layers between a decision and a change on the floor.</p>
+                <h3 className="font-semibold text-white mb-1">Small team, fast iteration</h3>
+                <p className="text-sm text-white/60">Fewer layers between a decision and a change on the floor.</p>
               </div>
             </motion.div>
             <motion.div
@@ -256,10 +256,10 @@ const CaseStudiesPage = () => {
               viewport={{ once: true }}
               className="flex items-start gap-3"
             >
-              <Clock className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
+              <Clock className="w-5 h-5 text-primary-400 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Right-sized first step</h3>
-                <p className="text-sm text-gray-600">We scope a pilot that proves value before either of us commits to scaling it.</p>
+                <h3 className="font-semibold text-white mb-1">Right-sized first step</h3>
+                <p className="text-sm text-white/60">We scope a pilot that proves value before either of us commits to scaling it.</p>
               </div>
             </motion.div>
           </div>
@@ -267,7 +267,7 @@ const CaseStudiesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

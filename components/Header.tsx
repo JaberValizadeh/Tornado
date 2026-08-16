@@ -31,15 +31,15 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
         isScrolled
-          ? 'border-white/10 bg-neutral-950/90 backdrop-blur-md'
-          : 'border-white/5 bg-neutral-950/70 backdrop-blur-sm'
+          ? 'border-white/10 bg-black/80 backdrop-blur-xl'
+          : 'border-transparent bg-transparent'
       }`}
     >
-      <nav className="container-custom">
+      <nav className="container-wide">
         <div
-          className={`flex items-center justify-between transition-all duration-300 ${
+          className={`flex items-center justify-between transition-all duration-500 ${
             isScrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'
           }`}
         >
@@ -64,23 +64,26 @@ const Header = () => {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-9 md:flex">
+          <div className="hidden items-center gap-10 md:flex">
             {navItems.map((item) => {
               const active = pathname === item.href
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm transition-colors duration-200 ${
-                    active ? 'text-white' : 'text-neutral-400 hover:text-white'
-                  }`}
+                  className="group relative text-[13px] font-light tracking-wide text-white/85 transition-colors duration-200 hover:text-white"
                 >
                   {item.name}
+                  <span
+                    className={`absolute -bottom-1.5 left-0 h-px bg-primary-400 transition-all duration-300 ${
+                      active ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
                 </Link>
               )
             })}
             {showCta && (
-              <button onClick={openBooking} className="btn-primary py-2.5 text-sm">
+              <button onClick={openBooking} className="btn-ghost py-2 text-[13px] font-light tracking-wide">
                 Book a consultation
               </button>
             )}
@@ -100,13 +103,13 @@ const Header = () => {
 
       {/* Mobile nav */}
       {isMenuOpen && (
-        <div className="border-t border-white/10 bg-neutral-950 md:hidden">
-          <div className="container-custom flex flex-col py-4">
+        <div className="border-t border-white/10 bg-black/95 backdrop-blur-xl md:hidden">
+          <div className="container-wide flex flex-col py-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="border-b border-white/5 py-3.5 text-sm text-neutral-300 last:border-0"
+                className="border-b border-white/5 py-3.5 text-sm font-light tracking-wide text-white/85 last:border-0"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

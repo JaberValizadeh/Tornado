@@ -367,7 +367,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -396,7 +396,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -405,10 +405,10 @@ const ServicesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Our Robotics Consulting Offerings
             </h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
               From strategy to implementation, we provide end-to-end robotics solutions tailored to your business needs.
             </p>
           </motion.div>
@@ -421,16 +421,16 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group"
+                className="bg-black rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/10 overflow-hidden group"
               >
                 {/* Card Header */}
-                <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 border-b border-primary-200">
+                <div className="bg-gradient-to-br from-primary-500/20 to-primary-500/5 p-6 border-b border-white/10">
                   <div className="flex items-start gap-4">
                     <div className="w-14 h-14 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="w-7 h-7 text-gray-900" />
+                      <service.icon className="w-7 h-7 text-black" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg font-bold text-gray-900 leading-tight mb-2 group-hover:text-primary-700 transition-colors">
+                      <h3 className="text-lg font-bold text-white leading-tight mb-2 group-hover:text-primary-400 transition-colors">
                         {service.title}
                       </h3>
                     </div>
@@ -440,7 +440,7 @@ const ServicesPage = () => {
                 {/* Card Body */}
                 <div className="p-6 space-y-6">
                   {/* Description */}
-                  <p className="text-sm text-gray-700 leading-relaxed" style={{
+                  <p className="text-sm text-white/70 leading-relaxed" style={{
                     display: '-webkit-box',
                     WebkitLineClamp: 3,
                     WebkitBoxOrient: 'vertical',
@@ -452,18 +452,18 @@ const ServicesPage = () => {
                   {/* What We Deliver */}
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <CheckCircle className="w-5 h-5 text-accent-500" />
-                      <h4 className="text-sm font-semibold text-gray-900">What We Deliver</h4>
+                      <CheckCircle className="w-5 h-5 text-white/60" />
+                      <h4 className="text-sm font-semibold text-white">What We Deliver</h4>
                     </div>
                     <ul className="space-y-2">
                       {service.features.slice(0, 3).map((feature, featureIndex) => (
-                        <li key={featureIndex} className="text-xs text-gray-600 flex items-start">
-                          <div className="w-1.5 h-1.5 bg-accent-500 rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
+                        <li key={featureIndex} className="text-xs text-white/60 flex items-start">
+                          <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
                           <span className="leading-relaxed">{feature}</span>
                         </li>
                       ))}
                       {service.features.length > 3 && (
-                        <li className="text-xs text-primary-700 font-medium">
+                        <li className="text-xs text-primary-400 font-medium">
                           +{service.features.length - 3} more
                         </li>
                       )}
@@ -474,17 +474,17 @@ const ServicesPage = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-3">
                       <Target className="w-5 h-5 text-primary-500" />
-                      <h4 className="text-sm font-semibold text-gray-900">Business Impact</h4>
+                      <h4 className="text-sm font-semibold text-white">Business Impact</h4>
                     </div>
                     <ul className="space-y-2">
                       {service.benefits.slice(0, 3).map((benefit, benefitIndex) => (
-                        <li key={benefitIndex} className="text-xs text-gray-600 flex items-start">
+                        <li key={benefitIndex} className="text-xs text-white/60 flex items-start">
                           <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
                           <span className="leading-relaxed">{benefit}</span>
                         </li>
                       ))}
                       {service.benefits.length > 3 && (
-                        <li className="text-xs text-primary-700 font-medium">
+                        <li className="text-xs text-primary-400 font-medium">
                           +{service.benefits.length - 3} more
                         </li>
                       )}
@@ -494,10 +494,10 @@ const ServicesPage = () => {
 
                 {/* Card Footer */}
                 <div className="px-6 pb-6 pt-0">
-                  <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-4"></div>
+                  <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4"></div>
                   <button
                     onClick={() => setSelectedService(index)}
-                    className="flex items-center justify-between text-xs text-gray-500 hover:text-primary-700 transition-colors w-full group/btn"
+                    className="flex items-center justify-between text-xs text-white/50 hover:text-primary-400 transition-colors w-full group/btn"
                   >
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -510,7 +510,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="border-y border-neutral-200 py-16">
+      <section className="border-y border-white/10 py-16">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -533,8 +533,8 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">16</div>
-              <div className="text-sm text-neutral-500">Service Areas Covered</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-2">16</div>
+              <div className="text-sm text-white/50">Service Areas Covered</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -543,8 +543,8 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">2</div>
-              <div className="text-sm text-neutral-500">Founders, Hands-On Every Project</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-2">2</div>
+              <div className="text-sm text-white/50">Founders, Hands-On Every Project</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -553,15 +553,15 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-950 mb-2">2024</div>
-              <div className="text-sm text-neutral-500">Founded in Sydney</div>
+              <div className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-2">2024</div>
+              <div className="text-sm text-white/50">Founded in Sydney</div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -570,10 +570,10 @@ const ServicesPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Our Process
             </h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
               A systematic approach to robotics implementation that ensures success at every stage.
             </p>
           </motion.div>
@@ -589,13 +589,13 @@ const ServicesPage = () => {
                 className="text-center"
               >
                 <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <step.icon className="w-10 h-10 text-gray-900" />
+                  <step.icon className="w-10 h-10 text-black" />
                 </div>
-                <div className="text-4xl font-bold text-primary-700 mb-4">
+                <div className="text-4xl font-bold text-primary-400 mb-4">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">{step.title}</h3>
-                <p className="text-gray-700">{step.description}</p>
+                <h3 className="text-xl font-semibold mb-4 text-white">{step.title}</h3>
+                <p className="text-white/70">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -603,7 +603,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -665,31 +665,31 @@ const ServicesPage = () => {
               className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
             >
               <div
-                className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto"
+                className="bg-black rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto"
                 onClick={(e) => e.stopPropagation()}
               >
                 {selectedService !== null && (
                   <>
                     {/* Modal Header */}
-                    <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 border-b border-primary-200 sticky top-0 z-10">
+                    <div className="bg-gradient-to-br from-primary-500/20 to-primary-500/5 p-6 border-b border-white/10 sticky top-0 z-10">
                       <div className="flex items-start gap-4">
                         <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
                           {(() => {
                             const ServiceIcon = services[selectedService].icon
-                            return <ServiceIcon className="w-8 h-8 text-gray-900" />
+                            return <ServiceIcon className="w-8 h-8 text-white" />
                           })()}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
                             {services[selectedService].title}
                           </h2>
                         </div>
                         <button
                           onClick={() => setSelectedService(null)}
-                          className="w-10 h-10 rounded-full bg-white hover:bg-gray-100 flex items-center justify-center transition-colors flex-shrink-0"
+                          className="w-10 h-10 rounded-full bg-black hover:bg-white/5 flex items-center justify-center transition-colors flex-shrink-0"
                           aria-label="Close modal"
                         >
-                          <X className="w-6 h-6 text-gray-600" />
+                          <X className="w-6 h-6 text-white/60" />
                         </button>
                       </div>
                     </div>
@@ -698,7 +698,7 @@ const ServicesPage = () => {
                     <div className="p-6 md:p-8 space-y-8">
                       {/* Full Description */}
                       <div>
-                        <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                        <p className="text-base md:text-lg text-white/70 leading-relaxed">
                           {services[selectedService].description}
                         </p>
                       </div>
@@ -706,13 +706,13 @@ const ServicesPage = () => {
                       {/* What We Deliver - Full List */}
                       <div>
                         <div className="flex items-center gap-3 mb-4">
-                          <CheckCircle className="w-6 h-6 text-accent-500" />
-                          <h3 className="text-xl font-bold text-gray-900">What We Deliver</h3>
+                          <CheckCircle className="w-6 h-6 text-white/60" />
+                          <h3 className="text-xl font-bold text-white">What We Deliver</h3>
                         </div>
                         <ul className="space-y-3">
                           {services[selectedService].features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="text-base text-gray-700 flex items-start">
-                              <div className="w-2 h-2 bg-accent-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <li key={featureIndex} className="text-base text-white/70 flex items-start">
+                              <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                               <span className="leading-relaxed">{feature}</span>
                             </li>
                           ))}
@@ -723,11 +723,11 @@ const ServicesPage = () => {
                       <div>
                         <div className="flex items-center gap-3 mb-4">
                           <Target className="w-6 h-6 text-primary-500" />
-                          <h3 className="text-xl font-bold text-gray-900">Business Impact</h3>
+                          <h3 className="text-xl font-bold text-white">Business Impact</h3>
                         </div>
                         <ul className="space-y-3">
                           {services[selectedService].benefits.map((benefit, benefitIndex) => (
-                            <li key={benefitIndex} className="text-base text-gray-700 flex items-start">
+                            <li key={benefitIndex} className="text-base text-white/70 flex items-start">
                               <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                               <span className="leading-relaxed">{benefit}</span>
                             </li>
@@ -736,7 +736,7 @@ const ServicesPage = () => {
                       </div>
 
                       {/* CTA Buttons */}
-                      <div className="pt-6 border-t border-gray-200">
+                      <div className="pt-6 border-t border-white/10">
                         <div className="flex flex-col sm:flex-row gap-4">
                           <Link href="/contact" className="flex-1">
                             <Button variant="primary" size="lg" className="w-full">

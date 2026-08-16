@@ -86,7 +86,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -106,7 +106,7 @@ const AboutPage = () => {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -116,14 +116,14 @@ const AboutPage = () => {
               viewport={{ once: true }}
             >
               <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-gray-900" />
+                <Target className="w-8 h-8 text-black" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-white/60 mb-6">
                 To enable businesses to unlock the potential of robotics by providing strategic guidance,
                 innovative solutions, and expert implementation that drives real, measurable growth.
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-white/60">
                 We believe that robotics should be accessible, safe, and transformative.
                 Our mission is to bridge the gap between cutting-edge robotic technology and
                 practical business applications that deliver value.
@@ -137,15 +137,15 @@ const AboutPage = () => {
               viewport={{ once: true }}
             >
               <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
-                <Eye className="w-8 h-8 text-gray-900" />
+                <Eye className="w-8 h-8 text-black" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-white/60 mb-6">
                 To be Australia's most trusted partner in applied robotics,
                 recognized for our expertise, integrity, and commitment to delivering
                 transformative robotic solutions.
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-white/60">
                 We envision a future where robotics empowers every business to achieve
                 unprecedented levels of efficiency, innovation, and growth while
                 maintaining the highest safety standards.
@@ -156,7 +156,7 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -166,7 +166,7 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Values</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               The principles that guide everything we do and every solution we deliver.
             </p>
           </motion.div>
@@ -182,10 +182,10 @@ const AboutPage = () => {
                 className="card p-8 text-center"
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-gray-900" />
+                  <value.icon className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <p className="text-white/60">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -193,7 +193,7 @@ const AboutPage = () => {
       </section>
 
       {/* Leadership Section */}
-      <section className="section-padding bg-accent-100">
+      <section className="section-padding bg-white/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -202,8 +202,8 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Meet Our Founders</h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Meet Our Founders</h2>
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
               Deep expertise in robotics, applied hands-on by the two people who lead every engagement.
             </p>
           </motion.div>
@@ -216,7 +216,7 @@ const AboutPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white border border-accent-300 rounded-2xl p-8 lg:p-12 shadow-lg"
+                className="bg-black border border-white/20 rounded-2xl p-8 lg:p-12 shadow-lg"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                   <div className="lg:col-span-1">
@@ -232,26 +232,26 @@ const AboutPage = () => {
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
-                          <span className="text-5xl font-bold text-gray-900">{leader.initials}</span>
+                          <span className="text-5xl font-bold text-black">{leader.initials}</span>
                         </div>
                       )}
                     </div>
                   </div>
 
                   <div className="lg:col-span-2">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">{leader.name}</h3>
-                    <p className="text-lg text-primary-700 font-semibold mb-6">{leader.role}</p>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">{leader.name}</h3>
+                    <p className="text-lg text-primary-400 font-semibold mb-6">{leader.role}</p>
 
                     <div className="space-y-4 mb-6">
                       {leader.details.map((detail) => (
                         <div key={detail.text} className="flex items-center space-x-3">
-                          <detail.icon className="w-5 h-5 text-primary-700" />
-                          <span className="text-gray-700">{detail.text}</span>
+                          <detail.icon className="w-5 h-5 text-primary-400" />
+                          <span className="text-white/70">{detail.text}</span>
                         </div>
                       ))}
                     </div>
 
-                    <p className="text-gray-700 mb-6">{leader.bio}</p>
+                    <p className="text-white/70 mb-6">{leader.bio}</p>
 
                     <div className="flex flex-wrap gap-2">
                       {leader.tags.map((tag, tagIndex) => (
@@ -259,8 +259,8 @@ const AboutPage = () => {
                           key={tag}
                           className={
                             tagIndex % 2 === 0
-                              ? 'px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm'
-                              : 'px-3 py-1 bg-accent-200 text-gray-700 rounded-full text-sm'
+                              ? 'px-3 py-1 bg-primary-500/15 text-primary-400 rounded-full text-sm'
+                              : 'px-3 py-1 bg-white/15 text-white/70 rounded-full text-sm'
                           }
                         >
                           {tag}
@@ -276,7 +276,7 @@ const AboutPage = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -286,7 +286,7 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Tornado Consulting Group?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               Here's what to expect when you work with us.
             </p>
           </motion.div>
@@ -302,10 +302,10 @@ const AboutPage = () => {
                 className="text-center"
               >
                 <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <achievement.icon className="w-10 h-10 text-gray-900" />
+                  <achievement.icon className="w-10 h-10 text-black" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{achievement.title}</h3>
-                <p className="text-gray-600">{achievement.description}</p>
+                <p className="text-white/60">{achievement.description}</p>
               </motion.div>
             ))}
           </div>
@@ -313,7 +313,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

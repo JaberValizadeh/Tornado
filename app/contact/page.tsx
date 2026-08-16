@@ -74,25 +74,25 @@ const ContactPage = () => {
       icon: MapPin,
       title: 'Location',
       details: ['Sydney, Australia'],
-      color: 'text-primary-700'
+      color: 'text-primary-400'
     },
     {
       icon: Phone,
       title: 'Phone',
       details: ['+61 468 933 033', 'Mon-Fri 9AM-6PM AEST'],
-      color: 'text-accent-600'
+      color: 'text-white/60'
     },
     {
       icon: Mail,
       title: 'Email',
       details: ['info@tornadoai.com.au'],
-      color: 'text-primary-700'
+      color: 'text-primary-400'
     },
     {
       icon: Clock,
       title: 'Business Hours',
       details: ['Monday - Friday: 9:00 AM - 6:00 PM', 'Saturday: 10:00 AM - 2:00 PM', 'Sunday: Closed'],
-      color: 'text-accent-600'
+      color: 'text-white/60'
     }
   ]
 
@@ -117,7 +117,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -138,7 +138,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
@@ -150,7 +150,7 @@ const ContactPage = () => {
             >
               <div className="card p-8">
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">Send us a Message</h2>
-                <p className="text-gray-600 mb-8">
+                <p className="text-white/60 mb-8">
                   Tell us about your business and robotics goals. We'll get back to you within 24 hours.
                 </p>
 
@@ -160,19 +160,19 @@ const ContactPage = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <CheckCircle className="w-16 h-16 text-primary-700 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
-                    <p className="text-gray-600">Thank you for reaching out. We'll be in touch soon.</p>
+                    <CheckCircle className="w-16 h-16 text-primary-400 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
+                    <p className="text-white/60">Thank you for reaching out. We'll be in touch soon.</p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {error && (
-                      <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                      <div className="bg-red-500/10 border border-red-500/30 text-red-300 px-4 py-3 rounded-lg">
                         <p className="text-sm">{error}</p>
                       </div>
                     )}
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-white/70 mb-2">
                         Full Name *
                       </label>
                       <input
@@ -182,13 +182,13 @@ const ContactPage = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 bg-white/5 text-white placeholder-white/35 border border-white/15 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                         placeholder="Your full name"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="business" className="block text-sm font-medium text-white/70 mb-2">
                         Business Name *
                       </label>
                       <input
@@ -198,13 +198,13 @@ const ContactPage = () => {
                         value={formData.business}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 bg-white/5 text-white placeholder-white/35 border border-white/15 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                         placeholder="Your company name"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-white/70 mb-2">
                         Email Address *
                       </label>
                       <input
@@ -214,13 +214,13 @@ const ContactPage = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 bg-white/5 text-white placeholder-white/35 border border-white/15 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                         placeholder="your.email@company.com"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-white/70 mb-2">
                         Message *
                       </label>
                       <textarea
@@ -230,7 +230,7 @@ const ContactPage = () => {
                         onChange={handleInputChange}
                         required
                         rows={6}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-white/5 text-white placeholder-white/35 border border-white/15 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
                         placeholder="Tell us about your robotics goals, challenges, or questions..."
                       />
                     </div>
@@ -244,7 +244,7 @@ const ContactPage = () => {
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin mr-2"></div>
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-transparent rounded-full animate-spin mr-2"></div>
                           Sending...
                         </>
                       ) : (
@@ -269,7 +269,7 @@ const ContactPage = () => {
             >
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">Get in Touch</h2>
-                <p className="text-gray-600 mb-8">
+                <p className="text-white/60 mb-8">
                   We're based in Sydney and serve clients across Australia and internationally. 
                   Whether you're looking for a quick consultation or a comprehensive robotics strategy,
                   we're here to help.
@@ -286,14 +286,14 @@ const ContactPage = () => {
                     viewport={{ once: true }}
                     className="flex items-start space-x-4"
                   >
-                    <div className={`w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <div className={`w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center flex-shrink-0`}>
                       <info.icon className={`w-6 h-6 ${info.color}`} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                      <h3 className="font-semibold text-white mb-2">{info.title}</h3>
                       <div className="space-y-1">
                         {info.details.map((detail, detailIndex) => (
-                          <p key={detailIndex} className="text-gray-600 text-sm">
+                          <p key={detailIndex} className="text-white/60 text-sm">
                             {detail}
                           </p>
                         ))}
@@ -309,18 +309,18 @@ const ContactPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-r from-primary-100 to-primary-50 rounded-2xl p-6"
+                className="bg-gradient-to-r from-primary-500/15 to-primary-500/5 rounded-2xl p-6"
               >
                 <h3 className="text-xl font-bold mb-4">Why Partner with Us?</h3>
                 <div className="space-y-4">
                   {partnershipBenefits.map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <benefit.icon className="w-4 h-4 text-gray-900" />
+                        <benefit.icon className="w-4 h-4 text-black" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900">{benefit.title}</h4>
-                        <p className="text-gray-600 text-sm">{benefit.description}</p>
+                        <h4 className="font-semibold text-white">{benefit.title}</h4>
+                        <p className="text-white/60 text-sm">{benefit.description}</p>
                       </div>
                     </div>
                   ))}

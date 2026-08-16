@@ -24,7 +24,7 @@ const columns = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 bg-neutral-950">
+    <footer className="border-t border-white/10 bg-black">
       <div className="container-custom py-16 md:py-20">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-8">
           {/* Brand */}

@@ -128,7 +128,7 @@ const TrainingPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-neutral-950">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ const TrainingPage = () => {
       </section>
 
       {/* Training Programs Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -169,7 +169,7 @@ const TrainingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Training Programs
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               From fundamentals to advanced techniques, we offer comprehensive training programs 
               tailored to your team's needs and expertise level.
             </p>
@@ -188,33 +188,33 @@ const TrainingPage = () => {
                 <div className="flex flex-col lg:flex-row gap-8">
                   <div className="lg:w-1/4">
                     <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6">
-                      <program.icon className="w-10 h-10 text-gray-900" />
+                      <program.icon className="w-10 h-10 text-black" />
                     </div>
                     <div className="space-y-3">
                       <div>
-                        <span className="text-sm text-gray-500">Duration</span>
-                        <p className="font-semibold text-gray-900">{program.duration}</p>
+                        <span className="text-sm text-white/50">Duration</span>
+                        <p className="font-semibold text-white">{program.duration}</p>
                       </div>
                       <div>
-                        <span className="text-sm text-gray-500">Level</span>
-                        <p className="font-semibold text-gray-900">{program.level}</p>
+                        <span className="text-sm text-white/50">Level</span>
+                        <p className="font-semibold text-white">{program.level}</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="lg:w-3/4">
                     <h3 className="text-2xl md:text-3xl font-bold mb-4">{program.title}</h3>
-                    <p className="text-lg text-gray-600 mb-6">{program.description}</p>
+                    <p className="text-lg text-white/60 mb-6">{program.description}</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                          <BookOpen className="w-5 h-5 text-primary-700 mr-2" />
+                        <h4 className="font-semibold text-white mb-4 flex items-center">
+                          <BookOpen className="w-5 h-5 text-primary-400 mr-2" />
                           Topics Covered
                         </h4>
                         <ul className="space-y-2">
                           {program.topics.map((topic, topicIndex) => (
-                            <li key={topicIndex} className="text-gray-600 flex items-start">
+                            <li key={topicIndex} className="text-white/60 flex items-start">
                               <CheckCircle className="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
                               <span>{topic}</span>
                             </li>
@@ -223,13 +223,13 @@ const TrainingPage = () => {
                       </div>
                       
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                          <Target className="w-5 h-5 text-primary-700 mr-2" />
+                        <h4 className="font-semibold text-white mb-4 flex items-center">
+                          <Target className="w-5 h-5 text-primary-400 mr-2" />
                           Learning Outcomes
                         </h4>
                         <ul className="space-y-2">
                           {program.outcomes.map((outcome, outcomeIndex) => (
-                            <li key={outcomeIndex} className="text-gray-600 flex items-start">
+                            <li key={outcomeIndex} className="text-white/60 flex items-start">
                               <CheckCircle className="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
                               <span>{outcome}</span>
                             </li>
@@ -246,7 +246,7 @@ const TrainingPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="section-padding bg-accent-100">
+      <section className="section-padding bg-white/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -258,7 +258,7 @@ const TrainingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Why Choose Our Training?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               We provide practical, hands-on training that delivers real results for your business.
             </p>
           </motion.div>
@@ -274,10 +274,10 @@ const TrainingPage = () => {
                 className="text-center"
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <feature.icon className="w-8 h-8 text-gray-900" />
+                  <feature.icon className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-white/60">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -285,7 +285,7 @@ const TrainingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
