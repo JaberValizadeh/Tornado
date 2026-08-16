@@ -63,9 +63,22 @@
            hover:border-neutral-300;
   }
 
+  .card-dark {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm
+           transition-colors duration-200 hover:border-white/20;
+  }
+
+  .glass-dark {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-md;
+  }
+
   /* -------------------------------------------------------------- typography */
   .eyebrow {
     @apply text-xs font-medium uppercase tracking-[0.18em] text-neutral-400;
+  }
+
+  .eyebrow-dark {
+    @apply text-xs font-medium uppercase tracking-[0.18em] text-primary-400/90;
   }
 
   .display {

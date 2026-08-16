@@ -33,22 +33,34 @@ const Header = () => {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         isScrolled
-          ? 'border-neutral-200 bg-white/80 backdrop-blur-md'
-          : 'border-transparent bg-white/0'
+          ? 'border-white/10 bg-neutral-950/90 backdrop-blur-md'
+          : 'border-white/5 bg-neutral-950/70 backdrop-blur-sm'
       }`}
     >
       <nav className="container-custom">
-        <div className="flex h-16 items-center justify-between md:h-20">
-          {/* Logo */}
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ${
+            isScrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'
+          }`}
+        >
+          {/* Logo — white chip so the dark mark stays visible on the dark bar */}
           <Link href="/" className="flex items-center" aria-label="Tornado AI home">
-            <Image
-              src="/img/Tornado_AI-removebg-preview.png"
-              alt="Tornado AI"
-              width={512}
-              height={512}
-              priority
-              className="h-11 w-auto object-contain md:h-14"
-            />
+            <span
+              className={`flex items-center justify-center rounded-lg bg-white px-2 transition-all duration-300 ${
+                isScrolled ? 'py-1' : 'py-1.5'
+              }`}
+            >
+              <Image
+                src="/img/Tornado_AI-removebg-preview.png"
+                alt="Tornado AI"
+                width={512}
+                height={512}
+                priority
+                className={`w-auto object-contain transition-all duration-300 ${
+                  isScrolled ? 'h-8 md:h-9' : 'h-9 md:h-11'
+                }`}
+              />
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -60,9 +72,7 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className={`text-sm transition-colors duration-200 ${
-                    active
-                      ? 'text-neutral-950'
-                      : 'text-neutral-500 hover:text-neutral-950'
+                    active ? 'text-white' : 'text-neutral-400 hover:text-white'
                   }`}
                 >
                   {item.name}
@@ -78,7 +88,7 @@ const Header = () => {
 
           {/* Mobile toggle */}
           <button
-            className="-mr-2 p-2 text-neutral-900 md:hidden"
+            className="-mr-2 p-2 text-white md:hidden"
             onClick={() => setIsMenuOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -90,13 +100,13 @@ const Header = () => {
 
       {/* Mobile nav */}
       {isMenuOpen && (
-        <div className="border-t border-neutral-200 bg-white md:hidden">
+        <div className="border-t border-white/10 bg-neutral-950 md:hidden">
           <div className="container-custom flex flex-col py-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="border-b border-neutral-100 py-3.5 text-sm text-neutral-700 last:border-0"
+                className="border-b border-white/5 py-3.5 text-sm text-neutral-300 last:border-0"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
