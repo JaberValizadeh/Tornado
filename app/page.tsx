@@ -10,6 +10,7 @@ import {
   useReducedMotion,
 } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRef, useState } from 'react'
 import {
   ArrowRight,
@@ -219,36 +220,42 @@ const HomePage = () => {
       title: 'Robotics Strategy & Automation Roadmap',
       description:
         'Comprehensive robotics roadmaps aligned to your business objectives and measurable growth targets.',
+      image: 'https://images.unsplash.com/photo-1606206873764-fd15e242df52?auto=format&fit=crop&w=900&q=80',
     },
     {
       icon: Bot,
       title: 'Robotic Arms & Manufacturing Automation',
       description:
         'Intelligent robotic arms that automate production lines, optimise operations and unlock data-driven insight.',
+      image: 'https://images.unsplash.com/photo-1716191299980-a6e8827ba10b?auto=format&fit=crop&w=900&q=80',
     },
     {
       icon: Zap,
       title: 'Warehouse & Logistics Robotics',
       description:
         'Autonomous mobile robots and AGVs that automate workflows and lift productivity across the facility.',
+      image: 'https://images.unsplash.com/photo-1743611978046-9723d29b99cb?auto=format&fit=crop&w=900&q=80',
     },
     {
       icon: Cloud,
       title: 'Systems Integration & Cloud Monitoring',
       description:
         'Fleet management, cloud infrastructure and real-time telemetry with enterprise-grade reliability.',
+      image: 'https://images.unsplash.com/photo-1753153481105-7a979eabe5a9?auto=format&fit=crop&w=900&q=80',
     },
     {
       icon: Cpu,
       title: 'IoT & Edge Computing for Robotics',
       description:
         'Connected sensors, real-time processing and edge deployment for industrial and consumer robotics.',
+      image: 'https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=900&q=80',
     },
     {
       icon: Shield,
       title: 'Responsible & Safe Robotics',
       description:
         'Safety compliance, risk assessment and ethical automation for transparent, accountable systems.',
+      image: 'https://images.unsplash.com/photo-1705579611249-9861db5469ea?auto=format&fit=crop&w=900&q=80',
     },
   ]
 
@@ -550,23 +557,35 @@ const HomePage = () => {
                 {...fadeUp}
                 transition={{ ...fadeUp.transition, delay: (i % 3) * 0.07 }}
               >
-                <TiltCard className="card-dark group h-full rounded-2xl p-7">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-500/10 text-primary-400">
-                    <service.icon className="h-5 w-5" />
+                <TiltCard className="card-dark group h-full overflow-hidden rounded-2xl">
+                  <div className="relative h-40 w-full overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/10 to-transparent" />
+                    <div className="absolute bottom-3 left-3 flex h-9 w-9 items-center justify-center rounded-lg bg-neutral-950/70 text-primary-400 backdrop-blur-sm">
+                      <service.icon className="h-4 w-4" />
+                    </div>
                   </div>
-                  <h3 className="mt-5 text-base font-medium leading-snug text-white">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-400">
-                    {service.description}
-                  </p>
-                  <Link
-                    href="/services"
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-neutral-300 transition-colors hover:text-primary-400"
-                  >
-                    Read more
-                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </Link>
+                  <div className="p-7">
+                    <h3 className="text-base font-medium leading-snug text-white">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+                      {service.description}
+                    </p>
+                    <Link
+                      href="/services"
+                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-neutral-300 transition-colors hover:text-primary-400"
+                    >
+                      Read more
+                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </Link>
+                  </div>
                 </TiltCard>
               </motion.div>
             ))}

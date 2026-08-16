@@ -3,6 +3,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Clock,
   ArrowRight,
@@ -25,7 +26,8 @@ const CaseStudiesPage = () => {
       challenge: 'Overstock and stockouts are two of the most common warehouse problems — both eat into margin and customer trust.',
       approach: 'A fleet of autonomous mobile robots (AMRs) automates picking and replenishment, tracking demand patterns to keep inventory levels closer to what the floor actually needs.',
       outcomes: ['Fewer stockouts', 'Less manual picking time', 'Tighter inventory control'],
-      category: 'Warehouse Robotics'
+      category: 'Warehouse Robotics',
+      image: 'https://images.unsplash.com/photo-1767966762602-b68f11f146f7?auto=format&fit=crop&w=900&q=80'
     },
     {
       id: 2,
@@ -35,7 +37,8 @@ const CaseStudiesPage = () => {
       challenge: 'Clinical staff often lose hours a week to internal logistics — moving medications, supplies, and lab samples between departments.',
       approach: 'Autonomous delivery robots take over routine transport runs, freeing clinical staff to spend that time on patient care instead.',
       outcomes: ['Faster delivery turnaround', 'More staff time for patients', 'Fewer manual handoffs'],
-      category: 'Service Robotics'
+      category: 'Service Robotics',
+      image: 'https://images.unsplash.com/photo-1723513198534-c3cd2e033815?auto=format&fit=crop&w=900&q=80'
     },
     {
       id: 3,
@@ -45,7 +48,8 @@ const CaseStudiesPage = () => {
       challenge: 'Production lines with manual, repetitive tasks tend to accumulate inconsistent quality and unplanned downtime over time.',
       approach: 'Robotic arm work cells with machine vision quality control and predictive maintenance keep production lines running consistently.',
       outcomes: ['More consistent output', 'Fewer defects reaching QA', 'Maintenance scheduled before failure'],
-      category: 'Manufacturing Automation'
+      category: 'Manufacturing Automation',
+      image: 'https://images.unsplash.com/photo-1655393001768-d946c97d6fd1?auto=format&fit=crop&w=900&q=80'
     },
     {
       id: 4,
@@ -55,7 +59,8 @@ const CaseStudiesPage = () => {
       challenge: 'Facility monitoring across a large site is expensive to staff around the clock, and human patrols can miss the same blind spots every time.',
       approach: 'Autonomous patrol robots handle facility monitoring and anomaly detection, with real-time sensing and after-hours coverage.',
       outcomes: ['Consistent, repeatable patrol coverage', 'Faster anomaly detection', 'Lower reliance on overnight staffing'],
-      category: 'Security Robotics'
+      category: 'Security Robotics',
+      image: 'https://images.unsplash.com/photo-1753153481105-7a979eabe5a9?auto=format&fit=crop&w=900&q=80'
     },
     {
       id: 5,
@@ -65,7 +70,8 @@ const CaseStudiesPage = () => {
       challenge: 'Delivery networks lose money to inefficient routing and reactive vehicle maintenance.',
       approach: 'Autonomous delivery robots paired with route optimization algorithms and predictive maintenance systems keep a fleet running efficiently.',
       outcomes: ['Lower fuel costs', 'More predictable delivery windows', 'Fewer unplanned fleet outages'],
-      category: 'Logistics Robotics'
+      category: 'Logistics Robotics',
+      image: 'https://images.unsplash.com/photo-1742761771253-459473041235?auto=format&fit=crop&w=900&q=80'
     },
     {
       id: 6,
@@ -75,7 +81,8 @@ const CaseStudiesPage = () => {
       challenge: 'Hands-on robotics education is one of the most effective ways to build student engagement — but it takes real equipment and curriculum, not just theory.',
       approach: 'A STEM robotics lab with programmable robot kits and an adaptive, project-based curriculum gives students something to actually build.',
       outcomes: ['Higher student engagement', 'Practical, transferable skills', 'A curriculum that scales with ability'],
-      category: 'Educational Robotics'
+      category: 'Educational Robotics',
+      image: 'https://images.unsplash.com/photo-1737228813532-9cd720824ba7?auto=format&fit=crop&w=900&q=80'
     }
   ]
 
@@ -139,49 +146,59 @@ const CaseStudiesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card p-6 group hover:shadow-2xl transition-all duration-300"
+                className="card p-0 overflow-hidden group hover:shadow-2xl transition-all duration-300"
               >
-                {/* Header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
-                      <scenario.icon className="w-6 h-6 text-gray-900" />
+                {/* Image */}
+                <div className="relative h-40 w-full overflow-hidden">
+                  <Image
+                    src={scenario.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute bottom-3 left-3 flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
+                      <scenario.icon className="w-5 h-5 text-gray-900" />
                     </div>
-                    <div className="font-semibold text-gray-900">{scenario.industry}</div>
+                    <div className="font-semibold text-white text-sm">{scenario.industry}</div>
                   </div>
-                  <div className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
+                  <div className="absolute top-3 right-3 text-xs bg-white/90 text-primary-700 px-2 py-1 rounded-full backdrop-blur-sm">
                     {scenario.category}
                   </div>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold mb-4 group-hover:text-primary-700 transition-colors">
-                  {scenario.title}
-                </h3>
+                <div className="p-6">
+                  {/* Title */}
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-primary-700 transition-colors">
+                    {scenario.title}
+                  </h3>
 
-                {/* Challenge */}
-                <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">The Challenge</h4>
-                  <p className="text-gray-600 text-sm">{scenario.challenge}</p>
-                </div>
+                  {/* Challenge */}
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">The Challenge</h4>
+                    <p className="text-gray-600 text-sm">{scenario.challenge}</p>
+                  </div>
 
-                {/* Approach */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-2">The Approach</h4>
-                  <p className="text-gray-600 text-sm">{scenario.approach}</p>
-                </div>
+                  {/* Approach */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-gray-900 mb-2">The Approach</h4>
+                    <p className="text-gray-600 text-sm">{scenario.approach}</p>
+                  </div>
 
-                {/* Outcomes */}
-                <div className="pt-4 border-t border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-3">What This Targets</h4>
-                  <ul className="space-y-1.5">
-                    {scenario.outcomes.map((outcome) => (
-                      <li key={outcome} className="text-sm text-gray-600 flex items-center">
-                        <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
-                        {outcome}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Outcomes */}
+                  <div className="pt-4 border-t border-gray-100">
+                    <h4 className="font-semibold text-gray-900 mb-3">What This Targets</h4>
+                    <ul className="space-y-1.5">
+                      {scenario.outcomes.map((outcome) => (
+                        <li key={outcome} className="text-sm text-gray-600 flex items-center">
+                          <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
+                          {outcome}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             ))}
