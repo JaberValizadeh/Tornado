@@ -73,7 +73,7 @@ const ContactPage = () => {
     {
       icon: MapPin,
       title: 'Location',
-      details: ['Level 15, 123 George Street', 'Sydney NSW 2000', 'Australia'],
+      details: ['Sydney, Australia'],
       color: 'text-primary-700'
     },
     {
@@ -328,39 +328,6 @@ const ContactPage = () => {
               </motion.div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Visit Our Sydney Office</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Located in the heart of Sydney's business district, our office is easily accessible 
-              by public transport and offers convenient parking options.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center"
-          >
-            <div className="text-center">
-              <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600">Interactive map would be integrated here</p>
-              <p className="text-sm text-gray-500 mt-2">Level 15, 123 George Street, Sydney NSW 2000</p>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
