@@ -40,7 +40,7 @@ const AboutPage = () => {
   const leaders = [
     {
       name: 'Dr. Jaber Valizadeh',
-      role: 'Founder & Principal Robotics Consultant',
+      role: 'Founder & Principal Robotics Engineer',
       image: '/img/Jaber.jpg',
       initials: 'JV',
       details: [

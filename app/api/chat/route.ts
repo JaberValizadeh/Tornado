@@ -41,8 +41,8 @@ export async function POST(request: NextRequest) {
     // System message to give context about the company
     const systemMessage = {
       role: 'system' as const,
-      content: `You are a helpful AI assistant for Tornado Consulting Group (TCG), a robotics solutions firm.
-      You help visitors learn about robotics consulting and integration services, answer questions about the company, and assist with inquiries.
+      content: `You are a helpful AI assistant for Tornado Consulting Group (TCG), a robotics solutions provider.
+      You help visitors learn about the robotic systems TCG designs, builds, and deploys, answer questions about the company, and assist with inquiries.
       Be friendly, professional, and concise. If you don't know something, direct them to contact the company directly.
       Keep responses conversational and helpful.`
     }

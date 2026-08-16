@@ -121,8 +121,8 @@ const ServicesPage = () => {
     },
     {
       icon: Bot,
-      title: 'Robotics Strategy & Automation Transformation Consulting',
-      description: 'We partner with executives to craft robotics strategies and implementation roadmaps aligned with business priorities. From opportunity discovery to measurable outcomes, our consultants guide your organization through every stage of its robotics transformation journey.',
+      title: 'Robotics Strategy & Automation Transformation',
+      description: 'We partner with executives to craft robotics strategies and implementation roadmaps aligned with business priorities. From opportunity discovery to measurable outcomes, our team guides your organization through every stage of its robotics transformation journey.',
       features: [
         'Executive-level robotics strategy',
         'Implementation roadmaps',
@@ -139,10 +139,10 @@ const ServicesPage = () => {
     },
     {
       icon: Briefcase,
-      title: 'Operations & Digital Transformation Consulting',
-      description: 'Our management consultants align robotics and automation strategies with organizational goals. We help businesses modernize production systems, optimize performance, and foster innovation through seamless technology integration and change management.',
+      title: 'Operations & Digital Transformation',
+      description: 'We align robotics and automation strategies with organizational goals. We help businesses modernize production systems, optimize performance, and foster innovation through seamless technology integration and change management.',
       features: [
-        'Strategic alignment consulting',
+        'Strategic alignment planning',
         'System modernization',
         'Performance optimization',
         'Technology integration',
@@ -301,8 +301,8 @@ const ServicesPage = () => {
     },
     {
       icon: Award,
-      title: 'Responsible & Sustainable Robotics Consulting',
-      description: 'We help organizations design ethical and sustainable robotics frameworks that prioritize worker safety, inclusivity, and environmental responsibility. Our consultants align technology with human and societal values for long-term trust and success.',
+      title: 'Responsible & Sustainable Robotics',
+      description: 'We help organizations design ethical and sustainable robotics frameworks that prioritize worker safety, inclusivity, and environmental responsibility. We align technology with human and societal values for long-term trust and success.',
       features: [
         'Ethical robotics framework design',
         'Worker safety & inclusivity focus',
@@ -377,11 +377,11 @@ const ServicesPage = () => {
           >
             <span className="eyebrow">What we do</span>
             <h1 className="display mt-5">
-              Robotics consulting <span className="text-neutral-400">services.</span>
+              Robotic <span className="text-neutral-400">solutions.</span>
             </h1>
             <p className="body-muted mx-auto mt-6 max-w-xl">
-              Comprehensive robotic solutions designed to transform your business operations,
-              drive innovation, and deliver measurable results.
+              We design, build, and deploy robotic solutions that transform your business
+              operations, drive innovation, and deliver measurable results.
             </p>
             <div className="mt-9">
               <Link href="/contact">
@@ -406,10 +406,10 @@ const ServicesPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Our Robotics Consulting Offerings
+              Our Robotic Solutions
             </h2>
             <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              From strategy to implementation, we provide end-to-end robotics solutions tailored to your business needs.
+              From strategy to implementation, we design, build, and deploy end-to-end robotic solutions tailored to your business needs.
             </p>
           </motion.div>
 

@@ -36,7 +36,7 @@ const SLIDE_DURATION = 7000
 const slides = [
   {
     id: 'tornado',
-    eyebrow: 'Tornado Consulting Group',
+    eyebrow: 'Robotic Solutions, Delivered',
     title: 'Robots That Understand',
     tagline: 'Perceive. Plan. Act.',
     href: '/services',
